@@ -1,0 +1,804 @@
+[
+  {
+    "answers": [
+      "It is easy to use and understand processes. There are a lot of hidden extras that we have found very useful.",
+      "I like that there are dimensions we can use, but I am not happy with how a lot of the current standard reports cannot utilize the dimension fields. I'm told that as the year goes on there will be more reports that can filter with dimensions, but I expected this to be much further along.",
+      null,
+      "I am able to run financial reports with a click of a button. There are helpful dashboard KPI's and I can connect by bank account and credit card account. I am also able to add my own custom dimensions to track by. We have over 60 car washes that require us to have a P&L. Easy to Use, with Helpful"
+    ],
+    "date": {
+      "published": "2026-04-01T11:05:00.617-05:00",
+      "submitted": "2026-04-01T09:35:09.554-05:00",
+      "updated": "2026-04-01T09:35:09.824-05:00"
+    },
+    "helpful": 0,
+    "id": "12575033",
+    "industry": "Consumer Services",
+    "location": {
+      "country": "United States",
+      "primary": "Americas",
+      "region": "North America"
+    },
+    "name": "Diana D.",
+    "product": {
+      "id": "1553954",
+      "name": "Intuit Enterprise Suite",
+      "slug": "intuit-intuit-enterprise-suite"
+    },
+    "role": "Administrator",
+    "score": 4,
+    "segment": "small-business",
+    "source": {
+      "review": "vendor",
+      "type": "vendor"
+    },
+    "switched_from": {
+      "products": [
+        {
+          "id": "94113",
+          "name": "CYMA Financial Management System",
+          "slug": "cyma-financial-management-system"
+        }
+      ],
+      "reason": "Cyma was old, server based, clunky, slow, and all the ledgers were maintained separately."
+    },
+    "title": "Hidden Extras",
+    "type": "text",
+    "url": "https://www.g2.com/products/intuit-intuit-enterprise-suite/reviews/12575033"
+  },
+  {
+    "answers": [
+      "I really appreciate how Intuit Enterprise Suite keeps our multiple entities clearly separated, which is a huge improvement over our last software. The reporting, multi-entity functionality, and ability to manage project-level finances are all major positives. The platform is generally user-friendly for day-to-day accounting, and the support for workflows and multi-role access is helpful. Migrating from a third-party system was manageable, and I like that the system lets me keep things organized and clear.",
+      "Some features, like intercompany billing and the forwarding email for bills, still feel green and haven't worked reliably for us. The primary admin setup was confusing at first and caused access headaches. Customer support can be slow to respond, and sometimes it feels like new features are pushed out before they're ready for real-world use, which means I end up doing things manually and a lot of time with support instead of saving time.",
+      null,
+      "It makes things flow easier and saves time Solid for Multi-Entity Accounting, But Some"
+    ],
+    "date": {
+      "published": "2026-04-28T12:05:18.547-05:00",
+      "submitted": "2026-04-28T08:22:36.375-05:00",
+      "updated": "2026-04-28T08:22:36.570-05:00"
+    },
+    "id": "12698034",
+    "industry": "Construction",
+    "location": {
+      "country": "United States",
+      "primary": "Americas",
+      "region": "North America"
+    },
+    "name": "Verified User in Construction",
+    "product": {
+      "id": "1553954",
+      "name": "Intuit Enterprise Suite",
+      "slug": "intuit-intuit-enterprise-suite"
+    },
+    "role": "Administrator",
+    "score": 5,
+    "segment": "small-business",
+    "source": {
+      "review": "ai_assisted_review",
+      "type": "ai_assisted_review"
+    },
+    "switched_from": {
+      "products": [
+        {
+          "id": "1554126",
+          "name": "MYOB Acumatica",
+          "slug": "myob-acumatica"
+        }
+      ],
+      "reason": "It was not working well. Enterprise does it separates things.\r\n\r\n I hate that your AI is making me type more of a description right now."
+    },
+    "title": "Features Need Work",
+    "type": "text",
+    "url": "https://www.g2.com/products/intuit-intuit-enterprise-suite/reviews/12698034"
+  },
+  {
+    "answers": [
+      "I find Intuit Enterprise Suite very helpful for managing clients who invoice, pay bills, and track job costs. I like how it allows the owners of the company to be directly involved in billing and managing costs. It lets me code expenses to projects and divisions, which helps me tailor my reports. I can print P&L reports by project at any time and make adjustments, like requesting change orders or adjusting labor costs. The transition from QBO to Intuit Enterprise Suite was smooth and required minimal employee training, and the initial setup was no problem.",
+      "The sales tax module needs improvement. We are still learning Dimensions. The challenge is coding all transactions to a Dimension. We don't have the time to assign a Dimension to historical transactions so we can compare this year to last year.",
+      null,
+      "Intuit Enterprise Suite helps me manage clients, track job costs, and involve owners in billing. I can code expenses to projects and divisions, tailor reports, and print P&L reports by project, enabling adjustments and better financial oversight. Versatile Financial Management with"
+    ],
+    "date": {
+      "published": "2026-04-21T18:05:07.406-05:00",
+      "submitted": "2026-04-21T13:50:20.162-05:00",
+      "updated": "2026-04-21T13:50:20.172-05:00"
+    },
+    "id": "12665064",
+    "location": {
+      "country": "United States",
+      "primary": "Americas",
+      "region": "North America"
+    },
+    "name": "Sherrie S.",
+    "product": {
+      "id": "1553954",
+      "name": "Intuit Enterprise Suite",
+      "slug": "intuit-intuit-enterprise-suite"
+    },
+    "score": 5,
+    "segment": "mid-market",
+    "source": {
+      "review": "vendor_self",
+      "type": "vendor_self"
+    },
+    "title": "Minor Hiccups",
+    "type": "text",
+    "url": "https://www.g2.com/products/intuit-intuit-enterprise-suite/reviews/12665064"
+  },
+  {
+    "answers": [
+      "Since implementing the Intuit Enterprise Suite (IES), I have saved approximately eight hours per week on data entry and reconciliations. The ability to manage multiple entities under a single user login has significantly streamlined my workflow.\r\n\r\nI no longer need to remember multiple user IDs and passwords or repeatedly log in and out to access information across entities. Instead, I can simply select the appropriate entity from a dropdown menu, retrieve the required data, and move forward efficiently.\r\n\r\nThis functionality has materially simplified my day-to-day responsibilities and freed up valuable time, allowing me to focus on higher-value work such as building stronger budgets, developing KPIs, and performing more strategic financial analysis.",
+      "The only thing I don’t like is the lack of better training on new releases. I wish there were a “class” you could attend so you’d be kept informed about this information.",
+      null,
+      "N/A IES Streamlined Multi-Entity Workflows and Saved Me 8"
+    ],
+    "date": {
+      "published": "2026-02-04T18:05:01.114-06:00",
+      "submitted": "2026-02-04T15:10:02.718-06:00",
+      "updated": "2026-02-04T15:10:03.007-06:00"
+    },
+    "id": "12311695",
+    "industry": "Health, Wellness and Fitness",
+    "location": {
+      "country": "United States",
+      "primary": "Americas",
+      "region": "North America"
+    },
+    "name": "Crystal H.",
+    "product": {
+      "id": "1553954",
+      "name": "Intuit Enterprise Suite",
+      "slug": "intuit-intuit-enterprise-suite"
+    },
+    "role": "Administrator",
+    "score": 5,
+    "segment": "enterprise",
+    "source": {
+      "review": "organic",
+      "type": "organic"
+    },
+    "title": "Hours a Week",
+    "type": "text",
+    "url": "https://www.g2.com/products/intuit-intuit-enterprise-suite/reviews/12311695"
+  },
+  {
+    "answers": [
+      "I like that Intuit Enterprise Suite is better than the desktop version we used before in almost every way. It's very efficient, and I see the groundwork for some major system improvements. Even though I don't know if the software is done, it's already better, and I think it's only going to get even better. The initial setup was very easy, and the team helped resolve any issues we had. We really like the software a lot, and I would recommend using it to any company our size or larger.",
+      "I hate the menu bar. When we first switched over to the software, there was a different menu system on the left that the nav bar was different. And within a week, it just so happened that they switched to the way it looks now, and I don't like it at all. I don't like that you have to hover over icons. Then it expands the menu option. I would rather just have at least a bookmarked list of things. The nav bar is a big one for us.",
+      null,
+      "I use Intuit Enterprise Suite to improve automations and reduce manual entry with its cloud-based system, solving our accounting software needs. Efficient Cloud-Based Accounting with Room for"
+    ],
+    "date": {
+      "published": "2026-04-02T17:05:00.532-05:00",
+      "submitted": "2026-04-02T14:22:02.220-05:00",
+      "updated": "2026-04-02T14:22:02.245-05:00"
+    },
+    "id": "12581172",
+    "location": {
+      "country": "United States",
+      "primary": "Americas",
+      "region": "North America"
+    },
+    "name": "Spencer G.",
+    "product": {
+      "id": "1553954",
+      "name": "Intuit Enterprise Suite",
+      "slug": "intuit-intuit-enterprise-suite"
+    },
+    "score": 4.5,
+    "segment": "small-business",
+    "source": {
+      "review": "vendor",
+      "type": "vendor"
+    },
+    "title": "Improvement",
+    "type": "text",
+    "url": "https://www.g2.com/products/intuit-intuit-enterprise-suite/reviews/12581172"
+  },
+  {
+    "answers": [
+      "IES offers a lot of options for companies that need more depth in their bookkeeping. They also keep expanding the available features and have been very responsive, showing genuine interest in our feedback.",
+      "The only issue I’m having right now is that some of the options I need still haven’t been released. That said, they’re working on them and should have them available soon.",
+      null,
+      "We really need the dimensions to be available in our payroll, and we also need to be able to assign an employee more than one dimension. They’ve said this option should be available for us in May. Powerful, Expanding Bookkeeping Options with a"
+    ],
+    "date": {
+      "published": "2026-03-31T17:05:00.722-05:00",
+      "submitted": "2026-03-31T14:34:28.126-05:00",
+      "updated": "2026-03-31T14:34:28.506-05:00"
+    },
+    "id": "12571265",
+    "location": {
+      "country": "United States",
+      "primary": "Americas",
+      "region": "North America"
+    },
+    "name": "Dee R.",
+    "product": {
+      "id": "1553954",
+      "name": "Intuit Enterprise Suite",
+      "slug": "intuit-intuit-enterprise-suite"
+    },
+    "role": "Administrator",
+    "score": 4.5,
+    "segment": "small-business",
+    "source": {
+      "review": "vendor",
+      "type": "vendor"
+    },
+    "switched_from": {
+      "products": [
+        {
+          "id": "4111",
+          "name": "QuickBooks Desktop Enterprise",
+          "slug": "quickbooks-desktop-enterprise"
+        }
+      ],
+      "reason": "We needed more flexibility and wanted features for the CEO to be able to see the books and reports."
+    },
+    "title": "Responsive Team",
+    "type": "text",
+    "url": "https://www.g2.com/products/intuit-intuit-enterprise-suite/reviews/12571265"
+  },
+  {
+    "answers": [
+      "I really like how Intuit Enterprise Suite offers us the power and depth of a mid-market ERP without the complexity and cost of systems like NetSuite or Sage Intacct. It's a great fit for businesses that have outgrown basic QuickBooks and want to avoid lengthy implementations or steep learning curves. The advanced reporting and customization are standouts for us. We can create highly tailored P&Ls, balance sheets, job-costing reports, and inventory summaries that aren't possible in lower QuickBooks versions. It allows us to slice data by department, location, project, or customer, enabling real data-driven decisions rather than guessing. Also, the initial setup was straightforward, making the transition smooth.",
+      "The biggest pain point is the speed and performance when working with large datasets. If we run complex, detailed reports over a long date range, or have many users logged in at once, the system can lag or take a long time to load. It’s manageable, but slower than we’d expect for a paid enterprise solution.",
+      null,
+      "Intuit Enterprise Suite streamlined our processes by consolidating financials, inventory, and project tracking into one system, eliminating data silos and duplicate entries. It enhanced our reporting capabilities, enabling us to create detailed, custom financial reports for efficient month-close, budgeting, and forecasting. Unified System with Customizable"
+    ],
+    "date": {
+      "published": "2026-03-06T01:42:39.414-06:00",
+      "submitted": "2026-03-06T00:30:19.502-06:00",
+      "updated": "2026-03-06T00:30:19.601-06:00"
+    },
+    "id": "12444531",
+    "location": {
+      "country": "United States",
+      "primary": "Americas",
+      "region": "North America"
+    },
+    "name": "Bo L.",
+    "product": {
+      "id": "1553954",
+      "name": "Intuit Enterprise Suite",
+      "slug": "intuit-intuit-enterprise-suite"
+    },
+    "score": 3.5,
+    "segment": "mid-market",
+    "source": {
+      "review": "g2",
+      "type": "g2_incentivized"
+    },
+    "title": "Reporting Power",
+    "type": "text",
+    "url": "https://www.g2.com/products/intuit-intuit-enterprise-suite/reviews/12444531"
+  },
+  {
+    "answers": [
+      "The ease of use and the auto suggestions of transactions. The support recieved is amazing as well.",
+      "There are some import function I would love to see. Some sort of Deposit import, not just journal entry import, yes we can import deposits as a journal entry but I would like the function of importing a deposit as a deposit and be treated like a deposit. I also would like to see the auto match in the bank transaction section to post the payment to the account as an actual payment and NOT an expenditure",
+      null,
+      "they have solved the ability to really zero in on transactions and ease the review process with all the filtering abilities. Easy to Use, Smart Transaction Suggestions, and"
+    ],
+    "date": {
+      "published": "2026-04-29T18:05:01.071-05:00",
+      "submitted": "2026-04-29T14:12:21.957-05:00",
+      "updated": "2026-04-29T14:12:22.125-05:00"
+    },
+    "id": "12716212",
+    "industry": "Non-Profit Organization Management",
+    "location": {
+      "country": "United States",
+      "primary": "Americas",
+      "region": "North America"
+    },
+    "name": "Verified User in Non-Profit Organization Management",
+    "product": {
+      "id": "1553954",
+      "name": "Intuit Enterprise Suite",
+      "slug": "intuit-intuit-enterprise-suite"
+    },
+    "role": "User",
+    "score": 5,
+    "segment": "mid-market",
+    "source": {
+      "review": "vendor_self",
+      "type": "vendor_self"
+    },
+    "title": "Amazing Support",
+    "type": "text",
+    "url": "https://www.g2.com/products/intuit-intuit-enterprise-suite/reviews/12716212"
+  },
+  {
+    "answers": [
+      "I love how easy it is to use. We switched from QuickBooks Desktop, and it was difficult to work on the go. This gives us the ability to stay on top of our company’s financial health no matter where we are in the world.",
+      "So far, I haven’t found any downsides or anything I dislike about the software.",
+      null,
+      "It allows us to use the software from anywhere, not just in the office. Multiple people can work in it at the same time, so we no longer have to worry about kicking users out or switching to single-user mode. I also love the month-end AI analysis, along with the suggestions for items to review. Easy to Use and Perfect for Managing"
+    ],
+    "date": {
+      "published": "2026-01-20T16:05:00.525-06:00",
+      "submitted": "2026-01-20T14:13:17.531-06:00",
+      "updated": "2026-01-20T14:13:17.927-06:00"
+    },
+    "id": "12237531",
+    "industry": "Construction",
+    "location": {
+      "country": "United States",
+      "primary": "Americas",
+      "region": "North America"
+    },
+    "name": "Katie R.",
+    "product": {
+      "id": "1553954",
+      "name": "Intuit Enterprise Suite",
+      "slug": "intuit-intuit-enterprise-suite"
+    },
+    "role": "Administrator",
+    "score": 5,
+    "segment": "small-business",
+    "source": {
+      "review": "organic",
+      "type": "organic"
+    },
+    "switched_from": {
+      "products": [
+        {
+          "id": "4111",
+          "name": "QuickBooks Desktop Enterprise",
+          "slug": "quickbooks-desktop-enterprise"
+        }
+      ],
+      "reason": "We needed the software to be easily accessible on the cloud. This has several features that QBO is somewhat lacking."
+    },
+    "title": "Finances on the Go",
+    "type": "text",
+    "url": "https://www.g2.com/products/intuit-intuit-enterprise-suite/reviews/12237531"
+  },
+  {
+    "answers": [
+      "I really like Intuit Enterprise Suite for its ability to handle global reports and other reporting functions, which makes it easy for us to understand the numbers and metrics. It's been effective for tracking multiple businesses for a single business owner.",
+      "A better way to help sell this to my clients is with a marketing piece that would show the product. More transparency of your pricing structure and how to get an agreement offer from Intuit.",
+      null,
+      "I use Intuit Enterprise Suite to deliver global reports for multiple businesses, making it easy to understand numbers and metrics. Global Reporting Simplified with"
+    ],
+    "date": {
+      "published": "2026-04-30T02:05:01.294-05:00",
+      "submitted": "2026-04-29T23:12:20.664-05:00",
+      "updated": "2026-04-29T23:12:20.675-05:00"
+    },
+    "id": "12718560",
+    "location": {
+      "country": "United States",
+      "primary": "Americas",
+      "region": "North America"
+    },
+    "name": "Patty H.",
+    "product": {
+      "id": "1553954",
+      "name": "Intuit Enterprise Suite",
+      "slug": "intuit-intuit-enterprise-suite"
+    },
+    "score": 5,
+    "segment": "small-business",
+    "source": {
+      "review": "vendor_self",
+      "type": "vendor_self"
+    },
+    "title": "Stellar Support",
+    "type": "text",
+    "url": "https://www.g2.com/products/intuit-intuit-enterprise-suite/reviews/12718560"
+  },
+  {
+    "answers": [
+      "We started using Intuit Enterprise Suite about a year ago, and it has made a huge difference in how we handle our accounting workflows—especially consolidating intercompany entries. What used to take a lot more manual effort is now much smoother and easier to manage.\r\n\r\nOne of the biggest advantages is the ability to toggle between companies without constantly logging out and back in. That alone saves a lot of time during the day and makes working across multiple entities far more efficient.\r\n\r\nThe platform is also constantly evolving, which is great to see. At the same time, it would be really helpful if Intuit offered regular training sessions or update classes that explain exactly what has changed and how to best use new features. Since updates roll out fairly often, it can sometimes be hard to keep up with everything that’s new.\r\n\r\nOverall, the system is fairly user-friendly, but there are still a few improvements that could make the experience even better. For example, it would be helpful to have a clear indicator showing which company/location you’re currently working in throughout the interface, not just on the main screen.\r\n\r\nEven with a few areas that could be improved, it’s clear the platform is continuously improving, and we’ve definitely seen the benefits over the past year.",
+      "Support is sometimes lacking in knowledge. I had a case open that was never formally resolved. By that, I mean the problem was fixed, but no one told me to check back or confirm it was resolved. The issue was that a Journal Entry was pending and I couldn’t delete or edit it. It also wasn’t posted anywhere; it was like it had been drafted and then got stuck. I ended up remaking the entry, and a few months later I noticed the original one was back in draft and I could delete it. This was over a year ago. Since then, I haven’t had any issues, so I haven’t needed support again.\r\n\r\nWish the consolidated P&L can pull YOY or YTD, MTD, MOM views or include % of income, and other things that the company has.",
+      null,
+      "Intercompany entries are a breeze now. I only have to make the entry once, and it’s posted across all companies. The bill allocation is smoother, too: one location receives the bill, and the entry is taken care of. I no longer have to run intercompany balance sheet accounts and hunt down which side is missing. Granted, I still have to do this sometimes, but it’s much easier now since most entries go through the automated system. Streamlined Multi-Entity Accounting with Intuit"
+    ],
+    "date": {
+      "published": "2026-03-17T08:46:29.101-05:00",
+      "submitted": "2026-03-16T16:08:42.299-05:00",
+      "updated": "2026-03-16T16:08:42.506-05:00"
+    },
+    "id": "12489784",
+    "industry": "Retail",
+    "location": {
+      "country": "United States",
+      "primary": "Americas",
+      "region": "North America"
+    },
+    "name": "Verified User in Retail",
+    "product": {
+      "id": "1553954",
+      "name": "Intuit Enterprise Suite",
+      "slug": "intuit-intuit-enterprise-suite"
+    },
+    "role": "Administrator",
+    "score": 4,
+    "segment": "mid-market",
+    "source": {
+      "review": "organic",
+      "type": "organic"
+    },
+    "title": "Enterprise Suite",
+    "type": "text",
+    "url": "https://www.g2.com/products/intuit-intuit-enterprise-suite/reviews/12489784"
+  },
+  {
+    "answers": [
+      "I really like how intuitive and user-friendly the Intuit Enterprise Suite is. It makes managing all our finances so much easier. The reporting tools are super helpful and save me a ton of time each month. Overall, it just feels like a reliable solution that actually keeps everything organized without a headache.",
+      "Sometimes it can feel a bit overwhelming with all the features if you’re just trying to do something simple. Also, a few of the reports take longer to load than I’d like.",
+      null,
+      "Intuit Enterprise Suite helps solve the problem of managing complex financial data across multiple accounts and departments. By centralizing everything in one place, it saves me time, reduces errors, and makes reporting and budgeting much more efficient. Intuitive, Reliable Finance Management with"
+    ],
+    "date": {
+      "published": "2026-02-25T16:56:51.607-06:00",
+      "submitted": "2026-02-23T14:31:17.658-06:00",
+      "updated": "2026-02-25T11:19:42.906-06:00"
+    },
+    "id": "12397178",
+    "industry": "Accounting",
+    "location": {
+      "country": "United States",
+      "primary": "Americas",
+      "region": "North America"
+    },
+    "name": "Derrick H.",
+    "product": {
+      "id": "1553954",
+      "name": "Intuit Enterprise Suite",
+      "slug": "intuit-intuit-enterprise-suite"
+    },
+    "role": "User",
+    "score": 4.5,
+    "segment": "small-business",
+    "source": {
+      "review": "g2",
+      "type": "g2_incentivized"
+    },
+    "title": "Time-Saving Reporting",
+    "type": "text",
+    "url": "https://www.g2.com/products/intuit-intuit-enterprise-suite/reviews/12397178"
+  },
+  {
+    "answers": [
+      "I like that Intuit Enterprise Suite keeps all entities in one software, which is essential when managing many entities. It's customizable, which I appreciate a lot. The reporting is another aspect I value because it allows me to be 2D or 3D. Also, the setup was simple, making it easy to get started.",
+      "Purchasing it is a pain, allow me to buy it.",
+      null,
+      "I use Intuit Enterprise Suite for accounting, AR, AP, and cross-entity transactions. It centralizes all my entities in one software, which is essential for managing multiple entities. All-In-One Accounting Powerhouse with"
+    ],
+    "date": {
+      "published": "2026-04-28T12:05:02.035-05:00",
+      "submitted": "2026-04-28T09:07:52.731-05:00",
+      "updated": "2026-04-28T09:07:52.740-05:00"
+    },
+    "id": "12701006",
+    "location": {
+      "country": "United States",
+      "primary": "Americas",
+      "region": "North America"
+    },
+    "name": "Ryan M.",
+    "product": {
+      "id": "1553954",
+      "name": "Intuit Enterprise Suite",
+      "slug": "intuit-intuit-enterprise-suite"
+    },
+    "score": 5,
+    "segment": "mid-market",
+    "source": {
+      "review": "g2",
+      "type": "g2_incentivized"
+    },
+    "title": "Customizable Features",
+    "type": "text",
+    "url": "https://www.g2.com/products/intuit-intuit-enterprise-suite/reviews/12701006"
+  },
+  {
+    "answers": [
+      "I appreciate how this platform allows me to run and manage multiple companies within a single, dynamic environment. It offers a wide range of features that make handling various businesses much more efficient.",
+      "There have been many updates and improvements, and as a result, things change quite a bit over time.",
+      null,
+      "It allows me to manage more than 15 businesses and maintain visibility across all of them, even with a limited staff. Effortless Multi-Company Management with"
+    ],
+    "date": {
+      "published": "2026-01-11T02:08:27.294-06:00",
+      "submitted": "2026-01-10T23:16:46.882-06:00",
+      "updated": "2026-01-10T23:16:47.304-06:00"
+    },
+    "id": "12198507",
+    "industry": "Management Consulting",
+    "location": {
+      "country": "United States",
+      "primary": "Americas",
+      "region": "North America"
+    },
+    "name": "Jason C.",
+    "product": {
+      "id": "1553954",
+      "name": "Intuit Enterprise Suite",
+      "slug": "intuit-intuit-enterprise-suite"
+    },
+    "role": "Administrator",
+    "score": 5,
+    "segment": "small-business",
+    "source": {
+      "review": "vendor_self",
+      "type": "vendor_self"
+    },
+    "switched_from": {
+      "products": [
+        {
+          "id": "390",
+          "name": "Sage Intacct",
+          "slug": "sage-intacct"
+        }
+      ],
+      "reason": "We decided to transition all our entities to Intuit platforms."
+    },
+    "title": "Powerful Features",
+    "type": "text",
+    "url": "https://www.g2.com/products/intuit-intuit-enterprise-suite/reviews/12198507"
+  },
+  {
+    "answers": [
+      "I like the multi-entity entries and eliminations",
+      "Not necessarily a downside, but not sure of the differences between dimensions and classes and how dimensions can be used to get more information",
+      null,
+      "It is benifiting us because we are able to offer our clients an elevated product and find bigger clients that need the product Multi-Entity Eliminations Shine, But Dimensions vs. Classes"
+    ],
+    "date": {
+      "published": "2026-04-30T14:17:11.138-05:00",
+      "submitted": "2026-04-30T10:29:03.325-05:00",
+      "updated": "2026-04-30T10:29:03.482-05:00"
+    },
+    "id": "12723198",
+    "industry": "Accounting",
+    "location": {
+      "country": "United States",
+      "primary": "Americas",
+      "region": "North America"
+    },
+    "name": "Verified User in Accounting",
+    "product": {
+      "id": "1553954",
+      "name": "Intuit Enterprise Suite",
+      "slug": "intuit-intuit-enterprise-suite"
+    },
+    "role": "User",
+    "score": 2.5,
+    "segment": "small-business",
+    "source": {
+      "review": "vendor_self",
+      "type": "vendor_self"
+    },
+    "title": "Needs Clarity",
+    "type": "text",
+    "url": "https://www.g2.com/products/intuit-intuit-enterprise-suite/reviews/12723198"
+  },
+  {
+    "answers": [
+      "I have not been using it long, however, what I have seen so far is great! The user roles are more flexible to give our managers the access they need.",
+      "I have not found anything I do not like yet!",
+      null,
+      "The user roles was a big thing, now our managers have access to what they need to do their jobs without having access to everything! Great First Impressions with Flexible User"
+    ],
+    "date": {
+      "published": "2026-01-14T14:05:01.156-06:00",
+      "submitted": "2026-01-14T10:39:44.600-06:00",
+      "updated": "2026-01-14T10:39:45.122-06:00"
+    },
+    "id": "12214023",
+    "industry": "Construction",
+    "location": {
+      "country": "United States",
+      "primary": "Americas",
+      "region": "North America"
+    },
+    "name": "Shawn S.",
+    "product": {
+      "id": "1553954",
+      "name": "Intuit Enterprise Suite",
+      "slug": "intuit-intuit-enterprise-suite"
+    },
+    "role": "Administrator",
+    "score": 5,
+    "segment": "small-business",
+    "source": {
+      "review": "organic",
+      "type": "organic"
+    },
+    "title": "Roles for Managers!",
+    "type": "text",
+    "url": "https://www.g2.com/products/intuit-intuit-enterprise-suite/reviews/12214023"
+  },
+  {
+    "answers": [
+      "I find Intuit Enterprise Suite very user-friendly and it helps me be stress-free by offering easy-to-understand services. I really appreciated how easy the migration was from Epicor to Intuit Enterprise Suite. The initial setup was also very easy. Overall, I am grateful for Intuit as it solves every problem I encounter in accounting.",
+      "Some times messing around is easy",
+      null,
+      "Intuit Enterprise Suite is user-friendly, making it easy to understand and stress-free for accounting. Effortless Migration,"
+    ],
+    "date": {
+      "published": "2026-03-09T13:05:01.401-05:00",
+      "submitted": "2026-03-09T11:01:18.764-05:00",
+      "updated": "2026-03-09T11:01:18.808-05:00"
+    },
+    "id": "12454649",
+    "location": {
+      "country": "Canada",
+      "primary": "Americas",
+      "region": "North America"
+    },
+    "name": "Aditya P.",
+    "product": {
+      "id": "1553954",
+      "name": "Intuit Enterprise Suite",
+      "slug": "intuit-intuit-enterprise-suite"
+    },
+    "score": 5,
+    "segment": "small-business",
+    "source": {
+      "review": "g2",
+      "type": "g2_incentivized"
+    },
+    "title": "Intuitive and Reliable",
+    "type": "text",
+    "url": "https://www.g2.com/products/intuit-intuit-enterprise-suite/reviews/12454649"
+  },
+  {
+    "answers": [
+      "I value that Intuit Enterprise Suite is pretty much the same as QBO.",
+      "There's not a drop down for \"reclassify transactions\" like there was before. We struggled importing open invoices.",
+      null,
+      "I use Intuit Enterprise Suite for consolidated reporting in my client's bookkeeping services. Recommended for Bookkeeping with Room for"
+    ],
+    "date": {
+      "published": "2026-04-26T04:05:00.423-05:00",
+      "submitted": "2026-04-25T10:24:49.726-05:00",
+      "updated": "2026-04-25T10:24:49.736-05:00"
+    },
+    "id": "12688869",
+    "location": {
+      "country": "United States",
+      "primary": "Americas",
+      "region": "North America"
+    },
+    "name": "Omolara M.",
+    "product": {
+      "id": "1553954",
+      "name": "Intuit Enterprise Suite",
+      "slug": "intuit-intuit-enterprise-suite"
+    },
+    "score": 5,
+    "segment": "small-business",
+    "source": {
+      "review": "vendor_self",
+      "type": "vendor_self"
+    },
+    "title": "Improvement",
+    "type": "text",
+    "url": "https://www.g2.com/products/intuit-intuit-enterprise-suite/reviews/12688869"
+  },
+  {
+    "answers": [
+      "Intuit Enterprise Suite allows me to manage multiple locations within my company while keeping them separate. It allows me to run reports in an individual method but also as one.",
+      "What I dislike about Intuit Enterprise Suite was the merge. There is no clean cut way to merge from a desktop file while using multiple classes. This created delayed issues.",
+      null,
+      "Intuit Enterprise Suite allows me to manage multiple locations under one IES. This is hugely beneficial when trying to keep locations separate but also together as a company. Powerful Multi-Location Management with"
+    ],
+    "date": {
+      "published": "2026-01-20T16:05:00.776-06:00",
+      "submitted": "2026-01-20T13:29:26.038-06:00",
+      "updated": "2026-01-20T13:29:26.533-06:00"
+    },
+    "id": "12237339",
+    "industry": "Accounting",
+    "location": {
+      "country": "United States",
+      "primary": "Americas",
+      "region": "North America"
+    },
+    "name": "Verified User in Accounting",
+    "product": {
+      "id": "1553954",
+      "name": "Intuit Enterprise Suite",
+      "slug": "intuit-intuit-enterprise-suite"
+    },
+    "role": "Administrator",
+    "score": 5,
+    "segment": "mid-market",
+    "source": {
+      "review": "organic",
+      "type": "organic"
+    },
+    "title": "Flexible Reporting",
+    "type": "text",
+    "url": "https://www.g2.com/products/intuit-intuit-enterprise-suite/reviews/12237339"
+  },
+  {
+    "answers": [
+      "Intuit Enterprise Suite offers top-of-the-line accounting tools along with automations and intelligence that help me run my business more efficiently and smarter.",
+      "I would like to see even more features added, but I'm impressed by the rollout pace.",
+      null,
+      "We run a complex business with multiple areas of operation. IES offers great insights on where we are doing well and where we can improve. Top-Tier Accounting Tools and Smart Automation That"
+    ],
+    "date": {
+      "published": "2026-02-24T12:18:12.843-06:00",
+      "submitted": "2026-02-24T09:22:35.307-06:00",
+      "updated": "2026-02-24T09:22:35.569-06:00"
+    },
+    "id": "12400486",
+    "industry": "Food & Beverages",
+    "location": {
+      "country": "United States",
+      "primary": "Americas",
+      "region": "North America"
+    },
+    "name": "Nick V.",
+    "product": {
+      "id": "1553954",
+      "name": "Intuit Enterprise Suite",
+      "slug": "intuit-intuit-enterprise-suite"
+    },
+    "role": "Administrator",
+    "score": 5,
+    "segment": "small-business",
+    "source": {
+      "review": "organic",
+      "type": "organic"
+    },
+    "title": "Boost Efficiency",
+    "type": "text",
+    "url": "https://www.g2.com/products/intuit-intuit-enterprise-suite/reviews/12400486"
+  },
+  {
+    "answers": [
+      "cloud based, scanning invoices into vendor section",
+      "Payroll - it is way less detailed and user friendly than desktop",
+      null,
+      "Using credits with bill pay / work comp report showing hours and wages Cloud-Based Convenience and Easy"
+    ],
+    "date": {
+      "published": "2026-04-28T16:05:06.130-05:00",
+      "submitted": "2026-04-28T12:08:05.309-05:00",
+      "updated": "2026-04-28T12:08:05.548-05:00"
+    },
+    "id": "12705516",
+    "industry": "Construction",
+    "location": {
+      "country": "United States",
+      "primary": "Americas",
+      "region": "North America"
+    },
+    "name": "Verified User in Construction",
+    "product": {
+      "id": "1553954",
+      "name": "Intuit Enterprise Suite",
+      "slug": "intuit-intuit-enterprise-suite"
+    },
+    "role": "Administrator",
+    "score": 4,
+    "segment": "mid-market",
+    "source": {
+      "review": "vendor_self",
+      "type": "vendor_self"
+    },
+    "switched_from": {
+      "products": [
+        {
+          "id": "4111",
+          "name": "QuickBooks Desktop Enterprise",
+          "slug": "quickbooks-desktop-enterprise"
+        }
+      ],
+      "reason": "cloud based"
+    },
+    "title": "Invoice Scanning",
+    "type": "text",
+    "url": "https://www.g2.com/products/intuit-intuit-enterprise-suite/reviews/12705516"
+  }
+]
