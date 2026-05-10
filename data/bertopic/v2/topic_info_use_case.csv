@@ -1,0 +1,71 @@
+topic_id,doc_count,topic_name,top_keywords,is_noise
+-1,3877,-1_sure_good_ability_payroll,outlier — no coherent topic,True
+0,1942,0_online_desktop_pro_desktop pro,"online, desktop, pro, desktop pro, quick books, small, enterprise, use online, recommend, books",False
+1,889,1_customizable_manufacturing_construction_highly customizable,"customizable, manufacturing, construction, highly customizable, project, room, inventory, inquiries, streamlined, production",False
+2,875,2_orders_searches_systems_workflows,"orders, searches, systems, workflows, inventory, operations, powerful, subsidiaries, saved searches, visibility",False
+3,800,3_entity_multi entity_multi_ap,"entity, multi entity, multi, ap, entities, entries, helping, month end, consolidations, automates",False
+4,796,4_cash flow_reconciliation_invoicing_bank reconciliation,"cash flow, reconciliation, invoicing, bank reconciliation, effortless, bank, flow, cash, finances, bookkeeping",False
+5,436,5_4hana_4hana cloud_cloud_analytics,"4hana, 4hana cloud, cloud, analytics, business processes, time analytics, time insights, real time, decision making, real",False
+6,313,6_desktop_online_qbd_unless,"desktop, online, qbd, unless, don, bookkeeping, reason, pro, accountant, expect",False
+7,304,7_inventory_inventory management_order_orders,"inventory, inventory management, order, orders, inventory control, order fulfillment, production, tracking inventory, inventory tracking, manufacturing",False
+8,275,8_invoices_invoice_invoicing_sales invoices,"invoices, invoice, invoicing, sales invoices, processing invoices, payments, estimates, bills invoices, customer invoices, sending",False
+9,258,9_bank_journal_reconciliation_journal entries,"bank, journal, reconciliation, journal entries, reconciliations, transactions, banking, bank accounts, bank statements, entries",False
+10,239,10_erps_manufacturing_upgrading_company good,"erps, manufacturing, upgrading, company good, true, hardware, moving, p2p, systems, implementation",False
+11,233,11_365_business central_central_power bi,"365, business central, central, power bi, bi, power, outlook, productivity, finance sales, functions",False
+12,198,12_reports_report_reports needed_easy generate,"reports, report, reports needed, easy generate, reporting, generate, customized, fast reporting, sql, generate reports",False
+13,165,13_books_bookkeeping_book_bookkeeper,"books, bookkeeping, book, bookkeeper, book keeping, bookkeeping needs, books month, bookkeeping easier, maintaining books, accounting books",False
+14,110,14_automation_manual processes_automation processes_processes,"automation, manual processes, automation processes, processes, ai, efficiency automation, automation integration, automating, automations, tasks automation",False
+15,103,15_ap_ar_ap automation_ar ap,"ap, ar, ap automation, ar ap, ap ar, automation, ap process, ap bills, gl, billing ar",False
+16,88,16_expenses_income_expenses income_track expenses,"expenses, income, expenses income, track expenses, donations, keeping track, expenses easy, tracking expenses, business expenses, expense",False
+17,85,17_small_small business_small businesses_good small,"small, small business, small businesses, good small, businesses, great small, sized, business small, medium size, medium",False
+18,79,18_synced_multiple entities_vendor_entities,"synced, multiple entities, vendor, entities, avoided, format helps, playing, applied, extracting, customers using",False
+19,76,19_use great_worth_definitely worth_recommendations,"use great, worth, definitely worth, recommendations, use reliable, price, try great, effective easy, use recommend, cost effective",False
+20,69,20_project_projects_project cost_project management,"project, projects, project cost, project management, project accounting, tracking projects, construction accounting, management project, construction, reports track",False
+21,64,21_definitely recommend_worth penny_worth money_yes,"definitely recommend, worth penny, worth money, yes, use definitely, penny, fantastic, regret, definitely, recommend",False
+22,62,22_customer service_service_support needs_support,"customer service, service, support needs, support, customer support, needs work, portal, issues using, good support, figure things",False
+23,60,23_implementation_setup_beginning_make sure,"implementation, setup, beginning, make sure, time implementation, test, going live, rush, sure, set",False
+24,60,24_financial management_hr_use financial_management manage,"financial management, hr, use financial, management manage, employee, hours worked, management solves, student, ensures compliance, approvals",False
+25,57,25_payroll_payroll accounting_easy payroll_employee expense,"payroll, payroll accounting, easy payroll, employee expense, payrolls, payroll tax, checks, included, employee, expense reports",False
+26,53,26_time data_real time_real_time reporting,"time data, real time, real, time reporting, realtime data, realtime, time information, make quicker, having real, reporting user",False
+27,51,27_cloud based_cloud_premise_based,"cloud based, cloud, premise, based, cloud easy, work remotely, based cloud, moving cloud, measure, cloud cloud",False
+28,49,28_company time_helped company_workplace_making efficient,"company time, helped company, workplace, making efficient, helped, efficient, work team, quickly review, new ways, processes helped",False
+29,48,29_dashboards_dashboard_items easy_dashboards help,"dashboards, dashboard, items easy, dashboards help, dashboards helps, time dashboards, line items, data dashboards, ceo, cfo",False
+30,45,30_financial reporting_reporting financial_financial reports_parallel,"financial reporting, reporting financial, financial reports, parallel, storage data, good idea, make financial, reporting really, data salesforce, detailed information",False
+31,41,31_financial force_force_salesforce_configured,"financial force, force, salesforce, configured, consulting, 360, support team, utilization, fraud, questions",False
+32,41,32_excel_data excel_export_spreadsheets,"excel, data excel, export, spreadsheets, using excel, export excel, pdf, sort, spreadsheet, pivot",False
+33,37,33_subsidiaries_multiple subsidiaries_branches_consolidate multiple,"subsidiaries, multiple subsidiaries, branches, consolidate multiple, parent company, intercompany, deploy, parent, areas business, areas",False
+34,36,34_closing_month end_close_close process,"closing, month end, close, close process, end close, month, gl, able close, end, closing month",False
+35,35,35_desktop version_version_online version_desktop,"desktop version, version, online version, desktop, desktop online, pc, online, lose, switching desktop, stick desktop",False
+36,34,36_currency_multi currency_multi_foreign currency,"currency, multi currency, multi, foreign currency, foreign, multiple currencies, exchange rates, creating vendors, currencies, multicurrency",False
+37,34,37_regret_life lot_try_buy,"regret, life lot, try, buy, life, make life, lot easier, second, jump, don let",False
+38,33,38_ffa_ff_psa_salesforce,"ffa, ff, psa, salesforce, integration salesforce, data report, end business, sf, renewals, business single",False
+39,32,39_solve problems_really solving_problems_problems solving,"solve problems, really solving, problems, problems solving, problems just, solving problems, causes, causing, help solve, solving",False
+40,30,40_tutorials_time learn_learn_know use,"tutorials, time learn, learn, know use, use know, really useful, class, super easy, intimidated, training use",False
+41,28,41_consolidation_consolidated financial_financial consolidation_consolidation financial,"consolidation, consolidated financial, financial consolidation, consolidation financial, legal, consolidated, consolidations, entities, international, better process",False
+42,26,42_billing_use cases_billing use_billing easy,"billing, use cases, billing use, billing easy, automate billing, cases, subscription, usage, based billing, billing problems",False
+43,26,43_remote_remote work_remotely_able work,"remote, remote work, remotely, able work, work remotely, remote access, office, ability work, home, directly clients",False
+44,24,44_having data_data place_managing data_source data,"having data, data place, managing data, source data, data multiple, data source, data single, centralized data, multiple platforms, transfer",False
+45,23,45_general ledger_ledger_general_ledgers,"general ledger, ledger, general, ledgers, general ledgers, ledger reporting, robust integration, robust easy, types easy, transaction details",False
+46,22,46_revenue recognition_recognition_revenue_asc 606,"revenue recognition, recognition, revenue, asc 606, asc, 606, schedules, straight, functions works, vp",False
+47,22,47_accountant_accountant help_consult_help set,"accountant, accountant help, consult, help set, using accountant, set, make adjustments, professional, adjustments, access make",False
+48,21,48_multi entity_entity_entities_multi,"multi entity, entity, entities, multi, multiple entities, managing multiple, data customization, customer supplier, tools gives, entry complex",False
+49,21,49_checks_write_print_receipts,"checks, write, print, receipts, cutting, printing, checks easy, customer able, purchasing process, payroll invoices",False
+50,20,50_training_aside_instructions_advantage,"training, aside, instructions, advantage, features streamline, proper training, lot extra, read, need training, training videos",False
+51,20,51_order entry_customized easily_ensure use_entry accounting,"order entry, customized easily, ensure use, entry accounting, integration products, educate, sure consider, static, organization finance, number users",False
+52,20,52_online version_version_consider online_version consider,"online version, version, consider online, version consider, version use, using online, buying, consider, prefer, need update",False
+53,19,53_accounting cloud_old legacy_cloud based_access accounting,"accounting cloud, old legacy, cloud based, access accounting, cloud, assurance, accounting access, based work, cloud management, download data",False
+54,19,54_searches_saved searches_search_saved,"searches, saved searches, search, saved, important data, feature saved, reports built, need easily, visibility great, supervisors",False
+55,19,55_reporting visibility_financial reporting_management reporting_reporting financial,"reporting visibility, financial reporting, management reporting, reporting financial, financial accounting, accounting financial, investor, reporting reporting, reporting compliance, gold standard",False
+56,18,56_content_patient_line item_sure good,"content, patient, line item, sure good, works, 3rd party, 3rd, make sure, based program, use doesn",False
+57,17,57_time management_use time_duplication work_project hours,"time management, use time, duplication work, project hours, meeting clients, timecard, work managing, getting better, management efficient, way use",False
+58,16,58_crm_sales team_crm sales_track leads,"crm, sales team, crm sales, track leads, delivery, crm data, allow company, company going, complex processes, customer communications",False
+59,16,59_departments_multiple departments_collaboration_departments helped,"departments, multiple departments, collaboration, departments helped, issue user, project progress, inbuilt, accounting purchasing, best way, look forward",False
+60,15,60_truth_source truth_source_single source,"truth, source truth, source, single source, data source, consistent data, source financial, different department, effective use, good data",False
+61,14,61_release_new features_need improvement_great things,"release, new features, need improvement, great things, smooth business, add new, getting used, failing, add features, features tools",False
+62,13,62_suite_use enterprise_enterprise_management use,"suite, use enterprise, enterprise, management use, code expenses, businesses making, consolidating financials, bookkeeping services, centralizing place, bookkeeping room",False
+63,13,63_management cloud_decision makers_makers_sales billing,"management cloud, decision makers, makers, sales billing, customer relationships, pipeline, financial management, relationships, force com, time implementing",False
+64,13,64_var_understands_partner_don afraid,"var, understands, partner, don afraid, partner help, implementation work, 18, pm, allowing use, grasp",False
+65,12,65_smartphone_mobile_mobile apps_apps,"smartphone, mobile, mobile apps, apps, job make, helps job, sure make, purchasing accounting, 3pl, definitely great",False
+66,12,66_spreadsheets reduces_manual spreadsheets_automate accounting_spreadsheets,"spreadsheets reduces, manual spreadsheets, automate accounting, spreadsheets, 35, resources allows, spreadsheets helps, reduces accounting, resolves issue, paper files",False
+67,11,67_store_high security_data effectively_manage user,"store, high security, data effectively, manage user, protected, reduce number, user data, processing transactions, information access, photos",False
+68,10,68_users easy_easy small_ability multiple_users user,"users easy, easy small, ability multiple, users user, people using, row, appropriately, multiple users, users, use users",False

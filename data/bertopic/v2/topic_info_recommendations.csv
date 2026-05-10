@@ -1,0 +1,29 @@
+topic_id,doc_count,topic_name,top_keywords,is_noise
+-1,1052,-1_track_quick_program_company,outlier — no coherent topic,True
+0,554,0_online_small business_small_bookkeeping,"online, small business, small, bookkeeping, desktop pro, pro, expenses, desktop, accounting, keeping",False
+1,157,1_good_used_good accounting_allowed,"good, used, good accounting, allowed, monitoring, anticipate, billing, purposes, accounting billing, using accounting",False
+2,141,2_desktop_standard_version_clients,"desktop, standard, version, clients, desktop version, wish, use desktop, bookkeeping, reconciling, enterprise",False
+3,122,3_invoices_invoicing_sending_invoices customers,"invoices, invoicing, sending, invoices customers, invoice, payments, invoices payments, track invoices, customers, email",False
+4,83,4_cloud based_cloud_based_activities,"cloud based, cloud, based, activities, accountants, web, configured, optimize, accountant, integrations",False
+5,71,5_modern_distribution_legacy_implementation,"modern, distribution, legacy, implementation, processes, enhanced, purchasing, development, visibility, operations",False
+6,44,6_run_run reports_customization_reports,"run, run reports, customization, reports, create reports, filter, reports easy, easy run, need run, reports best",False
+7,43,7_productivity_efficiencies_biggest benefit_increased productivity,"productivity, efficiencies, biggest benefit, increased productivity, 50, biggest, reduce, login, sure, increased",False
+8,41,8_cloud_cloud based_access_user access,"cloud, cloud based, access, user access, remotely, based, ease access, working remotely, available cloud, access clients",False
+9,41,9_inventory_inventory management_track inventory_control,"inventory, inventory management, track inventory, control, stock, purchasing, locations, inventory sales, inventory tracking, greatly",False
+10,32,10_central_did_imported_use using,"central, did, imported, use using, gl, general ledger, able import, general, office, corporate",False
+11,31,11_problems_haven_issues_resolve,"problems, haven, issues, resolve, business problems, faced, solving, solved, solving problems, months",False
+12,28,12_accounts receivable_receivable_accounts_payable,"accounts receivable, receivable, accounts, payable, payable accounts, accounts payable, reminders, payroll accounts, templates, track accounts",False
+13,27,13_database_new_achieved_material,"database, new, achieved, material, currency, faced, code, demand, availability, traditional",False
+14,26,14_4hana_requirement_isn_optimization,"4hana, requirement, isn, optimization, key, develop, automation, business problems, giving, customization",False
+15,22,15_bank_reconciliation_bank reconciliation_credit,"bank, reconciliation, bank reconciliation, credit, bank credit, credit card, reconcile bank, card, feeds, reconciliations",False
+16,21,16_posting_engineers_thought_needing,"posting, engineers, thought, needing, core, warehouse, entities, needed, job cost, largest",False
+17,18,17_ar_ap_ap ar_ar ap,"ar, ap, ap ar, ar ap, implemented, financial force, automating, force, fixed assets, accounting easy",False
+18,17,18_dashboards_dashboard_kpi_workflow,"dashboards, dashboard, kpi, workflow, maintenance, reporting data, data, best thing, develop, giving",False
+19,17,19_ffa_ff_psa_salesforce,"ffa, ff, psa, salesforce, seamless, gl, view business, reporting capabilities, rest, allows analyze",False
+20,17,20_salesforce_force_financial force_intercompany,"salesforce, force, financial force, intercompany, com, crm, hosted, enabling, cycle, manual",False
+21,16,21_depreciation_offering_fixed assets_teams,"depreciation, offering, fixed assets, teams, fixed, highly, marketing, assets, benefits program, needs makes",False
+22,14,22_systems_integrated_touch_eliminating,"systems, integrated, touch, eliminating, accounting operations, administrator, actionable, using salesforce, process flow, seven",False
+23,14,23_direct deposit_direct_deposit_payroll simple,"direct deposit, direct, deposit, payroll simple, half, payroll, place making, pay taxes, paying taxes, issues love",False
+24,13,24_month end_closing_end close_close,"month end, closing, end close, close, end, month, year end, accounting month, reporting easy, card accounts",False
+25,13,25_profit loss_loss_business performance_profitability,"profit loss, loss, business performance, profitability, profit, actually, loss statements, understanding, knowing, coming",False
+26,12,26_financial management_great financial_asset management_according,"financial management, great financial, asset management, according, planning, financial, balances, asset, fixed, management",False

@@ -1,0 +1,106 @@
+topic_id,doc_count,topic_name,top_keywords,is_noise
+-1,4171,-1_check_transactions_learn_limitations,outlier — no coherent topic,True
+0,1136,0_reporting_report_reports_excel,"reporting, report, reports, excel, accounting, report writer, reports difficult, writer, custom reports, building",False
+1,981,1_online_pro_quickbook_desktop,"online, pro, quickbook, desktop, books, desktop enterprise, enterprise, desktop pro, quick books, book",False
+2,837,2_price_pricing_medium_expensive,"price, pricing, medium, expensive, worth, small, higher, expensive small, high, curve",False
+3,520,3_saved searches_searches_saved_powerful,"saved searches, searches, saved, powerful, fields, implementation, consultant, challenging, particularly, additionally",False
+4,476,4_businesses_small businesses_advanced features_claims,"businesses, small businesses, advanced features, claims, issue bank, feeds, bank feeds, expense claims, advanced, api",False
+5,426,5_intaact_university_interface feel_unintuitive,"intaact, university, interface feel, unintuitive, feel bit, cheque, new users, entity, certain customizations, success",False
+6,387,6_cloud_ecc_erps_systems,"cloud, ecc, erps, systems, premise, costly, compared premise, migration, complexity, hardware",False
+7,342,7_ui_interface_customization_interface user,"ui, interface, customization, interface user, looks, customize, user interface, customizations, user friendly, friendly",False
+8,331,8_initial setup_initial_setup difficult_setup wasn,"initial setup, initial, setup difficult, setup wasn, aia, equipment, growing, partners, production, warehouse",False
+9,313,9_slow_loading_load_lag,"slow, loading, load, lag, crashes, bit slow, freezes, lags, slowness, lag time",False
+10,291,10_invoice_invoices_invoicing_send,"invoice, invoices, invoicing, send, invoice date, send invoices, paid, recurring, attached, ar",False
+11,281,11_desktop_accountant_class_online doesn,"desktop, accountant, class, online doesn, casual, casual users, desktop version, clients, 10 years, years",False
+12,224,12_customer service_customer support_service_customer,"customer service, customer support, service, customer, poor customer, chat, phone, hour, phone customer, reach",False
+13,178,13_payroll_payroll module_hr_payroll feature,"payroll, payroll module, hr, payroll feature, payroll features, job costing, taxes, payroll taxes, gusto, payroll program",False
+14,176,14_reconciliation_bank reconciliation_reconciled_bank,"reconciliation, bank reconciliation, reconciled, bank, payment, reconcile, ach, payments, bank account, match",False
+15,157,15_cloud_cloud based_desktop version_desktop,"cloud, cloud based, desktop version, desktop, online version, based, version, remotely, offline, public cloud",False
+16,151,16_user mode_multi user_mode_roles,"user mode, multi user, mode, roles, single user, permission, security, multi, multiple users, rights",False
+17,142,17_search_searches_saved searches_saved,"search, searches, saved searches, saved, saved search, search bar, word, bar, fields, searching",False
+18,126,18_inventory_inventory management_inventory module_boms,"inventory, inventory management, inventory module, boms, serial, shipping, stock, inventory control, management, quantity",False
+19,124,19_navigate_layout_navigation_menus,"navigate, layout, navigation, menus, menu, difficult navigate, hard navigate, easy navigate, navigating, easier navigate",True
+20,111,20_updates_update_new updates_updates time,"updates, update, new updates, updates time, bugs, updates need, frequent updates, frequent, updates change, reverted",False
+21,107,21_integrations_integration_party applications_edi,"integrations, integration, party applications, edi, party, lack integration, integrating, applications, integration party, integration external",False
+22,96,22_365_business central_central_social,"365, business central, central, social, finances, engage, business, disadvantages, setup configuration, crm",False
+23,94,23_downsides_downside_think downsides_don downsides,"downsides, downside, think downsides, don downsides, disadvantages, think downside, temporary, really downside, human, really downsides",False
+24,86,24_complaints_problems using_don issues_really complaints,"complaints, problems using, don issues, really complaints, issues issues, far, faced issue, works perfectly, complain, issues far",False
+25,79,25_password_log_login_authentication,"password, log, login, authentication, logs, passwords, logout, factor authentication, logged, logging",False
+26,73,26_training_training videos_videos_better training,"training, training videos, videos, better training, trainings, training courses, attend, videos help, virtual, greatest",False
+27,70,27_help section_help_section_articles,"help section, help, section, articles, questions, help desk, information looking, answers, help center, help articles",False
+28,70,28_currency_currencies_multi currency_foreign,"currency, currencies, multi currency, foreign, fx, multiple currencies, multi, multicurrency, usd, rates",False
+29,67,29_upgrade_upgrades_upgrade years_yearly,"upgrade, upgrades, upgrade years, yearly, twice year, cycles, version year, having upgrade, upgrade process, cycle",False
+30,54,30_backups_save_backup_saving,"backups, save, backup, saving, restore, drive, save work, does save, time save, backing",False
+31,52,31_error_errors_error messages_messages,"error, errors, error messages, messages, error message, message, need fix, work occasionally, mistakes, errors occur",False
+32,52,32_set time_difficult set_set_complex setup,"set time, difficult set, set, complex setup, set just, setup process, smooth sailing, setup, sailing, setup time",False
+33,49,33_implementation_implementation process_implementation requires_exhausting,"implementation, implementation process, implementation requires, exhausting, implementation team, ideas, careful planning, implementation partner, implementation challenging, implementation difficult",False
+34,49,34_simplified_understand features_tweak_features little,"simplified, understand features, tweak, features little, features difficult, features add, complexity, division, complex feel, things easier",False
+35,46,35_dashboard_dashboards_dashboarding_wish options,"dashboard, dashboards, dashboarding, wish options, homepage, data make, users challenging, tables data, really enjoy, statistics",False
+36,46,36_intaact_using daily_schedules_synced,"intaact, using daily, schedules, synced, face issues, possibility, inbuilt, till, technical issues, using years",False
+37,44,37_bank feeds_feeds_bank feed_feed,"bank feeds, feeds, bank feed, feed, bank, subaccounts, bookkeeper, issues bank, bank statement, happening",False
+38,41,38_crm_marketing_integration crm_crms,"crm, marketing, integration crm, crms, bolt, hubspot, leads, cost optimization, process crm, bummer",False
+39,41,39_really good_works_enjoy_really pretty,"really good, works, enjoy, really pretty, change thing, just works, great maybe, cost just, easy handle, working good",False
+40,40,40_ai_ai features_artificial intelligence_artificial,"ai, ai features, artificial intelligence, artificial, intelligence, reviews, reconciled, think lot, uploading receipts, currently limited",False
+41,40,41_journal_journal entries_entries_journal entry,"journal, journal entries, entries, journal entry, journals, general journal, postings, entry, posted, data extraction",False
+42,40,42_modules_certain modules_modules work_additional modules,"modules, certain modules, modules work, additional modules, process flow, additional fees, cost additional, incomplete, module, process isn",False
+43,39,43_honestly isn_enjoyed_deserves_really enjoyed,"honestly isn, enjoyed, deserves, really enjoyed, relevant information, use dont, business easier, far experience, function need, knowledge don",False
+44,38,44_license_licenses_licensing_user licenses,"license, licenses, licensing, user licenses, version new, licensing model, model, party tools, premise, model complex",False
+45,37,45_var_vars_rocky_bit rocky,"var, vars, rocky, bit rocky, reseller, understood, decisions, relationship, bit struggle, value added",False
+46,37,46_subscription_monthly subscription_use personal_pricey compared,"subscription, monthly subscription, use personal, pricey compared, plan, ads, subscriptions, expensive plan, use company, subscription based",False
+47,36,47_financial management_certain processes_isp_guy,"financial management, certain processes, isp, guy, guidelines, simplifying, aid, financial, returned, processes feel",False
+48,36,48_mobile_wish mobile_mobile apps_cell,"mobile, wish mobile, mobile apps, cell, phones, version does, device, lacks features, web, apps",False
+49,35,49_timesheets_timesheet_time tracking_time entry,"timesheets, timesheet, time tracking, time entry, timecards, capturing, cells, 25, hours, history",False
+50,34,50_tax_vat_sales tax_tax forms,"tax, vat, sales tax, tax forms, taxes, local, dimension, return, mileage, international",False
+51,33,51_fixed asset_asset module_asset_fixed,"fixed asset, asset module, asset, fixed, prepaid, fixed assets, module, assets, asset management, assets module",False
+52,31,52_mac_annual payroll_15 years_taken away,"mac, annual payroll, 15 years, taken away, enterprise, standalone, 15, upgrading, subscription model, owners",False
+53,31,53_approval_approval process_approvals_approval processes,"approval, approval process, approvals, approval processes, approval workflows, approved, completing, notification, pending, bit modern",True
+54,30,54_delete_deleted_easy delete_delete transactions,"delete, deleted, easy delete, delete transactions, delete transaction, deletion, delete entries, permanently, able delete, trail",False
+55,28,55_ledger_general ledger_general_create account,"ledger, general ledger, general, create account, ledger entries, ledger report, ledgers, split, consolidating, account type",False
+56,28,56_csv_import_csv import_imports,"csv, import, csv import, imports, able import, csv imports, import feature, importing, customer lists, systematic",False
+57,26,57_european_localization_uk_english,"european, localization, uk, english, spanish, languages, country, terminology, countries, rich features",False
+58,25,58_purchase order_purchase_orders_purchase orders,"purchase order, purchase, orders, purchase orders, sales order, order, loop, need manually, difficult adapt, sales orders",False
+59,25,59_reconciling_sorting_end close_close,"reconciling, sorting, end close, close, databases, description, month, bins, able process, defaults",False
+60,24,60_audit_trail_audit trail_lack audit,"audit, trail, audit trail, lack audit, editable, audit trails, ap automation, audit history, fields need, email notification",False
+61,24,61_syncing_sync_platforms_mess things,"syncing, sync, platforms, mess things, campaign, reasonable time, size company, things used, problem takes, update released",False
+62,23,62_chart_chart accounts_sub accounts_accounts,"chart, chart accounts, sub accounts, accounts, inactive accounts, subaccounts, charts, define, hierarchy, inactive",False
+63,23,63_project management_project_projects_complete task,"project management, project, projects, complete task, needs improvements, cost think, able filter, requisition, features tracking, want example",False
+64,23,64_reclassify_reclass_payee_card transactions,"reclassify, reclass, payee, card transactions, credit card, credit, bulk, card, feature add, paid",False
+65,23,65_think think_head_think point_think right,"think think, head, think point, think right, moment, comes mind, think, think really, better think, think time",False
+66,22,66_budget_budgets_budgeting_planning budgeting,"budget, budgets, budgeting, planning budgeting, compare, manager, arounds, work arounds, percentage, does support",False
+67,22,67_hard make_certain transactions_memorized_make mistake,"hard make, certain transactions, memorized, make mistake, transactions, edit, mistake, editing, unforgiving, create mess",False
+68,22,68_printing_print_printer_printed,"printing, print, printer, printed, checks, screenshot, printing reports, print checks, printing checks, checks printed",False
+69,21,69_consolidation_entities_entity_working multiple,"consolidation, entities, entity, working multiple, multiple entities, volumes data, large volumes, multi entity, structures, volumes",False
+70,20,70_wms_robust_alternate_bare bones,"wms, robust, alternate, bare bones, decrease, implemention, child, bones, packing slips, powerful advanced",False
+71,20,71_field service_service module_field_field services,"field service, service module, field, field services, calendar, techs, board, team members, service, module",False
+72,20,72_skills_change thing_accomplish task_make expensive,"skills, change thing, accomplish task, make expensive, unpleasant, faq, come accross, important information, agreement, really issues",False
+73,19,73_manufacturing_traceability_production_able lot,"manufacturing, traceability, production, able lot, features compared, missing functionality, blocking, functionality lack, ability drill, serialized items",False
+74,19,74_shortcuts_keyboard_shortcut_keys,"shortcuts, keyboard, shortcut, keys, keyboard shortcuts, mouse, irritates, cuts, short, cut",False
+75,19,75_steps_lot steps_accomplished_complained,"steps, lot steps, accomplished, complained, granular, know specific, complete process, process simple, step, multi step",False
+76,18,76_mac_windows_pc_remote desktop,"mac, windows, pc, remote desktop, apple, os, devices, style, outlook, bother",False
+77,17,77_documentation_lab_lack documentation_documentation available,"documentation, lab, lack documentation, documentation available, 2026, kind hard, wealth, resources documentation, precise, soap",False
+78,17,78_multiple windows_windows open_windows_window,"multiple windows, windows open, windows, window, open, new tab, open multiple, intaact, open time, tabs",False
+79,17,79_1099_1099 reporting_year end_inactive accounts,"1099, 1099 reporting, year end, inactive accounts, paycheck, irs, inactive, close open, contacted support, inability generate",False
+80,17,80_ar_ap_ap ar_ar ap,"ar, ap, ap ar, ar ap, ar don, thing noticed, workflow options, statements excel, team used, improved processes",False
+81,16,81_vendor_vendor customer_vendors_words,"vendor, vendor customer, vendors, words, spelled, vice versa, vice, sales customer, invoice instead, getting use",False
+82,16,82_workflow_workflows_altogether_optimizing,"workflow, workflows, altogether, optimizing, intuitive ui, don fit, steps workflow, unintuitive new, noticeable learning, pretty clunky",False
+83,16,83_glitches_gets annoying_groupings_doesn happen,"glitches, gets annoying, groupings, doesn happen, ordinary, glitchy, feature little, glitchy times, time especially, deletes",False
+84,16,84_pull data_queries_extract_tables,"pull data, queries, extract, tables, generic inquiries, data tables, certain time, data manipulation, good great, facilitate",False
+85,15,85_generic inquiries_inquiries_generic_inquiry,"generic inquiries, inquiries, generic, inquiry, develop, reports custom, customization need, dashboards better, need information, power comes",False
+86,15,86_mail_gmail_outlook_policies,"mail, gmail, outlook, policies, email, templates, exchange, signed, emails, module integration",False
+87,15,87_good far_good work_learning time_far going,"good far, good work, learning time, far going, process learning, work easily, good good, pretty great, works perfectly, getting started",False
+88,14,88_procurement_small things_specific business_customization specific,"procurement, small things, specific business, customization specific, achieve goals, better business, business business, industries, needs little, just work",False
+89,14,89_search transaction_search function_search_driving,"search transaction, search function, search, driving, entry posted, fields want, defaults, search transactions, ability drill, certain parts",False
+90,14,90_forms_form_custom field_drafts,"forms, form, custom field, drafts, comes creating, company prefer, looks dated, huge benefit, maybe make, nice features",False
+91,14,91_mrp_blanket_wise_users better,"mrp, blanket, wise, users better, want nice, use initial, want write, improved time, items wish, bad data",False
+92,14,92_internet_internet connectivity_connectivity_unreliable,"internet, internet connectivity, connectivity, unreliable, internet connection, able operate, connection required, based performance, depends internet, vpn",False
+93,14,93_add ons_ons_additional costs_add,"add ons, ons, additional costs, add, businesses require, modules add, ons add, paid add, thing add, pricing plan",False
+94,14,94_pos_po_retail_mechanism,"pos, po, retail, mechanism, way doesn, perfomance, aren best, po module, experience better, matching",False
+95,14,95_ap_bills paid_customer refund_billable,"ap, bills paid, customer refund, billable, ap module, bills, 000, split, use modify, checks printed",False
+96,13,96_api_api calls_calls_apis,"api, api calls, calls, apis, add options, hoops, expensive complicated, say add, nested, new difficult",False
+97,13,97_construction_construction module_construction companies_module functionality,"construction, construction module, construction companies, module functionality, needs attention, work really, based company, firm, tools need, adjusted",False
+98,13,98_negatives_negative_negative say_negative comment,"negatives, negative, negative say, negative comment, don thing, really negative, negative report, stands, negatively, honestly say",False
+99,12,99_tables_access database_different module_data tables,"tables, access database, different module, data tables, users better, thing able, developments, isn available, table, different screens",False
+100,12,100_ad_clicks_bit harder_clicks needed,"ad, clicks, bit harder, clicks needed, frustrating ui, small price, visualizations, interface clunky, different platforms, need need",False
+101,12,101_color_eyes_dark_color scheme,"color, eyes, dark, color scheme, customisable, items lot, blue, turning, different fields, aesthetic",False
+102,12,102_categories_category_automatically add_example company,"categories, category, automatically add, example company, great maybe, right time, penalties, problem don, produced, multiple things",False
+103,11,103_migration_migration process_migrating_migrations,"migration, migration process, migrating, migrations, fix problems, lot improvements, difficult think, easy process, process complex, com",False

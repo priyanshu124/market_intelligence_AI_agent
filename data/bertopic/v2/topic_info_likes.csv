@@ -1,0 +1,47 @@
+topic_id,doc_count,topic_name,top_keywords,is_noise
+-1,4062,-1_ease_ability_access_able,outlier — no coherent topic,True
+0,5563,0_online_desktop_365_invoices,"online, desktop, 365, invoices, pro, cloud, enterprise, easy use, reports, small",False
+1,899,1_appreciate_inquiries_initial setup_initial,"appreciate, inquiries, initial setup, initial, generic inquiries, generic, gis, setup, var, manufacturing",False
+2,840,2_bank_invoicing_reconciliation_cash flow,"bank, invoicing, reconciliation, cash flow, initial setup, initial, setup, invoices, cash, clean",False
+3,781,3_searches_saved searches_workflows_operations,"searches, saved searches, workflows, operations, saved, customizable, appreciate, inventory, systems, needs",False
+4,710,4_entity_multi entity_multi_intaact,"entity, multi entity, multi, intaact, automation, financial, ap, reporting, entities, manual",False
+5,317,5_desktop_qbe_pro_accountant,"desktop, qbe, pro, accountant, does, years, small, payroll, online, standard",False
+6,148,6_bank_reconciliation_currency_bank reconciliation,"bank, reconciliation, currency, bank reconciliation, bank feed, feed, bank accounts, feeds, reconcile, banks",False
+7,147,7_database_fiori_ecc_memory,"database, fiori, ecc, memory, analytics, cloud, gui, business process, load, cds",False
+8,119,8_using years_record transactions_entries_provides,"using years, record transactions, entries, provides, vendor creation, years working, book journal, dimensions, nexonia, entries ease",False
+9,108,9_customer service_customer support_customer_support,"customer service, customer support, customer, support, service, support team, agent, implementation customer, answer questions, problem",False
+10,87,10_automation_processes_automate processes_automation integration,"automation, processes, automate processes, automation integration, business processes, automate, processes flexibility, processes automated, business process, love automation",False
+11,82,11_financial management_hr_management_financial,"financial management, hr, management, financial, payroll processing, revenue management, pay, trainings, management user, employee",False
+12,74,12_log_internet_phone_device,"log, internet, phone, device, ability log, computer, access, internet connection, able log, access account",False
+13,72,13_inventory_inventory levels_quote_manage inventory,"inventory, inventory levels, quote, manage inventory, inbound, order, inventory management, quantity, inventory tracking, sales",False
+14,63,14_transaction_transactions_enter transactions_batch,"transaction, transactions, enter transactions, batch, changes easy, transaction codes, posting transactions, transactions easy, transactions user, drill transactions",False
+15,53,15_searches_saved searches_saved_saved search,"searches, saved searches, saved, saved search, reports saved, use saved, search, create custom, need create, search functionality",False
+16,50,16_modules_integrated modules_modules easy_access modules,"modules, integrated modules, modules easy, access modules, good user, use modules, module, modules easily, integration modules, different modules",False
+17,50,17_integration platforms_platforms_groups_platforms use,"integration platforms, platforms, groups, platforms use, brand, implement new, security, need integrations, platforms ease, recommend best",False
+18,40,18_excel_data excel_excel easy_export,"excel, data excel, excel easy, export, download excel, excel great, use excel, word excel, export data, export excel",False
+19,31,19_organized_organized easy_organized love_liked,"organized, organized easy, organized love, liked, organization, keeps organized, able needed, aspect easy, marketing team, liked feature",False
+20,30,20_api_integration salesforce_rest api_api documentation,"api, integration salesforce, rest api, api documentation, endpoints, seamless integration, salesforce, custom development, sales force, rest",False
+21,30,21_version_desktop version_online version_version user,"version, desktop version, online version, version user, desktop, use desktop, version desktop, version online, version easy, desktop online",False
+22,28,22_search_search bar_global search_bar,"search, search bar, global search, bar, search feature, global, easy search, search functions, search capabilities, friendly setup",False
+23,25,23_pto_enter_enter data_accounting department,"pto, enter, enter data, accounting department, allows employees, 2004, capabilities work, 2016, size fits, use ton",False
+24,24,24_ai_new ai_ai features_ai feature,"ai, new ai, ai features, ai feature, machine learning, machine, ai integration, ai machine, feature helpful, looking forward",False
+25,24,25_licensing_unlimited_unlimited users_users,"licensing, unlimited, unlimited users, users, model, unlimited user, people use, multiple users, accounts receivable, license",False
+26,21,26_ffa_ff_salesforce crm_psa,"ffa, ff, salesforce crm, psa, salesforce, objectives, integrated salesforce, lightning, lot flexibility, billing",False
+27,20,27_journal_journal entries_entries_journal entry,"journal, journal entries, entries, journal entry, edit journal, posted, uploading, edit, uploads, memorized",False
+28,20,28_ns_features data_sandbox environment_just implemented,"ns, features data, sandbox environment, just implemented, metadata, updates customer, unavailable, support different, tune, workflow smooth",False
+29,19,29_suite_enterprise_sucks_entities,"suite, enterprise, sucks, entities, multiple entities, manage multiple, ability manage, year ago, tracking multiple, company location",False
+30,18,30_crm_business inventory_businesses clients_based built,"crm, business inventory, businesses clients, based built, amazing love, crm accounting, crm project, crm features, good managing, features finance",False
+31,17,31_fiori_fiori apps_fiori interface_apps,"fiori, fiori apps, fiori interface, apps, analytics user, day transaction, appreciate streamlined, apps functionality, experience fiori, processing bank",False
+32,17,32_help menu_answers questions_questions_help page,"help menu, answers questions, questions, help page, help button, answers, menu, answer, help, page",False
+33,17,33_layout_layouts_good layout_layout simple,"layout, layouts, good layout, layout simple, layout easy, sections, functionality screen, navigate make, programs ve, layout intuitive",False
+34,15,34_budgeting_project costing_edits_project,"budgeting, project costing, edits, project, costs, cost tracking, helpful make, projections, project costs, cost center",False
+35,14,35_tabs_multiple screens_multiple tabs_data entered,"tabs, multiple screens, multiple tabs, data entered, similarly, features advanced, function fact, used easily, tab, user firendly",False
+36,13,36_truth_source truth_single source_source,"truth, source truth, single source, source, single, profitability financial, transactions data, truth financial, truth easy, unified view",False
+37,13,37_photos_receipts_photos receipts_submit expenses,"photos, receipts, photos receipts, submit expenses, upload, upload receipts, snap, submit, receipt, expenses month",False
+38,13,38_sync_easy sync_sync ability_softwares use,"sync, easy sync, sync ability, softwares use, different softwares, syncing, using time, syncs, related data, native salesforce",False
+39,13,39_mistakes_mistakes easily_fix mistakes_easy fix,"mistakes, mistakes easily, fix mistakes, easy fix, correcting, fix, errors, mistakes easy, entries user, correct errors",False
+40,13,40_timesheet_timesheets_clock_able view,"timesheet, timesheets, clock, able view, time sheets, containing, amazing love, view edit, love work, good learning",False
+41,12,41_generic_generic inquiries_inquiries_inquiry,"generic, generic inquiries, inquiries, inquiry, generic inquiry, modify reports, inquiry feature, use built, panels, inquiries great",False
+42,12,42_ap_ap bills_bills_ap automation,"ap, ap bills, bills, ap automation, entering bills, deleting, automation great, feature make, great automation, reconcile credit",False
+43,10,43_ability track_ability export_ability easily_taking care,"ability track, ability export, ability easily, taking care, extremely fast, ease making, way integrated, sales allows, support ability, time taking",False
+44,10,44_document management_je_download report_html,"document management, je, download report, html, service user, need download, documentations, attaching documents, document, drop feature",False
