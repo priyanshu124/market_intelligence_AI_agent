@@ -1,0 +1,18 @@
+macro_group,group_label,total_docs,n_topics,top_topic_keywords,pct_of_docs
+reporting_analytics,Reporting & Analytics,3521,8,"accounting, business, small, track, payr | accounting, accountant, expenses, accoun | excel, export, database, real, import, a",29.0
+ease_of_use,Ease of Use & UX,1667,6,"navigate, easy navigate, learn, intuitiv | learn, products, business, easy learn, c | search, searches, saved, saved searches,",13.7
+customization,Customization & Flexibility,1667,4,"reports, reporting, report, reports easy | business, needs, customize, small, flexi | customization, customize, customizable, ",13.7
+bank_reconciliation,Bank & Reconciliation,1102,2,"bank, accounting, invoices, invoicing, f | bank, reconciliation, bank accounts, acc",9.1
+integrations_api,Integrations & API,926,6,"analytics, real, business, fiori, best,  | integration, integrations, api, integrat | platforms, integration platforms, differ",7.6
+implementation_setup,Implementation & Setup,902,1,"appreciate, initial, initial setup, setu",7.4
+payroll_hr,Payroll & HR,590,1,"invoices, invoice, invoicing, payments, ",4.9
+accounting_bookkeeping,Accounting & Bookkeeping,565,5,"salesforce, financial, force, finance, f | financial management, financial, managem | transactions, transaction, record, trans",4.7
+customer_support,Customer Support,289,3,"customer, customer support, customer ser | customer support, implement, care, custo | help, page, questions, answers, help pag",2.4
+mobile_access,Mobile & Remote Access,235,2,"log, device, internet, computer, phone,  | app, apps, mobile app, mobile, integrate",1.9
+inventory_orders,Inventory & Orders,209,2,"inventory, sales, orders, order, invento | crm, salesforce, management, integrated,",1.7
+automation_workflow,Automation & Workflow,208,1,"processes, automation, process, business",1.7
+multi_entity,Multi-Entity & Consolidation,85,2,"currency, multi, multi currency, currenc | entity, multi, multi entity, entities, m",0.7
+pricing_licensing,Pricing & Licensing,59,1,"unlimited, users, licensing, unlimited u",0.5
+updates_upgrades,Updates & Upgrades,50,1,"version, versions, version user, version",0.4
+project_budgeting,Project & Budgeting,32,1,"project, budgeting, projects, budget, tr",0.3
+invoicing_payments,Invoicing & Payments,19,1,"bills, ap automation, entering bills, au",0.2

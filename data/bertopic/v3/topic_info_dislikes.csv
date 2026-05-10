@@ -1,0 +1,60 @@
+topic_id,doc_count,label,top_keywords,is_product_cluster,macro_group,group_label
+0,1269,version | accounting | enterprise,"version, accounting, enterprise, support, customer, quick, payroll, years, business",False,other,Other
+1,1096,reports | reporting | report,"reports, reporting, report, excel, custom, custom reports, data, financial, create, export",False,reporting_analytics,Reporting & Analytics
+2,780,say | issues | dont,"say, issues, dont, disliked, isn, major, encountered",False,noise,Noise / Filler
+3,868,cost | business | expensive,"cost, business, expensive, price, small, pricing, high, businesses, companies, users",False,other,Other
+4,759,accounting | payroll | financial,"accounting, payroll, financial, accountant, expenses, expense, accountants, budget, functions, management",False,other,Other
+5,522,implementation | support | team,"implementation, support, team, training, challenging, fields, searches, setup, data, feel",False,other,Other
+6,478,accounting | bank | businesses,"accounting, bank, businesses, support, advanced, accounts, small, users",False,other,Other
+7,428,learning | learning curve | curve,"learning, learning curve, curve, customer, feel, reports, accounting, new users, helpful, team",False,learning_training,Learning & Training
+8,537,invoice | invoices | payment,"invoice, invoices, payment, credit, payments, invoicing, paid, bills, date, vendor",False,other,Other
+9,375,initial setup | initial | setup,"initial setup, initial, setup, implementation, wasn, team, orders, issues, help, data",False,implementation_setup,Implementation & Setup
+10,568,interface | navigate | friendly,"interface, navigate, friendly, user friendly, user interface, navigation, intuitive, outdated, layout",False,ease_of_use,Ease of Use & UX
+11,508,slow | load | loading,"slow, load, loading, takes, times, speed, performance, bit slow, lags, lag",False,performance_reliability,Performance & Reliability
+12,322,complex | integration | implementation,"complex, integration, implementation, systems, complexity, cost, premise, users, business, compared",False,implementation_setup,Implementation & Setup
+13,384,support | customer | customer service,"support, customer, customer service, service, customer support, phone, chat, help, issue, issues",False,customer_support,Customer Support
+14,364,bank | reconciliation | currency,"bank, reconciliation, currency, feeds, bank feeds, transactions, account, currencies, bank reconciliation, bank account",False,bank_reconciliation,Bank & Reconciliation
+15,258,log | security | user mode,"log, security, user mode, mode, login, multi user, roles, users, multi, password",False,security_access,Security & Access Control
+16,258,integration | integrations | party,"integration, integrations, party, support, integrating, issues, products, years, integrate, applications",False,other,Other
+17,327,customization | customizations | customize,"customization, customizations, customize, customizable, custom, options, customisation, customized, forms, technical",False,other,Other
+18,296,updates | update | upgrade,"updates, update, upgrade, upgrades, version, changes, bugs, release, updating, year",False,other,Other
+19,409,learning | training | curve,"learning, training, curve, learning curve, learn, steep, steep learning, videos, takes",False,learning_training,Learning & Training
+20,244,inventory | orders | inventory management,"inventory, orders, inventory management, order, sales, management, items, purchase, vendor, item",False,inventory_orders,Inventory & Orders
+21,195,search | searches | saved,"search, searches, saved, saved searches, fields, searching, saved search, search bar, word",False,reporting_analytics,Reporting & Analytics
+22,164,based | internet | access,"based, internet, access, offline, internet connection, version, connection, data, storage, server",False,mobile_access,Mobile & Remote Access
+23,221,love | enjoy | point,"love, enjoy, point, easy, sure, actually, going, let",False,ease_of_use,Ease of Use & UX
+24,305,implementation | complexity | complex,"implementation, complexity, complex, implement, implementation process, steps, workflow, complicated, processes, workflows",False,implementation_setup,Implementation & Setup
+25,209,version | app | mobile,"version, app, mobile, mac, mobile app, windows, web, apps, functionality, computer",False,mobile_access,Mobile & Remote Access
+26,129,help | documentation | questions,"help, documentation, questions, section, helpful, answers, answer, articles, specific",False,other,Other
+27,133,sync | save | data,"sync, save, data, syncing, backups, backup, saving, computer, lose, automatically",False,other,Other
+28,144,setup | set | initial,"setup, set, initial, initial setup, complicated, took, onboarding, instructions, easy, configuration",False,implementation_setup,Implementation & Setup
+29,93,journal | journal entries | ledger,"journal, journal entries, ledger, entries, journal entry, general ledger, general, entry, journals, posted",False,accounting_bookkeeping,Accounting & Bookkeeping
+30,180,error | errors | glitches,"error, errors, glitches, bugs, issues, fix, error messages, correct, messages, glitchy",False,performance_reliability,Performance & Reliability
+31,101,dashboard | dashboards | charts,"dashboard, dashboards, charts, data, useful, dynamic, reports, plan, summary, graphs",False,other,Other
+32,107,month | entry | reconciling,"month, entry, reconciling, entries, dates, date, post, auto, description",False,other,Other
+33,63,crm | integration | email,"crm, integration, email, marketing, mail, templates, outlook, employees, leads, emails",False,other,Other
+34,85,modules | add ons | ons,"modules, add ons, ons, module, additional, cost, bundle, additional modules, certain modules, expensive",False,pricing_licensing,Pricing & Licensing
+35,128,transactions | transaction | delete,"transactions, transaction, delete, deleted, edit, undo, entries, mistake, option",False,other,Other
+36,78,tax | vat | revenue,"tax, vat, revenue, taxes, revenue recognition, year, recognition, report, return",False,other,Other
+37,81,project | field | projects,"project, field, projects, field service, project management, module, management, service, calendar, tracking",False,project_budgeting,Project & Budgeting
+38,166,categories | learn | certain,"categories, learn, certain, areas, simplified, understand",False,other,Other
+39,48,automation | reviews | reconciled,"automation, reviews, reconciled, automate, accurate, improve",False,other,Other
+40,95,accounts | account | chart,"accounts, account, chart, sub, chart accounts, multiple, company, accounts payable, payable, linking",False,accounting_bookkeeping,Accounting & Bookkeeping
+41,80,consolidation | entity | entities,"consolidation, entity, entities, companies, multiple entities, multiple, group, company, consolidate, subsidiary",False,multi_entity,Multi-Entity & Consolidation
+42,41,fixed | fixed asset | asset,"fixed, fixed asset, asset, asset module, module, fixed assets, prepaid, assets, asset management, depreciation",False,other,Other
+43,56,manufacturing | construction | limitations,"manufacturing, construction, limitations, module, functionality, industries, scheduling, industry, development, specific",False,other,Other
+44,43,approval | approval process | approved,"approval, approval process, approved, approvals, status, request, pending, notification, audit, completing",True,other,Other
+45,53,check | aging | ap ar,"check, aging, ap ar, vendor, bills, ar ap, module, printing",False,accounting_bookkeeping,Accounting & Bookkeeping
+46,79,inquiries | generic | data,"inquiries, generic, data, tables, inquiry, queries, pull data, pull, pulling, table",False,other,Other
+47,58,import | csv | imports,"import, csv, imports, importing, file, data, error, upload, export, importing data",False,reporting_analytics,Reporting & Analytics
+48,37,country | english | terminology,"country, english, terminology, language, countries, consultants, versions, speak",False,other,Other
+49,53,audit | trail | audit trail,"audit, trail, audit trail, changed, control, changes, deleted, logs",False,security_access,Security & Access Control
+50,37,printing | print | checks,"printing, print, checks, check, printed, memo, minimize, batch, order, information",False,other,Other
+51,24,wms | robust | box,"wms, robust, box, order, nearly, license, locations, doesn, native, module",False,noise,Noise / Filler
+52,52,windows | open | window,"windows, open, window, tabs, windows open, screen, tab, multiple, new tab, browser",False,mobile_access,Mobile & Remote Access
+53,24,pos | aging | fifo,"pos, aging, fifo, costing, inbuilt, link, retail, doesnt",False,noise,Noise / Filler
+54,16,mrp | planning | wise,"mrp, planning, wise, capabilities, write, definitely improved, setup pretty, wizard, manage",False,inventory_orders,Inventory & Orders
+55,20,api | calls | apis,"api, calls, apis, documentation, access, limited, little bit, development, database, track",False,other,Other
+56,23,say | opinion | dont,"say, opinion, dont, criticism, impressed, accross, reversal, pricy, noticeable, havent",False,noise,Noise / Filler
+57,20,dark | color | eyes,"dark, color, eyes, mode, light, text, option, little bit, customizable, green",False,other,Other
+58,24,migration | migrating | conversion,"migration, migrating, conversion, transferring, com, premise, transfer, people, team, exit",False,other,Other

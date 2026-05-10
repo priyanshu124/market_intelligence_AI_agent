@@ -1,0 +1,60 @@
+topic_id,doc_count,label,top_keywords,is_product_cluster,macro_group,group_label
+0,1693,accounting | business | small,"accounting, business, small, track, payroll, bookkeeping, invoices, expenses, reports",False,reporting_analytics,Reporting & Analytics
+1,902,appreciate | initial | initial setup,"appreciate, initial, initial setup, setup, business, allows, needs, inquiries, makes",False,implementation_setup,Implementation & Setup
+2,841,bank | accounting | invoices,"bank, accounting, invoices, invoicing, financial, makes, reconciliation, setup, simple, transactions",False,bank_reconciliation,Bank & Reconciliation
+3,784,business | needs | appreciate,"business, needs, appreciate, reporting, operations, workflows, inventory, searches, customizable, systems",False,other,Other
+4,712,financial | reporting | accounting,"financial, reporting, accounting, reports, automation, entity, multi, makes, best, helpful",False,other,Other
+5,845,reports | reporting | report,"reports, reporting, report, reports easy, custom, customize, run, custom reports, create, customize reports",False,customization,Customization & Flexibility
+6,935,navigate | easy navigate | learn,"navigate, easy navigate, learn, intuitive, friendly easy, training, understand, navigation",False,ease_of_use,Ease of Use & UX
+7,449,analytics | real | business,"analytics, real, business, fiori, best, memory, processes, integration",False,integrations_api,Integrations & API
+8,590,invoices | invoice | invoicing,"invoices, invoice, invoicing, payments, payroll, send, create, customers, billing, pay",False,payroll_hr,Payroll & HR
+9,320,accounting | bank | accountant,"accounting, bank, accountant, payroll, small, years, businesses, account",False,other,Other
+10,965,accounting | accountant | expenses,"accounting, accountant, expenses, accounts, track, payroll, tax, accountants, business, reports",False,reporting_analytics,Reporting & Analytics
+11,409,excel | export | database,"excel, export, database, real, import, access data, analytics, data management",False,reporting_analytics,Reporting & Analytics
+12,496,business | needs | customize,"business, needs, customize, small, flexibility, businesses, business needs, ability customize, fit, company",False,customization,Customization & Flexibility
+13,431,learn | products | business,"learn, products, business, easy learn, company, needs, programs, small",False,ease_of_use,Ease of Use & UX
+14,203,business | addition | sales,"business, addition, sales, management, financial, finances, power, tools, power bi",False,reporting_analytics,Reporting & Analytics
+15,204,erps | systems | business,"erps, systems, business, best, based, company, enterprise, integrated, integration, management",False,other,Other
+16,285,customization | customize | customizable,"customization, customize, customizable, ability customize, new, customizations, easy customize, fields, flexibility",False,customization,Customization & Flexibility
+17,287,based | based access | base,"based, based access, base, updates, remote, work, office, collaboration",False,other,Other
+18,143,reporting | suite | enterprise,"reporting, suite, enterprise, reports, entries, module, entities, provides, multiple",False,other,Other
+19,261,bank | reconciliation | bank accounts,"bank, reconciliation, bank accounts, accounts, bank reconciliation, feeds, bank feeds, bank feed, feed, banking",False,bank_reconciliation,Bank & Reconciliation
+20,184,dashboard | dashboards | reporting,"dashboard, dashboards, reporting, reports, dashboard easy, reports dashboards, reporting dashboards, gives, insights, dashboards reports",False,reporting_analytics,Reporting & Analytics
+21,248,salesforce | financial | force,"salesforce, financial, force, finance, financials, management, multi, integration, accounting",False,accounting_bookkeeping,Accounting & Bookkeeping
+22,210,customer | customer support | customer service,"customer, customer support, customer service, service, team, help, issues, problem, customers",False,customer_support,Customer Support
+23,208,processes | automation | process,"processes, automation, process, business processes, automate, workflows, workflow, business, automate processes, business process",False,automation_workflow,Automation & Workflow
+24,90,financial management | financial | management,"financial management, financial, management, pay, payroll, employee, place, processes, useful",False,accounting_bookkeeping,Accounting & Bookkeeping
+25,122,search | searches | saved,"search, searches, saved, saved searches, saved search, global search, search bar, reports saved, bar",False,ease_of_use,Ease of Use & UX
+26,182,log | device | internet,"log, device, internet, computer, phone, web, login, account, work, web based",False,mobile_access,Mobile & Remote Access
+27,173,inventory | sales | orders,"inventory, sales, orders, order, inventory management, management, purchase, track, purchasing, purchase orders",False,inventory_orders,Inventory & Orders
+28,178,integration | integrations | api,"integration, integrations, api, integration salesforce, salesforce, integrate, party, seamless integration, seamless",False,integrations_api,Integrations & API
+29,138,transactions | transaction | record,"transactions, transaction, record, transactions easy, bulk, cash, batch, enter, record transactions",False,accounting_bookkeeping,Accounting & Bookkeeping
+30,113,platforms | integration platforms | different platforms,"platforms, integration platforms, different platforms, company, integration, needs, groups, robust, new, flexibility",True,integrations_api,Integrations & API
+31,73,modules | different modules | module,"modules, different modules, module, modules easy, integrated modules, integrated, integration modules, modules user",False,integrations_api,Integrations & API
+32,41,development | module | modules,"development, module, modules, department, order, enter, box, pages, interface easy, business",False,customization,Customization & Flexibility
+33,44,ledger | general ledger | general,"ledger, general ledger, general, ledgers, detailed, pull, entry, easy pull, accounts, creation",False,accounting_bookkeeping,Accounting & Bookkeeping
+34,120,organized | organization | organized easy,"organized, organization, organized easy, place, liked, clearly, things, helps organized, created",False,ease_of_use,Ease of Use & UX
+35,50,version | versions | version user,"version, versions, version user, version allows, app, standard, feel, web version",False,updates_upgrades,Updates & Upgrades
+36,59,unlimited | users | licensing,"unlimited, users, licensing, unlimited users, multiple, multiple users, unlimited user, model, people, role",False,pricing_licensing,Pricing & Licensing
+37,29,machine | learning | ai integration,"machine, learning, ai integration, looking forward, forward, new",False,reporting_analytics,Reporting & Analytics
+38,44,currency | multi | multi currency,"currency, multi, multi currency, currencies, entities, multiple, multiple entities, multiple currencies, level, consolidation",False,multi_entity,Multi-Entity & Consolidation
+39,25,salesforce | billing | crm,"salesforce, billing, crm, roadmap, integrated salesforce, lightning, lot flexibility, areas, seamless, programming",False,other,Other
+40,25,customer support | implement | care,"customer support, implement, care, customer, improvement, implemented, easy implement, professional",False,customer_support,Customer Support
+41,45,journal | journal entries | entries,"journal, journal entries, entries, edit, journal entry, entry, posted, upload, entering, uploading",False,accounting_bookkeeping,Accounting & Bookkeeping
+42,36,crm | salesforce | management,"crm, salesforce, management, integrated, scm, inventory management, having, maintain, emails, flows",False,inventory_orders,Inventory & Orders
+43,54,help | page | questions,"help, page, questions, answers, help page, community, question, answer, help center, help section",False,customer_support,Customer Support
+44,19,fiori | apps | easy business,"fiori, apps, easy business, complexity, experience, analytics, reduced, simplified, user experience",False,other,Other
+45,35,layout | layouts | layout easy,"layout, layouts, layout easy, page, simple, screen, sections, intuitive",False,ease_of_use,Ease of Use & UX
+46,32,project | budgeting | projects,"project, budgeting, projects, budget, tracking, cost, costs, project management, spending",False,project_budgeting,Project & Budgeting
+47,27,tabs | open | screen,"tabs, open, screen, tab, windows, multiple, multiple screens, multiple tabs, drop",False,other,Other
+48,20,truth | source | source truth,"truth, source, source truth, single source, single, office, crm hr, browser based, profitable",False,reporting_analytics,Reporting & Analytics
+49,31,receipts | app | upload,"receipts, app, upload, mobile, photos, receipt, expenses, expense, file, submit",False,other,Other
+50,24,mistakes | fix | wrong,"mistakes, fix, wrong, errors, fix mistakes, easy fix, correcting, fixed, correct",False,ease_of_use,Ease of Use & UX
+51,33,timesheet | hours | timesheets,"timesheet, hours, timesheets, clock, weekly, sheets, dont, view",False,other,Other
+52,30,sync | syncing | syncs,"sync, syncing, syncs, easy sync, ability sync, chose, files, softwares, web base",False,integrations_api,Integrations & API
+53,41,entity | multi | multi entity,"entity, multi, multi entity, entities, multiple entities, multiple, reporting, dimension, companies, dimensional",False,multi_entity,Multi-Entity & Consolidation
+54,18,generic | inquiries | generic inquiries,"generic, inquiries, generic inquiries, inquiry, generic inquiry, history, customizations, information help, data create, provides information",False,reporting_analytics,Reporting & Analytics
+55,19,bills | ap automation | entering bills,"bills, ap automation, entering bills, automation, checks, credit, duplicate, existing",False,invoicing_payments,Invoicing & Payments
+56,53,app | apps | mobile app,"app, apps, mobile app, mobile, integrates, simple, place, nicely, simple interface, seen",False,mobile_access,Mobile & Remote Access
+57,83,track | ability easily | ability track,"track, ability easily, ability track, banking, ability export, ability run, connect, ability connect",False,integrations_api,Integrations & API
+58,33,attach | documents | upload,"attach, documents, upload, emails, document, post, posting, draft",False,other,Other

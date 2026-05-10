@@ -1,0 +1,17 @@
+macro_group,group_label,total_docs,n_topics,top_topic_keywords,pct_of_docs
+inventory_orders,Inventory & Orders,2175,3,"inventory, customizable, project, needs, | inventory, reporting, processes, systems | inventory, inventory management, order, ",24.1
+bank_reconciliation,Bank & Reconciliation,1205,2,"bank, invoicing, accounting, financial,  | bank, transactions, reconciliation, acco",13.4
+accounting_bookkeeping,Accounting & Bookkeeping,1066,4,"accounting, small, accounting easy, busi | ap automation, ap ar, ar ap, automation, | force, salesforce, financial, financials",11.8
+reporting_analytics,Reporting & Analytics,1012,7,"reports, reporting, report, financial re | sales, financial, power bi, power, manag | excel, spreadsheets, export, spreadsheet",11.2
+automation_workflow,Automation & Workflow,664,2,"real, analytics, processes, decision, op | automation, processes, manual, process, ",7.4
+invoicing_payments,Invoicing & Payments,551,1,"invoices, invoicing, invoice, payments, ",6.1
+multi_entity,Multi-Entity & Consolidation,502,6,"suite, entities, vendor, multiple, multi | multiple, subsidiaries, departments, dif | currency, multi currency, multi, currenc",5.6
+payroll_hr,Payroll & HR,449,2,"payroll, expenses, track, tax, keeping t | checks, receipt, receipts, printing, che",5.0
+mobile_access,Mobile & Remote Access,446,3,"bookkeeping, accounting, small, don, cli | remote, office, remotely, access, remote | app, mobile, mobile app, apps, access, s",5.0
+customization,Customization & Flexibility,263,1,"systems, best, management, based, erps, ",2.9
+pricing_licensing,Pricing & Licensing,157,1,"worth, recommend, price, definitely, try",1.7
+ease_of_use,Ease of Use & UX,156,2,"financial management, financial, managem | learn, learning, tutorials, start, littl",1.7
+customer_support,Customer Support,124,1,"support, customer service, customer, ser",1.4
+project_budgeting,Project & Budgeting,117,1,"project, projects, project management, c",1.3
+integrations_api,Integrations & API,83,2,"salesforce, integration salesforce, inte | crm, customer, sales, information, reps,",0.9
+security_access,Security & Access Control,40,1,"users, trained, multiple users, fields, ",0.4

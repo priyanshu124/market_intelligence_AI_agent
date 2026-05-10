@@ -1,0 +1,60 @@
+topic_id,doc_count,label,top_keywords,is_product_cluster,macro_group,group_label
+0,1590,bookkeeping | accounting | payroll,"bookkeeping, accounting, payroll, small, track, enterprise, quick, recommend, reports, expenses",False,other,Other
+1,891,inventory | customizable | project,"inventory, customizable, project, needs, manufacturing, processes, sales, management, reporting, helps",False,inventory_orders,Inventory & Orders
+2,877,inventory | reporting | processes,"inventory, reporting, processes, systems, orders, management, operations, financial, visibility, manual",False,inventory_orders,Inventory & Orders
+3,800,financial | reporting | reports,"financial, reporting, reports, accounting, helps, entity, manual, multi, allows",False,other,Other
+4,796,bank | invoicing | accounting,"bank, invoicing, accounting, financial, invoices, bookkeeping, reconciliation, cash flow, makes, cash",False,bank_reconciliation,Bank & Reconciliation
+5,475,real | analytics | processes,"real, analytics, processes, decision, operations, decision making, insights, business processes, making",False,automation_workflow,Automation & Workflow
+6,551,invoices | invoicing | invoice,"invoices, invoicing, invoice, payments, billing, customers, send, customer, track, payment",False,invoicing_payments,Invoicing & Payments
+7,358,bookkeeping | accounting | small,"bookkeeping, accounting, small, don, clients, accountant, cost, best, small business, access",False,mobile_access,Mobile & Remote Access
+8,801,accounting | small | accounting easy,"accounting, small, accounting easy, business accounting, accounts, needs, small business, simple, accounting needs",False,accounting_bookkeeping,Accounting & Bookkeeping
+9,407,inventory | inventory management | order,"inventory, inventory management, order, orders, management, sales, tracking, supply, manufacturing, inventory control",False,inventory_orders,Inventory & Orders
+10,481,reports | reporting | report,"reports, reporting, report, financial reporting, financial, custom, run, generate, detailed, financial reports",False,reporting_analytics,Reporting & Analytics
+11,409,bank | transactions | reconciliation,"bank, transactions, reconciliation, accounts, journal, transaction, entries, account, reconciliations, bank accounts",False,bank_reconciliation,Bank & Reconciliation
+12,263,systems | best | management,"systems, best, management, based, erps, manufacturing, enterprise, cost, flexible, customizable",False,customization,Customization & Flexibility
+13,236,sales | financial | power bi,"sales, financial, power bi, power, management, operations, functions, tools",False,reporting_analytics,Reporting & Analytics
+14,721,helps | allows | helping,"helps, allows, helping, easier, track, helped, makes, place, financial, benefits",False,noise,Noise / Filler
+15,413,payroll | expenses | track,"payroll, expenses, track, tax, keeping track, income, keeping, tracking, expense, taxes",False,payroll_hr,Payroll & HR
+16,189,automation | processes | manual,"automation, processes, manual, process, manual processes, automating, workflows, tasks, business processes, business process",False,automation_workflow,Automation & Workflow
+17,122,ap automation | ap ar | ar ap,"ap automation, ap ar, ar ap, automation, ap process, reporting",False,accounting_bookkeeping,Accounting & Bookkeeping
+18,222,recommend | small | trial,"recommend, small, trial, best, small business, free trial, sure, definitely, try",False,noise,Noise / Filler
+19,107,suite | entities | vendor,"suite, entities, vendor, multiple, multiple entities, reports, helps, entries, reporting, enterprise",False,multi_entity,Multi-Entity & Consolidation
+20,184,small | small business | businesses,"small, small business, businesses, small businesses, size, recommend, companies, medium, business small, smaller",False,other,Other
+21,157,worth | recommend | price,"worth, recommend, price, definitely, try, love, cost effective, ease",False,pricing_licensing,Pricing & Licensing
+22,113,based | access | premise,"based, access, premise, applications, hosting, remotely, old, moved, version, systems",False,other,Other
+23,117,project | projects | project management,"project, projects, project management, cost, construction, costs, management, project accounting, profitability, tracking",True,project_budgeting,Project & Budgeting
+24,124,support | customer service | customer,"support, customer service, customer, service, issues, problems, times, customer support, issue, fix",False,customer_support,Customer Support
+25,70,financial management | financial | management,"financial management, financial, management, day, employee, employees, interface, intuitive",False,ease_of_use,Ease of Use & UX
+26,132,sure | implementation | set,"sure, implementation, set, setup, plan, partner, beginning, live, correctly",False,other,Other
+27,68,version | computer | consider,"version, computer, consider, functionality, lose, instead, expensive, fee, want",False,other,Other
+28,85,excel | spreadsheets | export,"excel, spreadsheets, export, spreadsheet, files, hours, export excel, timesheet, saves",False,reporting_analytics,Reporting & Analytics
+29,142,real | decisions | information,"real, decisions, information, insights, visibility, analytics, realtime",False,other,Other
+30,174,multiple | subsidiaries | departments,"multiple, subsidiaries, departments, different, companies, areas, intercompany, branches, consolidated, single",False,multi_entity,Multi-Entity & Consolidation
+31,76,dashboards | dashboard | real,"dashboards, dashboard, real, view, reporting, routine, key",False,other,Other
+32,102,force | salesforce | financial,"force, salesforce, financial, financials, finance, consulting, financial management, questions, did",False,accounting_bookkeeping,Accounting & Bookkeeping
+33,56,close | month | month end,"close, month, month end, end, closing, end close, close process, end closing, timely",False,other,Other
+34,51,currency | multi currency | multi,"currency, multi currency, multi, currencies, foreign, multiple currencies, multiple, countries, entity, multi entity",False,multi_entity,Multi-Entity & Consolidation
+35,52,regret | try | worth,"regret, try, worth, buy, life, don, trial",False,noise,Noise / Filler
+36,38,salesforce | integration salesforce | integration,"salesforce, integration salesforce, integration, financial, suite, seamless integration, enormous, empowering, financial management",False,integrations_api,Integrations & API
+37,77,problems | solving | solve,"problems, solving, solve, solve problems, issues, solving problems, solved",False,noise,Noise / Filler
+38,39,module | implementation | products,"module, implementation, products, highly, navigation, order, vendor, recommend, pipeline",False,other,Other
+39,86,learn | learning | tutorials,"learn, learning, tutorials, start, little, easy learn, recommend, understand",False,ease_of_use,Ease of Use & UX
+40,73,consolidation | consolidations | consolidated,"consolidation, consolidations, consolidated, entities, financials, reporting, consolidated financial, subsidiary, multi, financial",False,multi_entity,Multi-Entity & Consolidation
+41,47,remote | office | remotely,"remote, office, remotely, access, remote work, work remotely, home, available, working",False,mobile_access,Mobile & Remote Access
+42,119,data place | data multiple | access,"data place, data multiple, access, place, information, multiple, access data, migration, source, data single",False,reporting_analytics,Reporting & Analytics
+43,41,ledger | general ledger | general,"ledger, general ledger, general, accounts, ledger accounts, ledgers, receivable, reviewing, accounts payable, entries",False,accounting_bookkeeping,Accounting & Bookkeeping
+44,76,accountant | set | sure,"accountant, set, sure, don, return, consult, right, consultant, accountants",False,other,Other
+45,56,revenue | revenue recognition | recognition,"revenue, revenue recognition, recognition, billing, profit, intercompany, schedules, revenue management, contract",False,multi_entity,Multi-Entity & Consolidation
+46,36,checks | receipt | receipts,"checks, receipt, receipts, printing, check, write, print, person, quickly, pay",False,payroll_hr,Payroll & HR
+47,41,entity | entities | multi entity,"entity, entities, multi entity, multi, multiple entities, multiple, low, reporting multi, allocations, entity accounting",False,multi_entity,Multi-Entity & Consolidation
+48,38,training | train | house,"training, train, house, expert, learning, advantage, aside, instructions, courses, new users",False,other,Other
+49,54,search | searches | saved,"search, searches, saved, saved searches, information, easy search, supplier, save, quicker, short",False,reporting_analytics,Reporting & Analytics
+50,44,sure | network | patient,"sure, network, patient, version, check, line item, sync, line, accross",False,other,Other
+51,41,timesheet | hours | timesheets,"timesheet, hours, timesheets, employee, minimize",False,other,Other
+52,45,crm | customer | sales,"crm, customer, sales, information, reps, sales team, customer data, leads, marketing, track",False,integrations_api,Integrations & API
+53,24,truth | source truth | source,"truth, source truth, source, single source, single, data source, providing single, customer info, automation makes",False,reporting_analytics,Reporting & Analytics
+54,127,updates | add | years,"updates, add, years, upgrade, release, functionality, old, improve",False,other,Other
+55,13,financial management | financial | makers,"financial management, financial, makers, customer relationships, pipeline, single, relationships, comprehensive, sales, financial data",False,reporting_analytics,Reporting & Analytics
+56,14,partner | sure | implementation,"partner, sure, implementation, experience, business needs, selection, spend lot",False,other,Other
+57,41,app | mobile | mobile app,"app, mobile, mobile app, apps, access, screen, devices, feedback, home, paperwork",False,mobile_access,Mobile & Remote Access
+58,40,users | trained | multiple users,"users, trained, multiple users, fields, add, people, allow, email, according, roles",False,security_access,Security & Access Control

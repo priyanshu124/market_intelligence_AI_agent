@@ -1,0 +1,30 @@
+topic_id,doc_count,label,top_keywords,is_product_cluster,macro_group,group_label
+0,639,accounting | invoices | accounts,"accounting, invoices, accounts, invoicing, bookkeeping, keeping, track, payments, small, payroll",False,payroll_hr,Payroll & HR
+1,622,accounting | clients | payroll,"accounting, clients, payroll, track, small, allows, reports, helps, invoices, work",False,other,Other
+2,140,reports | financial | report,"reports, financial, report, data, information, run, best, financial reports, generate",False,accounting_bookkeeping,Accounting & Bookkeeping
+3,84,accounting | accountant | based,"accounting, accountant, based, manage, invoices, clients, bank, best, transactions, helped",False,other,Other
+4,76,processes | modern | distribution,"processes, modern, distribution, purchasing, visibility, sales, inventory, operations, crm, project",False,project_budgeting,Project & Budgeting
+5,128,expenses | tracking | year,"expenses, tracking, year, track, expense, money, budget, tax, reports, tracking expenses",False,other,Other
+6,92,inventory | sales | inventory management,"inventory, sales, inventory management, orders, tracking, customer, stock, customers, products, control",False,inventory_orders,Inventory & Orders
+7,160,allows | track | payroll,"allows, track, payroll, helps, accounting, employees, financial, pay, keeps",False,noise,Noise / Filler
+8,54,data | database | better,"data, database, better, real, solutions, new, performance, case",False,other,Other
+9,86,bank | reconciliation | financial,"bank, reconciliation, financial, credit, salesforce, force, reconciliations, transactions, credit card, transaction",False,invoicing_payments,Invoicing & Payments
+10,65,access | based | user,"access, based, user, data, working, connect, big, multiple, mobile, users",False,other,Other
+11,97,benefits | benefit | productivity,"benefits, benefit, productivity, efficient, ease, biggest, single, work, employees",False,noise,Noise / Filler
+12,36,did | general | office,"did, general, office, general ledger, accounting, support, ledger, needs",False,accounting_bookkeeping,Accounting & Bookkeeping
+13,73,data | dashboards | dashboard,"data, dashboards, dashboard, ability, excel, visibility, organized, making, information, analyze",False,other,Other
+14,44,problems | issues | solved,"problems, issues, solved, problem, solving, resolve, problems solved, solve, service, issue",False,noise,Noise / Filler
+15,44,payroll | taxes | employees,"payroll, taxes, employees, direct, tax, vendors, information, simple, year, print",False,other,Other
+16,27,needed | posting | integrate,"needed, posting, integrate, needing, financial, core, control, excellent, warehouse, entities",False,multi_entity,Multi-Entity & Consolidation
+17,20,finance | sales | offering,"finance, sales, offering, fixed assets, purchase, set, teams, realtime, asset, fixed",False,other,Other
+18,23,ap ar | ar ap | implemented,"ap ar, ar ap, implemented, billing, force, fixed assets, accounting easy",False,invoicing_payments,Invoicing & Payments
+19,20,salesforce | seamless | processes,"salesforce, seamless, processes, analyze, data, integrate, billing, accounting",False,accounting_bookkeeping,Accounting & Bookkeeping
+20,27,systems | integrated | different,"systems, integrated, different, multiple, having, business process, touch, companies, problems, processes",False,automation_workflow,Automation & Workflow
+21,32,profit | profit loss | loss,"profit, profit loss, loss, profitability, performance, doing, improved, business performance, faster, financially",False,other,Other
+22,17,month end | month | end,"month end, month, end, close, loss, year end, monthly, profit loss, process, end month",False,other,Other
+23,16,financial | financial management | planning,"financial, financial management, planning, balances, perform, financials, asset management, according, analysis, significant",False,accounting_bookkeeping,Accounting & Bookkeeping
+24,9,journal | capabilities | allow,"journal, capabilities, allow, specific, meet, business needs, journal entries, customizable, cycle, making",False,accounting_bookkeeping,Accounting & Bookkeeping
+25,21,didn | intuitive | simple,"didn, intuitive, simple, fast, user friendly, friendly, things",False,ease_of_use,Ease of Use & UX
+26,12,auto | tasks | automate,"auto, tasks, automate, streamline, automation, manual, team, work, developing, simplify",False,other,Other
+27,15,real | integration | integrations,"real, integration, integrations, care, single, data, operations, daily",False,other,Other
+28,8,checks | cutting | primary,"checks, cutting, primary, bills, payables, check, set, don",False,other,Other

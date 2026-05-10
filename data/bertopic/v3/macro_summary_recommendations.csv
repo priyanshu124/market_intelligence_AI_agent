@@ -1,0 +1,9 @@
+macro_group,group_label,total_docs,n_topics,top_topic_keywords,pct_of_docs
+payroll_hr,Payroll & HR,639,1,"accounting, invoices, accounts, invoicin",52.7
+accounting_bookkeeping,Accounting & Bookkeeping,221,5,"reports, financial, report, data, inform | did, general, office, general ledger, ac | salesforce, seamless, processes, analyze",18.2
+invoicing_payments,Invoicing & Payments,109,2,"bank, reconciliation, financial, credit, | ap ar, ar ap, implemented, billing, forc",9.0
+inventory_orders,Inventory & Orders,92,1,"inventory, sales, inventory management, ",7.6
+project_budgeting,Project & Budgeting,76,1,"processes, modern, distribution, purchas",6.3
+automation_workflow,Automation & Workflow,27,1,"systems, integrated, different, multiple",2.2
+multi_entity,Multi-Entity & Consolidation,27,1,"needed, posting, integrate, needing, fin",2.2
+ease_of_use,Ease of Use & UX,21,1,"didn, intuitive, simple, fast, user frie",1.7

@@ -1,0 +1,15 @@
+macro_group,group_label,total_docs,n_topics,top_topic_keywords,pct_of_docs
+reporting_analytics,Reporting & Analytics,1349,3,"reports, reporting, report, excel, custo | search, searches, saved, saved searches, | import, csv, imports, importing, file, d",19.2
+implementation_setup,Implementation & Setup,1146,4,"initial setup, initial, setup, implement | complex, integration, implementation, sy | implementation, complexity, complex, imp",16.3
+learning_training,Learning & Training,837,2,"learning, learning curve, curve, custome | learning, training, curve, learning curv",11.9
+ease_of_use,Ease of Use & UX,789,2,"interface, navigate, friendly, user frie | love, enjoy, point, easy, sure, actually",11.2
+performance_reliability,Performance & Reliability,688,2,"slow, load, loading, takes, times, speed | error, errors, glitches, bugs, issues, f",9.8
+mobile_access,Mobile & Remote Access,425,3,"based, internet, access, offline, intern | version, app, mobile, mac, mobile app, w | windows, open, window, tabs, windows ope",6.0
+customer_support,Customer Support,384,1,"support, customer, customer service, ser",5.5
+bank_reconciliation,Bank & Reconciliation,364,1,"bank, reconciliation, currency, feeds, b",5.2
+security_access,Security & Access Control,311,2,"log, security, user mode, mode, login, m | audit, trail, audit trail, changed, cont",4.4
+inventory_orders,Inventory & Orders,260,2,"inventory, orders, inventory management, | mrp, planning, wise, capabilities, write",3.7
+accounting_bookkeeping,Accounting & Bookkeeping,241,3,"journal, journal entries, ledger, entrie | accounts, account, chart, sub, chart acc | check, aging, ap ar, vendor, bills, ar a",3.4
+pricing_licensing,Pricing & Licensing,85,1,"modules, add ons, ons, module, additiona",1.2
+project_budgeting,Project & Budgeting,81,1,"project, field, projects, field service,",1.2
+multi_entity,Multi-Entity & Consolidation,80,1,"consolidation, entity, entities, compani",1.1
