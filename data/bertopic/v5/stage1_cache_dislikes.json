@@ -1,0 +1,709 @@
+{
+  "0": {
+    "topic_id": 0,
+    "resolved_keywords": "invoice processing, invoices management, purchase order processing, purchase requisitions, vendor management, payment processing, customer invoicing, sales orders, accounts payable payments, payment status tracking",
+    "plain_description": "Reviewers are discussing frustrations with invoice and purchase order processing workflows, including difficulties with vendor payment processing, customer invoicing, and managing the complete procure-to-pay cycle. The complaints likely center on workflow inefficiencies, approval bottlenecks, or system limitations in handling purchase orders and invoice payments.",
+    "candidate_categories": [
+      "accounts payable automation",
+      "purchase order management",
+      "invoice processing",
+      "vendor management"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "1": {
+    "topic_id": 1,
+    "resolved_keywords": "software version, accounting modules, enterprise resource planning, system access controls, inventory management, QuickBooks, financial data, invoice processing, limited functionality, multiple entities",
+    "plain_description": "Reviewers are complaining about limited functionality and restricted access in accounting and inventory modules, particularly around version constraints and enterprise features. They express frustration with basic ERP capabilities not meeting complex business needs across multiple entities or locations.",
+    "candidate_categories": [
+      "inventory management",
+      "multi-entity consolidation",
+      "system access controls",
+      "accounts receivable processing"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "2": {
+    "topic_id": 2,
+    "resolved_keywords": "reports, financial reporting, custom report builder, Microsoft Excel integration, data export functionality, report creation tools, business intelligence reporting",
+    "plain_description": "Reviewers are expressing frustrations with the financial reporting and business intelligence capabilities, specifically around difficulties in creating custom reports, limited report building functionality, and poor data export options to Excel.",
+    "candidate_categories": [
+      "financial reporting",
+      "business intelligence and analytics"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "3": {
+    "topic_id": 3,
+    "resolved_keywords": "accounting, financial reporting, accounts payable, accounts receivable, cash management, finance operations, balance sheet reconciliation",
+    "plain_description": "Reviewers are discussing issues with core accounting and financial reporting functionality, including problems with accounts payable/receivable processes, cash flow management, and generating accurate financial reports.",
+    "candidate_categories": [
+      "financial reporting",
+      "accounts payable management",
+      "accounts receivable management",
+      "cash management",
+      "general ledger accounting"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "4": {
+    "topic_id": 4,
+    "resolved_keywords": "customer support, customer service, technical support, help desk, service representatives, customer support team, phone support, user questions, helpful assistance, issue resolution",
+    "plain_description": "Reviewers are expressing dissatisfaction with customer support and service quality, including difficulties reaching support representatives, unhelpful responses, and poor issue resolution times.",
+    "candidate_categories": [
+      "customer support quality",
+      "technical support responsiveness"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "5": {
+    "topic_id": 5,
+    "resolved_keywords": "slow response times, data loading delays, system performance issues, processing lag, error messages during data retrieval, loading time bottlenecks",
+    "plain_description": "Reviewers are expressing frustration with slow system performance and lengthy data loading times across various ERP functions. They report experiencing delays when accessing information, processing transactions, and navigating between modules.",
+    "candidate_categories": [
+      "system performance",
+      "data processing speed",
+      "user interface responsiveness"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "6": {
+    "topic_id": 6,
+    "resolved_keywords": "customer support, customer service, service quality, pricing, payroll processing, annual costs, support hours, response time",
+    "plain_description": "Reviewers are expressing dissatisfaction with customer support quality, service responsiveness, and pricing concerns related to payroll processing functionality. The complaints focus on poor customer service experiences, high costs, and inadequate support during payroll operations.",
+    "candidate_categories": [
+      "customer support quality",
+      "payroll processing",
+      "pricing and costs"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "7": {
+    "topic_id": 7,
+    "resolved_keywords": "customization, customizations, customize, third-party integrations, require, customisation, customizable, business processes, configuration options, limited functionality",
+    "plain_description": "Reviewers are frustrated with limited customization capabilities and configuration options in their ERP systems. They express dissatisfaction with rigid business process workflows and insufficient ability to tailor the software to their specific operational requirements.",
+    "candidate_categories": [
+      "system customization",
+      "business process configuration",
+      "workflow customization"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "8": {
+    "topic_id": 8,
+    "resolved_keywords": "initial setup, initial implementation, system setup, warehouse management, implementation partner, project management, implementation process, wasn't (negative sentiment), implementation team, inventory items configuration",
+    "plain_description": "Reviewers are expressing frustration with the complexity and challenges of initial ERP system implementation and setup processes. They specifically mention difficulties with warehouse configuration, working with implementation partners, and the overall complexity of getting the system operational initially.",
+    "candidate_categories": [
+      "implementation complexity",
+      "warehouse management setup",
+      "implementation partner management"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "9": {
+    "topic_id": 9,
+    "resolved_keywords": "enterprise resource planning systems, implementation complexity, system integration challenges, learning curve difficulty, software complexity, customization requirements",
+    "plain_description": "Reviewers are expressing frustration with the steep learning curve and overall complexity of ERP systems, particularly during implementation and when integrating with other business systems. They find these platforms difficult to learn and customize compared to simpler alternatives.",
+    "candidate_categories": [
+      "implementation complexity",
+      "user training and adoption",
+      "system integration challenges"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "10": {
+    "topic_id": 10,
+    "resolved_keywords": "order fulfillment, enterprise resource planning, accounting modules, bookkeeping functions, ease of use, user experience",
+    "plain_description": "Reviewers expressing frustration with accounting and bookkeeping functionality that falls short of expectations for enterprise-level order management and financial processes. Users find the systems don't adequately support complex business requirements despite being marketed as easy-to-use solutions.",
+    "candidate_categories": [
+      "accounting module limitations",
+      "order management complexity",
+      "enterprise scalability issues"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "11": {
+    "topic_id": 11,
+    "resolved_keywords": "cost, high, expensive, price, small businesses, pricing, costs, higher, businesses, cost high",
+    "plain_description": "Reviewers are complaining about high costs and expensive pricing of ERP software, particularly noting that pricing is prohibitive for small businesses.",
+    "candidate_categories": [
+      "pricing and licensing costs",
+      "small business affordability"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "12": {
+    "topic_id": 12,
+    "resolved_keywords": "sales order processing, sales order management, sales functionality, early implementation stage, sales module usage, sales workflow issues encountered",
+    "plain_description": "Reviewers expressing dissatisfaction with sales order processing and sales module functionality, particularly during early implementation phases or initial usage periods.",
+    "candidate_categories": [
+      "sales order management",
+      "sales module functionality"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "13": {
+    "topic_id": 13,
+    "resolved_keywords": "inventory management, warehouse management system, material requirements planning, warehouse management, demand planning, inventory control, material resource planning, stock level management, manufacturing resource planning, material requirements planning",
+    "plain_description": "Reviewers are expressing dissatisfaction with inventory and warehouse management capabilities, including material requirements planning, stock tracking, and warehouse operations functionality. Common complaints likely involve inadequate inventory control features, poor warehouse management system integration, and insufficient material planning tools.",
+    "candidate_categories": [
+      "inventory management",
+      "warehouse management",
+      "material requirements planning",
+      "manufacturing planning"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "14": {
+    "topic_id": 14,
+    "resolved_keywords": "customer support, system implementation, implementation team, search functionality, challenging setup, user interface setup, user training, user experience, data management",
+    "plain_description": "Reviewers are expressing frustration with difficult system implementation processes, inadequate customer support during setup, challenging user interface configuration, and insufficient training resources. They specifically mention problems with search functionality and data management during the initial deployment phase.",
+    "candidate_categories": [
+      "implementation complexity",
+      "customer support quality",
+      "user interface navigation",
+      "user training and onboarding"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "15": {
+    "topic_id": 15,
+    "resolved_keywords": "bank reconciliation, small businesses, accounting functionality, advanced features, customer support, financial reporting, clients management, chart of accounts, third-party integrations",
+    "plain_description": "Reviewers are discussing limitations in banking features and advanced accounting capabilities that create challenges for small businesses, particularly around bank reconciliation, reporting functionality, and integration with external systems.",
+    "candidate_categories": [
+      "bank reconciliation",
+      "financial reporting",
+      "third-party integrations",
+      "small business accounting"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "16": {
+    "topic_id": 16,
+    "resolved_keywords": "dashboard displays, reporting dashboards, user interface design, graphical user interface, business intelligence data, financial reports, intuitive design, user experience feel, business intelligence tools, data visualization charts",
+    "plain_description": "Reviewers are criticizing the dashboard and reporting interface design, finding the user interface unintuitive, poorly designed, or difficult to navigate when accessing reports and data visualization tools.",
+    "candidate_categories": [
+      "business intelligence dashboards",
+      "user interface design",
+      "financial reporting interface",
+      "data visualization tools"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "17": {
+    "topic_id": 17,
+    "resolved_keywords": "easy to use, say, encountered, major issues, problems, user-friendly interface, real usability, user-friendly design, satisfied users, did experience",
+    "plain_description": "Reviewers expressing that they have not encountered major problems with the ERP system and find it easy to use and user-friendly. This appears to be positive feedback about overall system usability rather than specific dislikes.",
+    "candidate_categories": [
+      "user interface design",
+      "system usability"
+    ],
+    "is_noise": true,
+    "noise_reason": "This cluster contains positive meta-commentary about lack of problems rather than specific feature dislikes or pain points"
+  },
+  "18": {
+    "topic_id": 18,
+    "resolved_keywords": "learning curve, user learning curve, accounts (accounts payable/receivable), financial reports, new users onboarding, system setup, customer support, user training",
+    "plain_description": "Reviewers are discussing the steep learning curve and difficulty that new users face when getting started with ERP systems, particularly around understanding accounting modules and generating reports. They express concerns about the initial complexity and the time investment required for users to become proficient.",
+    "candidate_categories": [
+      "user training and onboarding",
+      "system learning curve",
+      "new user experience"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "19": {
+    "topic_id": 19,
+    "resolved_keywords": "love, using years, till (until), actually, perfect, enjoy, market, meets, soon, specific",
+    "plain_description": "Reviewers expressing that they have no specific dislikes or complaints about the ERP system, often stating they love the software and have been using it for years without issues. These are positive meta-comments in the dislikes field rather than actual functional criticisms.",
+    "candidate_categories": [
+      "user satisfaction",
+      "overall system evaluation"
+    ],
+    "is_noise": true,
+    "noise_reason": "Meta-commentary expressing no dislikes or only positive sentiment rather than specific ERP functional issues or pain points"
+  },
+  "20": {
+    "topic_id": 20,
+    "resolved_keywords": "navigate, hard to use, confusing interface, time-consuming, not intuitive, information access, certain functions, difficult to navigate, finding data, hard to navigate",
+    "plain_description": "Reviewers are frustrated with poor user interface navigation and system usability, finding it difficult and time-consuming to locate information and navigate between different functions within the ERP system.",
+    "candidate_categories": [
+      "user interface navigation",
+      "system usability",
+      "user experience design"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "21": {
+    "topic_id": 21,
+    "resolved_keywords": "say, comments, until, do not like, do not, currently, say do not, do not really, like really, is not really",
+    "plain_description": "Reviewers expressing general dissatisfaction or hesitancy to provide specific negative feedback about ERP features. This represents meta-commentary where users struggle to articulate concrete dislikes or provide vague responses.",
+    "candidate_categories": [
+      "user feedback patterns",
+      "review sentiment analysis"
+    ],
+    "is_noise": true,
+    "noise_reason": "This topic consists primarily of meta-commentary and vague expressions of dissatisfaction without reference to specific ERP features or functionality"
+  },
+  "22": {
+    "topic_id": 22,
+    "resolved_keywords": "business, products, management, gets, finances, financial, relationship management, customer relationship management, social",
+    "plain_description": "Reviewers are complaining about inadequate or poorly integrated Customer Relationship Management (CRM) functionality within their ERP systems, particularly how it handles customer data, social interactions, and the relationship between financial transactions and customer management features.",
+    "candidate_categories": [
+      "customer relationship management",
+      "financial customer tracking",
+      "social media integration"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "23": {
+    "topic_id": 23,
+    "resolved_keywords": "learning curve, learn, steep learning curve, complex system, takes time, took time, understand functionality",
+    "plain_description": "Reviewers are expressing frustration with the steep learning curve and complexity of ERP systems, indicating that it takes significant time and effort to learn and understand the software functionality. This relates to overall system complexity and user onboarding challenges.",
+    "candidate_categories": [
+      "system complexity",
+      "user training and onboarding",
+      "implementation complexity"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "24": {
+    "topic_id": 24,
+    "resolved_keywords": "bank feeds, bank feed integration, bank reconciliation, transaction matching, general ledger accounts, chart of accounts, bank account connectivity, reconciliation process",
+    "plain_description": "Reviewers are expressing dissatisfaction with bank feed functionality and automated bank reconciliation processes. They are experiencing issues with bank transaction imports, account matching, and the reconciliation workflow between bank accounts and general ledger.",
+    "candidate_categories": [
+      "bank reconciliation",
+      "bank feed integration",
+      "cash management"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "25": {
+    "topic_id": 25,
+    "resolved_keywords": "so far, accounting, Sage Intacct, in order so far, so far don't, financial management, accounting financial, financial, don't, say",
+    "plain_description": "Reviewers expressing that they haven't encountered significant issues with accounting and financial management features yet, often indicating they are new users or haven't used the system long enough to identify problems.",
+    "candidate_categories": [
+      "user experience feedback",
+      "implementation timeline",
+      "financial management"
+    ],
+    "is_noise": true,
+    "noise_reason": "Topic consists primarily of meta-commentary where users indicate they haven't been using the system long enough to identify specific dislikes or haven't encountered problems yet"
+  },
+  "26": {
+    "topic_id": 26,
+    "resolved_keywords": "currency, multi-currency, currencies, multi-entity, foreign exchange, United States Dollar, tax management, countries, multicurrency functionality, vendor management",
+    "plain_description": "Reviewers are frustrated with ERP systems' multi-currency functionality, including poor foreign exchange rate handling, complex currency conversions, and difficulties managing vendors and taxes across different countries and currencies.",
+    "candidate_categories": [
+      "multi-currency management",
+      "foreign exchange processing",
+      "international tax compliance",
+      "global vendor management"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "27": {
+    "topic_id": 27,
+    "resolved_keywords": "software updates, system upgrades, version releases, software bugs, system changes, updated functionality, annual updates, constant modifications",
+    "plain_description": "Reviewers are frustrated with frequent software updates and version changes that introduce bugs, disrupt workflows, and require constant adaptation. They dislike the pace and quality of system upgrades that often create more problems than they solve.",
+    "candidate_categories": [
+      "software maintenance",
+      "system stability",
+      "version management"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "28": {
+    "topic_id": 28,
+    "resolved_keywords": "software version compatibility, mobile application, mobile app functionality, web-based interface, feature availability, user-friendly functionality, Mac computer compatibility, desktop computer access",
+    "plain_description": "Reviewers are complaining about poor mobile app functionality and limited compatibility across different devices and operating systems. They express frustration with mobile versions lacking features compared to desktop versions and issues with Mac computer compatibility.",
+    "candidate_categories": [
+      "mobile application functionality",
+      "cross-platform compatibility",
+      "user interface accessibility"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "29": {
+    "topic_id": 29,
+    "resolved_keywords": "general ledger, general ledger transactions, chart of accounts, accounting entries, financial reports, ledger accounts, transaction processing",
+    "plain_description": "Reviewers are expressing dissatisfaction with general ledger functionality, including issues with transaction processing, account setup, ledger entries, and related financial reporting capabilities.",
+    "candidate_categories": [
+      "general ledger management",
+      "financial reporting",
+      "chart of accounts setup"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "30": {
+    "topic_id": 30,
+    "resolved_keywords": "accounting functionality, financial management, system reliability, accounting requirements, order processing workflows, technical support quality, user experience issues, implementation challenges",
+    "plain_description": "Reviewers expressing dissatisfaction with accounting functionality reliability and technical support quality, particularly around order processing workflows not meeting their accounting needs.",
+    "candidate_categories": [
+      "accounting functionality",
+      "technical support quality",
+      "order processing",
+      "system reliability"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "31": {
+    "topic_id": 31,
+    "resolved_keywords": "audit logs, user login, user access mode, access modes, system logs, single user mode, user logged in, single user access, password authentication, multi-user mode",
+    "plain_description": "Reviewers are complaining about user access management issues, including problems with single-user vs multi-user modes, login difficulties, password authentication problems, and inadequate system logging capabilities for tracking user activities.",
+    "candidate_categories": [
+      "user access management",
+      "system administration",
+      "audit trail functionality"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "32": {
+    "topic_id": 32,
+    "resolved_keywords": "cloud-based deployment, data management, internet connectivity, software version control, cloud storage, network connection, file management, data backup, on-premise deployment, backup procedures",
+    "plain_description": "Reviewers are discussing deployment and infrastructure concerns, particularly issues with cloud-based versus on-premise ERP deployments, internet connectivity requirements, and data backup/storage reliability.",
+    "candidate_categories": [
+      "cloud deployment",
+      "data backup and recovery",
+      "system infrastructure"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "33": {
+    "topic_id": 33,
+    "resolved_keywords": "companies, multiple companies, company structures, financial consolidation, business entity management, legal entities, multiple entities, consolidate financials, chart of accounts, inter-company transactions",
+    "plain_description": "Reviewers are expressing frustration with ERP systems' limitations in managing multiple companies or legal entities, particularly around consolidating financial data and handling inter-company transactions across different business units.",
+    "candidate_categories": [
+      "multi-entity consolidation",
+      "inter-company transactions",
+      "financial consolidation"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "34": {
+    "topic_id": 34,
+    "resolved_keywords": "search functionality, saved searches, search queries, keyword searching, saved search feature, search parameters, data lookup, search bar interface, search results",
+    "plain_description": "Reviewers are frustrated with the search functionality within their ERP system, citing poor search capabilities, ineffective saved searches, and difficulty finding records or data when looking for specific information.",
+    "candidate_categories": [
+      "user interface navigation",
+      "data retrieval functionality"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "35": {
+    "topic_id": 35,
+    "resolved_keywords": "database architecture, data migration, implementation cost, hardware requirements, costly infrastructure, technical support limitations, expensive licensing, business investment, system architecture",
+    "plain_description": "Reviewers are complaining about high implementation and infrastructure costs associated with ERP systems, including expensive database migrations, costly hardware requirements, and significant upfront investment needed for proper system architecture.",
+    "candidate_categories": [
+      "implementation complexity",
+      "system architecture",
+      "data migration",
+      "infrastructure costs"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "36": {
+    "topic_id": 36,
+    "resolved_keywords": "financial services, customer support quality, system reliability, business operations, support team responsiveness, customer service experience",
+    "plain_description": "Reviewers are expressing dissatisfaction with the quality and responsiveness of customer support services, particularly for financial and business-critical operations. They appear frustrated with support team reliability and service delivery that doesn't meet their business needs.",
+    "candidate_categories": [
+      "customer support quality",
+      "technical support responsiveness",
+      "user support services"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "37": {
+    "topic_id": 37,
+    "resolved_keywords": "general ledger journal entries, accounting entries, journal entry page, manual entry creation, save button functionality, click navigation, posting process",
+    "plain_description": "Reviewers are frustrated with the journal entry interface and workflow, specifically issues with saving entries, page navigation, and the posting process for general ledger transactions.",
+    "candidate_categories": [
+      "general ledger management",
+      "user interface navigation"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "38": {
+    "topic_id": 38,
+    "resolved_keywords": "user permissions, access permissions, security access controls, user role-based access control (RBAC), permission sets, internal controls, user access management, password security",
+    "plain_description": "Reviewers are complaining about limitations and complexity in user access management and security controls. They find it difficult to configure proper user permissions, role-based access, and internal security controls within the ERP system.",
+    "candidate_categories": [
+      "user access management",
+      "role-based security",
+      "internal controls"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "39": {
+    "topic_id": 39,
+    "resolved_keywords": "fixed asset management, fixed asset module, asset tracking module, asset management modules, fixed assets functionality, assets module, software modules, remaining functionality",
+    "plain_description": "Reviewers are expressing dissatisfaction with the fixed asset management module functionality in their ERP system. They are specifically critiquing limitations or problems with the fixed asset tracking and management capabilities.",
+    "candidate_categories": [
+      "fixed asset management",
+      "asset tracking",
+      "module functionality"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "40": {
+    "topic_id": 40,
+    "resolved_keywords": "training, learn, videos, training videos, learning, proper training, tutorials, learn use, train, trainings",
+    "plain_description": "Reviewers are complaining about inadequate training resources and materials for learning how to use ERP software features. They specifically mention poor quality or insufficient training videos, tutorials, and overall lack of proper user training programs.",
+    "candidate_categories": [
+      "user training and onboarding",
+      "documentation and support resources"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "41": {
+    "topic_id": 41,
+    "resolved_keywords": "user interface, user interface design, outdated interface, user experience, user friendly interface, interface user navigation, improved interface design, friendly user experience, visual design, old interface styling",
+    "plain_description": "Reviewers are criticizing ERP systems for having outdated, poorly designed user interfaces that are not user-friendly and need visual and navigation improvements. They are expressing dissatisfaction with old-fashioned interface designs that negatively impact the overall user experience.",
+    "candidate_categories": [
+      "user interface design",
+      "user experience navigation",
+      "system usability"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "42": {
+    "topic_id": 42,
+    "resolved_keywords": "application programming interface integration, programming interface, programming customization, interface connectivity, integrations with third-party systems, third-party vendors, integrate external systems, custom code development, lack of integration options, poor API functionality",
+    "plain_description": "Reviewers are criticizing the ERP system's application programming interface (API) capabilities and third-party integration functionality. They express frustration with poor API design, limited integration options with external systems, and the excessive need for custom programming to connect with third-party vendors.",
+    "candidate_categories": [
+      "API and integration platform",
+      "third-party system connectivity",
+      "custom development requirements"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "43": {
+    "topic_id": 43,
+    "resolved_keywords": "payroll processing, payroll management module, tax calculations, state tax compliance, employee compensation, payroll disbursement, tax reporting, payroll functionality, human resources module",
+    "plain_description": "Reviewers are expressing dissatisfaction with payroll processing capabilities, particularly around tax calculations, state tax compliance, and overall payroll module functionality. They cite issues with the payroll feature's ability to handle complex tax requirements and employee pay processing.",
+    "candidate_categories": [
+      "payroll processing",
+      "tax compliance management",
+      "human resources management"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "44": {
+    "topic_id": 44,
+    "resolved_keywords": "data fields, custom data fields, custom field configuration, reports and reporting, report generation, field names, search functionality, custom fields setup, data entry examples",
+    "plain_description": "Reviewers are frustrated with limitations and complexity around custom fields and reporting functionality, including difficulties with field configuration, naming conventions, and generating reports with custom data fields.",
+    "candidate_categories": [
+      "custom field configuration",
+      "financial reporting",
+      "data management"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "45": {
+    "topic_id": 45,
+    "resolved_keywords": "artificial intelligence features, automation capabilities, automated processes, advanced functionality, features don't work properly, user adoption challenges, bank reconciling processes, automated tasks, process improvement",
+    "plain_description": "Reviewers are frustrated with AI and automation features that don't work as expected or promised, particularly around automated reconciliation and task processing. They express disappointment with advanced features that fail to deliver on automation benefits or create adoption barriers.",
+    "candidate_categories": [
+      "artificial intelligence functionality",
+      "process automation",
+      "bank reconciliation",
+      "feature reliability"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "46": {
+    "topic_id": 46,
+    "resolved_keywords": "customer relationship management, customer relationship management module, relationship management functionality, customer data management, marketing automation integration, customer relationship module integration",
+    "plain_description": "Reviewers are expressing dissatisfaction with the Customer Relationship Management (CRM) functionality within their ERP systems, particularly regarding poor integration between CRM and marketing modules and inadequate customer relationship management capabilities.",
+    "candidate_categories": [
+      "customer relationship management",
+      "marketing automation integration",
+      "CRM module functionality"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "47": {
+    "topic_id": 47,
+    "resolved_keywords": "invoice, edit, invoices, credit memo, payment processing, financial transactions, date entry, accounts payable, check processing, paid status",
+    "plain_description": "Reviewers are expressing frustration with invoice editing limitations and accounts payable workflow issues, including difficulties modifying invoices after creation, problems with credit memo processing, and challenges with payment tracking and check processing functionality.",
+    "candidate_categories": [
+      "accounts payable processing",
+      "invoice management",
+      "payment processing"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "48": {
+    "topic_id": 48,
+    "resolved_keywords": "windows, open windows, application windows, screen displays, tab navigation, new tab creation, multiple tabs, multiple screens, different screen layouts",
+    "plain_description": "Reviewers are complaining about poor window and tab management in the ERP user interface, including difficulties with opening multiple windows, managing tabs, and navigating between different screens efficiently.",
+    "candidate_categories": [
+      "user interface navigation",
+      "system usability"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "49": {
+    "topic_id": 49,
+    "resolved_keywords": "tax compliance, tax form generation, 1099 tax reporting forms, tax form preparation, tax filing processes, fiscal year reporting, tax report generation, tax compliance forms",
+    "plain_description": "Reviewers are expressing dissatisfaction with tax compliance and reporting functionality, specifically around generating and filing tax forms like 1099s and other required tax documentation. They are experiencing difficulties with the system's ability to handle tax form preparation and filing processes effectively.",
+    "candidate_categories": [
+      "tax compliance",
+      "regulatory reporting",
+      "financial reporting"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "50": {
+    "topic_id": 50,
+    "resolved_keywords": "far from ideal, new sales order processing, order management gaps, feature offerings, general purpose limitations, genuinely problematic, time to fully implement, system setup complexity, favorable aspects lacking",
+    "plain_description": "Reviewers are expressing frustration with sales order processing functionality that falls short of expectations, particularly around new order management features and the time required for proper system setup and implementation.",
+    "candidate_categories": [
+      "sales order management",
+      "implementation complexity",
+      "order processing workflow"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "51": {
+    "topic_id": 51,
+    "resolved_keywords": "internet connection, network connectivity, offline access capability, internet connectivity requirements, network access, strong connection required",
+    "plain_description": "Reviewers dislike ERP systems that require constant internet connectivity to function, particularly the lack of offline access capabilities when network connections are unstable or unavailable.",
+    "candidate_categories": [
+      "system availability",
+      "offline access limitations",
+      "network dependency"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "52": {
+    "topic_id": 52,
+    "resolved_keywords": "initial implementation, rocky deployment, initial system setup, configuration decisions, setup complexity, setup ease-of-use, lack of guidance, follow-up support, software release",
+    "plain_description": "Reviewers are discussing difficulties and challenges during the initial ERP system implementation and setup phase. They highlight problems with rocky deployments, complex configuration decisions, and inadequate guidance during the initial rollout process.",
+    "candidate_categories": [
+      "implementation complexity",
+      "system configuration",
+      "deployment support"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "53": {
+    "topic_id": 53,
+    "resolved_keywords": "expenses, expense categories, expense category management, bills payable, charges, budget controls, bill paying, automated processing, expense section",
+    "plain_description": "Reviewers are expressing dissatisfaction with expense management and accounts payable functionality, particularly around expense categorization, bill paying processes, and budget controls. The complaints focus on limitations in how expenses are organized, categorized, and processed through the system.",
+    "candidate_categories": [
+      "expense management",
+      "accounts payable automation"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "54": {
+    "topic_id": 54,
+    "resolved_keywords": "really don't, site, best, like work, don't just, pleased, like like, time using, using time, just don't",
+    "plain_description": "Reviewers expressing general dissatisfaction with unspecified aspects of the ERP system, using vague negative language without identifying specific functional problems or features.",
+    "candidate_categories": [
+      "general user satisfaction",
+      "overall system experience"
+    ],
+    "is_noise": true,
+    "noise_reason": "Topic contains only vague negative sentiment without identifying specific ERP features, functionality, or concrete pain points"
+  },
+  "55": {
+    "topic_id": 55,
+    "resolved_keywords": "delete records, deleted transactions, undo functionality, audit logs, data files, system files, journal entries, delete button, easy record deletion, memorized transactions",
+    "plain_description": "Reviewers are discussing issues with deleting records and transactions in ERP systems, including concerns about the ease of accidental deletion, lack of undo functionality, and problems with audit trail preservation when records are deleted.",
+    "candidate_categories": [
+      "data management",
+      "audit trail controls",
+      "transaction management"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "56": {
+    "topic_id": 56,
+    "resolved_keywords": "implementation, implementation process, implement, long duration, complexity, development, initial implementation, complex, initial setup, roadmap",
+    "plain_description": "Reviewers are expressing frustration with lengthy and complex ERP implementation processes, citing difficulties with initial setup, development complexity, and extended project timelines. They dislike how complicated and time-consuming it is to get their ERP system up and running.",
+    "candidate_categories": [
+      "implementation complexity",
+      "project management"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "57": {
+    "topic_id": 57,
+    "resolved_keywords": "modules, module, different modules, different, modules need, incomplete, field service module, software bugs, purchased separately, missing functionality",
+    "plain_description": "Reviewers are frustrated with incomplete or missing functionality in ERP modules, particularly field service modules, and the need to purchase additional modules separately to get complete functionality. They also mention bugs and missing features within existing modules.",
+    "candidate_categories": [
+      "modular architecture limitations",
+      "field service management",
+      "software bugs and defects",
+      "add-on module pricing"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  },
+  "58": {
+    "topic_id": 58,
+    "resolved_keywords": "remote access capabilities, web-based access, desktop access limitations, sales order entry access, Windows-based interface, availability of remote functionality, ability to access system remotely, interface style preferences",
+    "plain_description": "Reviewers are complaining about limitations in remote access capabilities and system accessibility, particularly regarding outdated Windows-based interfaces that restrict users' ability to work remotely or access the system from various locations and devices.",
+    "candidate_categories": [
+      "remote access capabilities",
+      "user interface modernization",
+      "system accessibility"
+    ],
+    "is_noise": false,
+    "noise_reason": null
+  }
+}

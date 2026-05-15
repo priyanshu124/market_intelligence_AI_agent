@@ -1,0 +1,54 @@
+MASTER ENRICHED REVIEW DATASET — COVERAGE SUMMARY
+============================================================
+
+Total reviews:  14,933
+Total columns:  51
+Products:       12
+Date range:     2016-03-17 → 2026-05-10
+
+[bonus_data fields]
+  bonus_title                    14,735 / 14,933 (98.7%)
+  bonus_type                     14,933 / 14,933 (100.0%)
+  bonus_region                   14,887 / 14,933 (99.7%)
+  bonus_url                      14,933 / 14,933 (100.0%)
+  is_incentivized                 8,344 / 14,933 (55.9%)
+  switched_from_product           2,103 / 14,933 (14.1%)
+  bonus_submitted                14,933 / 14,933 (100.0%)
+
+[likes]
+  Topic assigned:  13,582 / 14,933 (91.0%)
+  Group assigned:  13,582 / 14,933 (91.0%)
+  Top groups:
+    Core Financial & Accounting                4,471
+    User Experience & System Usability         2,587
+    Inventory & Supply Chain Management        1,353
+    System Integration & APIs                  1,068
+    Sales & Order Management                     777
+    Financial Reporting & Business Intelligence   748
+    Advanced Analytics & AI                      578
+    Payroll & HR Management                      376
+
+[dislikes]
+  Topic assigned:  13,194 / 14,933 (88.4%)
+  Group assigned:  13,194 / 14,933 (88.4%)
+  Top groups:
+    Financial Accounting & General Ledger      2,065
+    Implementation, Setup & Cost Management    1,843
+    Financial Reporting & Business Intelligence 1,186
+    Customer Support & Service Quality         1,109
+    Accounts Payable & Invoice Processing      1,088
+    User Training & Learning Curve               856
+    System Performance & Reliability             851
+    User Interface & System Navigation           741
+
+[use_case] not run
+[displacement intelligence]
+  switched_from populated: 2,103 (14.1%)
+    QuickBooks Online                            403
+    QuickBooks Desktop Pro                       155
+    QuickBooks Desktop Enterprise                148
+    Sage 50cloud Accounting                       79
+    Xero                                          64
+    Intuit QuickBooks                             55
+    Sage Intacct                                  45
+    Sage 100                                      39

@@ -1,0 +1,1094 @@
+{
+  "field": "likes",
+  "stage1_enrichments": {
+    "0": {
+      "topic_id": 0,
+      "resolved_keywords": "accounting, sales, sales order processing, order management, payroll processing, small business functionality, invoice generation, expense tracking, bank reconciliation",
+      "plain_description": "Reviewers appreciate the comprehensive core financial and sales functionality including accounting, sales order processing, payroll, invoicing, and expense tracking capabilities that work well for small businesses.",
+      "candidate_categories": [
+        "sales order processing",
+        "payroll processing",
+        "expense tracking",
+        "invoice generation",
+        "bank reconciliation",
+        "small business accounting"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "1": {
+      "topic_id": 1,
+      "resolved_keywords": "business needs, appreciate functionality, workflow automation, business operations, inventory management, search capabilities, customizable features, integrated systems, business processes, process management",
+      "plain_description": "Reviewers appreciate ERP systems that offer customizable workflows and search functionality to streamline their business operations and inventory management processes. They value systems that can be tailored to meet their specific operational needs.",
+      "candidate_categories": [
+        "workflow automation",
+        "inventory management",
+        "system customization",
+        "search functionality"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "2": {
+      "topic_id": 2,
+      "resolved_keywords": "appreciate, initial implementation, initial system setup, configuration setup, business needs assessment, customer inquiries, ease of use, business processes automation, system helps operations, user-friendly interface",
+      "plain_description": "Reviewers appreciate the ease of initial ERP system setup and configuration, highlighting how the software helps streamline business processes and meets their operational needs with user-friendly interfaces.",
+      "candidate_categories": [
+        "implementation complexity",
+        "system configuration",
+        "user interface navigation",
+        "business process automation"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "3": {
+      "topic_id": 3,
+      "resolved_keywords": "analytics, real-time data processing, real-time reporting, in-memory computing, business processes, database performance, faster processing speeds, operations management, decision making, data processing",
+      "plain_description": "Reviewers appreciate real-time analytics and in-memory processing capabilities that enable faster data processing and immediate insights for operational decision-making. They specifically value how these systems provide instantaneous reporting and analytics without delays from traditional database processing.",
+      "candidate_categories": [
+        "real-time analytics",
+        "business intelligence",
+        "database performance",
+        "operational reporting"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "4": {
+      "topic_id": 4,
+      "resolved_keywords": "financial reporting, accounts payable, accounting processes, accounts payable automation, multi-entity consolidation, automation workflows, real-time financial data",
+      "plain_description": "Reviewers are praising the accounts payable automation features and real-time financial reporting capabilities, particularly for multi-entity organizations. They appreciate automated AP workflows and consolidated financial visibility across multiple business entities.",
+      "candidate_categories": [
+        "accounts payable automation",
+        "multi-entity consolidation",
+        "real-time financial reporting"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "5": {
+      "topic_id": 5,
+      "resolved_keywords": "accounting, accountant, simple, learn, ease of use, intuitive, understand, user-friendly, chart of accounts, accountants",
+      "plain_description": "Reviewers are praising the accounting modules for being easy to learn and use, with intuitive interfaces that make it simple for accountants to understand and navigate the system.",
+      "candidate_categories": [
+        "accounting user interface",
+        "system usability",
+        "user training and adoption"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "6": {
+      "topic_id": 6,
+      "resolved_keywords": "bank reconciliation, general ledger accounting, invoice management, invoicing automation, financial reporting, system setup, bank reconciliation process, user-friendly interface, financial transactions, initial implementation",
+      "plain_description": "Reviewers appreciate the straightforward and user-friendly approach to core accounting functions, particularly praising the ease of bank reconciliation, invoice processing, and initial system setup. They highlight how these fundamental financial processes are simplified compared to more complex ERP solutions.",
+      "candidate_categories": [
+        "bank reconciliation",
+        "accounts payable automation",
+        "invoice management",
+        "system implementation",
+        "financial transaction processing"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "7": {
+      "topic_id": 7,
+      "resolved_keywords": "management, enterprise resource planning systems, integrated, systems, modules, used, supply chain, compared, implementation, supply chain management",
+      "plain_description": "Reviewers are discussing their appreciation for comprehensive ERP systems that integrate multiple business modules and functions, particularly highlighting how these systems compare favorably to other solutions in managing supply chain operations.",
+      "candidate_categories": [
+        "supply chain management",
+        "system integration",
+        "module functionality"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "8": {
+      "topic_id": 8,
+      "resolved_keywords": "accounts payable, general ledger, accounting, financial transactions, accounts payable processing, simple interface",
+      "plain_description": "Reviewers appreciate the straightforward and user-friendly design of core accounting features, particularly accounts payable processing and general ledger management. They find these fundamental financial transaction recording capabilities easy to use and well-implemented.",
+      "candidate_categories": [
+        "accounts payable processing",
+        "general ledger management",
+        "financial transaction recording"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "9": {
+      "topic_id": 9,
+      "resolved_keywords": "navigate, easy navigate, navigation, user interface, search functionality, user-friendly easy, interface easy, intuitive design, screen layout, navigate user interface",
+      "plain_description": "Reviewers are praising the ease of navigation and intuitive user interface design of ERP systems. They appreciate how easy it is to find features, move between screens, and search for information within the software.",
+      "candidate_categories": [
+        "user interface navigation",
+        "system usability"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "10": {
+      "topic_id": 10,
+      "resolved_keywords": "sales order management, purchase order processing, order entry workflow, sales order creation, order fulfillment process, sales transaction processing, purchase order generation, order-to-cash cycle, procurement orders, sales document management",
+      "plain_description": "Reviewers are discussing the ease of use and functionality of sales order management and purchase order processing systems. They appreciate how straightforward it is to create, manage, and process both sales and purchase orders within the ERP system.",
+      "candidate_categories": [
+        "sales order management",
+        "purchase order processing",
+        "order-to-cash workflow",
+        "procurement management"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "11": {
+      "topic_id": 11,
+      "resolved_keywords": "Salesforce, Salesforce.com platform, Salesforce integration capabilities, billing management, financial management, accounting functionality, sales force automation, multi-entity operations",
+      "plain_description": "Reviewers are praising the integration capabilities between their ERP system and Salesforce CRM platform, particularly how it enables seamless data flow between sales, billing, and financial accounting functions across multiple entities or business units.",
+      "candidate_categories": [
+        "CRM integration",
+        "sales force automation",
+        "billing management",
+        "multi-entity operations"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "12": {
+      "topic_id": 12,
+      "resolved_keywords": "business processes, automation capabilities, automated workflows, manual task elimination, operational tasks, efficiency improvements, process management, business process management, manufacturing processes",
+      "plain_description": "Reviewers appreciate ERP systems' ability to automate manual business processes and tasks, making operations more efficient. They specifically value how the software helps streamline and manage various business workflows, particularly in manufacturing environments.",
+      "candidate_categories": [
+        "business process automation",
+        "workflow management",
+        "manufacturing process management",
+        "operational efficiency"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "13": {
+      "topic_id": 13,
+      "resolved_keywords": "bank reconciliation, chart of accounts, bank transaction reconciliation, bank transaction feeds, banking integration, bank account management, automated bank feeds, bank account reconciliation",
+      "plain_description": "Reviewers are praising ERP systems' bank reconciliation functionality, specifically the ability to automatically import bank transactions through bank feeds and efficiently match them to accounting records. They appreciate how these features streamline the monthly reconciliation process and reduce manual data entry.",
+      "candidate_categories": [
+        "bank reconciliation",
+        "automated bank feeds",
+        "cash management"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "14": {
+      "topic_id": 14,
+      "resolved_keywords": "customize, customization, business needs, ability to customize, customizable, business requirements, fit business processes, flexibility, custom configurations, specific requirements",
+      "plain_description": "Reviewers appreciate the ability to customize and configure ERP systems to fit their specific business processes and requirements. They value the flexibility to adapt the software to their unique operational needs rather than having to change their business processes to match rigid software constraints.",
+      "candidate_categories": [
+        "system configuration",
+        "business process customization",
+        "workflow customization",
+        "user interface customization"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "15": {
+      "topic_id": 15,
+      "resolved_keywords": "track expenses, centralized location, organized financial data, expense management, organize transactions, maintains records, centralized repository, income tracking, financial management, receipt management",
+      "plain_description": "Reviewers appreciate the expense tracking and financial organization capabilities that allow them to maintain all financial records, receipts, and transactions in one centralized location. They value how the system helps keep their financial data organized and easily accessible.",
+      "candidate_categories": [
+        "expense management",
+        "financial data organization",
+        "document management"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "16": {
+      "topic_id": 16,
+      "resolved_keywords": "addition, financial reporting, financial management, finance operations, sales operations, control mechanisms, power tools, Power BI (Microsoft Business Intelligence)",
+      "plain_description": "Reviewers appreciate the comprehensive financial management capabilities and powerful reporting tools, particularly the integration with Power BI for business intelligence and analytics. They value having centralized control over financial operations and sales processes.",
+      "candidate_categories": [
+        "financial reporting",
+        "business intelligence integration",
+        "financial operations management"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "17": {
+      "topic_id": 17,
+      "resolved_keywords": "invoices, invoice creation, create invoices, payment processing, invoicing workflows, send invoices, bills management, track payments, customer billing, upload documents",
+      "plain_description": "Reviewers are praising the accounts payable and accounts receivable functionality, specifically the ability to easily create, send, and track invoices and bills, as well as manage customer payments and document uploads.",
+      "candidate_categories": [
+        "accounts receivable management",
+        "accounts payable automation",
+        "invoice processing",
+        "payment tracking"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "18": {
+      "topic_id": 18,
+      "resolved_keywords": "learn, ease of use, intuitive interface, user training, simple navigation, user-friendly, understand functionality, easy to learn, learning curve, usable user interface",
+      "plain_description": "Reviewers are praising ERP systems for having intuitive user interfaces that are easy to learn and use, requiring minimal training for new users to become productive.",
+      "candidate_categories": [
+        "user interface design",
+        "user training and onboarding"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "19": {
+      "topic_id": 19,
+      "resolved_keywords": "dashboards, dashboard, reports dashboards, key performance indicators (KPIs), indicator, key performance, user interface, reporting dashboards, lots, insights",
+      "plain_description": "Reviewers appreciate the comprehensive dashboard capabilities and key performance indicator (KPI) reporting features that provide business insights through intuitive user interfaces. They value having multiple reporting dashboards that display performance metrics and analytics in accessible visual formats.",
+      "candidate_categories": [
+        "financial reporting",
+        "business intelligence dashboards",
+        "performance analytics"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "20": {
+      "topic_id": 20,
+      "resolved_keywords": "platforms, products, implementation, multiple systems, integration capabilities, business needs, implementation process, user interface design, flexibility, implementation team",
+      "plain_description": "Reviewers appreciate ERP systems that can integrate multiple platforms and products together, praising the flexibility and user interface design that allows their implementation teams to customize the system to meet diverse business needs.",
+      "candidate_categories": [
+        "system integration",
+        "implementation flexibility",
+        "user interface design"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "21": {
+      "topic_id": 21,
+      "resolved_keywords": "application programming interface, programming, integrations, code, user interface, ease of use, integrate, implementation, flexibility, third-party",
+      "plain_description": "Reviewers appreciate the programming flexibility and API capabilities that allow for custom integrations and third-party system connections. They value the ease of implementation and user-friendly interface design that supports integration development.",
+      "candidate_categories": [
+        "API and integration capabilities",
+        "custom development flexibility",
+        "third-party system integration"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "22": {
+      "topic_id": 22,
+      "resolved_keywords": "years of usage, sales order management, payroll processing, sales transactions, small business, enterprise-level, accountant users, accounting functionality",
+      "plain_description": "Reviewers are praising ERP systems for their comprehensive sales order processing and payroll management capabilities that have served their businesses effectively over multiple years of usage. They particularly appreciate how these systems scale from small business accounting needs to enterprise-level operations.",
+      "candidate_categories": [
+        "sales order management",
+        "payroll processing",
+        "small business accounting",
+        "multi-user accounting"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "23": {
+      "topic_id": 23,
+      "resolved_keywords": "keeping track, enterprise resource planning, quick navigation, accounting functions, tracking capabilities, user-friendly interface, easy navigation, bookkeeping tasks, simple workflows, easy to use, navigate system",
+      "plain_description": "Reviewers appreciate the ease of use and user-friendly interface design that makes basic accounting and bookkeeping tasks simple to navigate and quick to complete. They value how the software keeps tracking of financial data straightforward without complexity.",
+      "candidate_categories": [
+        "user interface navigation",
+        "accounting workflow usability",
+        "bookkeeping efficiency"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "24": {
+      "topic_id": 24,
+      "resolved_keywords": "role-based access control, user-based licensing, software updates, base functionality, role-based access permissions, robust security features, web-based access, role-based ease of use, unlimited user licensing, security controls",
+      "plain_description": "Reviewers appreciate role-based access control systems and user management capabilities that provide robust security with easy web-based access. They particularly value unlimited user licensing models and the base security functionality that allows proper access permissions management.",
+      "candidate_categories": [
+        "user access management",
+        "role-based security",
+        "user licensing models"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "25": {
+      "topic_id": 25,
+      "resolved_keywords": "doesn't, does not, didn't, did not, outdated system, purchase order, poor quality, sales order management, sales processes, mobile application, customer service",
+      "plain_description": "Reviewers expressing dissatisfaction with sales order processing functionality, outdated system components, and poor customer service experiences. The negative sentiment suggests problems with core sales order management features and system reliability.",
+      "candidate_categories": [
+        "sales order management",
+        "customer service quality",
+        "system modernization"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "26": {
+      "topic_id": 26,
+      "resolved_keywords": "Microsoft Office integration, SQL database connectivity, daily operations, general usage, Microsoft Excel integration, Microsoft Dynamics, smart features",
+      "plain_description": "Reviewers appreciate the seamless integration between their ERP system and Microsoft Office applications, particularly Excel and SQL connectivity for daily business operations. They value the smart features and dynamic capabilities that enhance productivity through familiar Office tools.",
+      "candidate_categories": [
+        "Microsoft Office integration",
+        "database connectivity",
+        "reporting and analytics"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "27": {
+      "topic_id": 27,
+      "resolved_keywords": "customize, customize reports, report, customizable, custom, custom reports, ability customize, customized, customization, customizable reports",
+      "plain_description": "Reviewers appreciate the ability to create and customize reports to meet their specific business needs. They value the flexibility to tailor reporting formats, fields, and layouts beyond standard system reports.",
+      "candidate_categories": [
+        "financial reporting",
+        "custom report builder"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "28": {
+      "topic_id": 28,
+      "resolved_keywords": "accounting, accountant, bank reconciliation, small businesses, purchase order, sales order, software version, functionality, certified public accountants",
+      "plain_description": "Reviewers appreciate ERP features specifically designed for small business accounting needs, including streamlined order management and banking integration that accountants find easy to use.",
+      "candidate_categories": [
+        "small business accounting",
+        "order management",
+        "bank reconciliation"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "29": {
+      "topic_id": 29,
+      "resolved_keywords": "small business, small and medium businesses (SMB), smaller companies, business owners, easy to use for small business",
+      "plain_description": "Reviewers appreciate that the ERP software is well-suited for small and medium-sized businesses, providing functionality that is appropriately scaled and easy to use for smaller business owners without unnecessary complexity.",
+      "candidate_categories": [
+        "small business suitability",
+        "user experience design",
+        "system scalability"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "30": {
+      "topic_id": 30,
+      "resolved_keywords": "financial management, financial reporting, management capabilities, employee data, payroll processing, payroll administration, useful functionality, payment processing, financial operations",
+      "plain_description": "Reviewers appreciate the integrated financial management and payroll processing capabilities, highlighting how useful it is to manage employee payments and financial operations within the same system.",
+      "candidate_categories": [
+        "payroll processing",
+        "financial management",
+        "human capital management"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "31": {
+      "topic_id": 31,
+      "resolved_keywords": "customer support, customer service, service quality, customer support utilization, help desk assistance, support team, support team effectiveness, ease of use, support utilization, helpful support responses",
+      "plain_description": "Reviewers are praising the quality and helpfulness of their ERP vendor's customer support services, including responsive help desk teams and ease of getting assistance when needed.",
+      "candidate_categories": [
+        "customer support services",
+        "technical support quality"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "32": {
+      "topic_id": 32,
+      "resolved_keywords": "university, navigate, sales order processing, help documentation, order management, team collaboration, configuration options, easy navigation, sales processes, user-friendly interface easy navigation",
+      "plain_description": "Reviewers appreciate the user-friendly interface and easy navigation of sales order processing features, highlighting how the system helps teams efficiently manage orders with intuitive options and good usability.",
+      "candidate_categories": [
+        "sales order processing",
+        "user interface navigation"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "33": {
+      "topic_id": 33,
+      "resolved_keywords": "real-time processing, real-time analytics, time-sensitive data, in-memory database technology, business process automation, system performance speed",
+      "plain_description": "Reviewers appreciate real-time analytics capabilities and in-memory database performance that enables faster processing of financial and operational data. They value the system's ability to provide immediate insights and accelerated transaction processing speeds.",
+      "candidate_categories": [
+        "real-time analytics",
+        "system performance",
+        "in-memory database processing"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "34": {
+      "topic_id": 34,
+      "resolved_keywords": "accounting, payroll processing, inventory management, accounting business needs, comprehensive business requirements, integrated software package, fully integrated solution, handle accounting operations, accounting and payroll functions",
+      "plain_description": "Reviewers appreciate ERP systems that provide comprehensive, fully integrated packages that can handle all their accounting needs including payroll and inventory management in one solution. They value the completeness and integration of core financial functions rather than needing separate systems.",
+      "candidate_categories": [
+        "integrated financial management",
+        "payroll processing",
+        "inventory management",
+        "comprehensive accounting solutions"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "35": {
+      "topic_id": 35,
+      "resolved_keywords": "internet access, system login, phone device access, computer device access, web-based access capability, convenient remote access, internet connection dependency, mobile accessibility",
+      "plain_description": "Reviewers appreciate the web-based accessibility and remote access capabilities of their ERP system, allowing them to log in and work from various devices including phones and computers anywhere with internet connection.",
+      "candidate_categories": [
+        "web-based system access",
+        "mobile device compatibility",
+        "remote access capabilities"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "36": {
+      "topic_id": 36,
+      "resolved_keywords": "help documentation, support answers, help page navigation, user questions, community forums, help section organization, question resolution, user tips, getting stuck on processes, support section",
+      "plain_description": "Reviewers are discussing the quality and usefulness of help documentation, community forums, and support resources available within their ERP systems. They appreciate having accessible help sections and community-driven answers when they get stuck using the software.",
+      "candidate_categories": [
+        "user support documentation",
+        "community forums",
+        "help system navigation"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "37": {
+      "topic_id": 37,
+      "resolved_keywords": "customer support, implemented, daily operations, used, implement, started using, recently, customer care, easy to implement, accounts payable",
+      "plain_description": "Reviewers praising the ease of implementation and quality of customer support during the setup phase, particularly for accounts payable functionality. They appreciate how quickly they were able to get the system running for daily operations.",
+      "candidate_categories": [
+        "implementation support",
+        "accounts payable automation"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "38": {
+      "topic_id": 38,
+      "resolved_keywords": "payroll processing, tax calculations, employee management, employee records, tax compliance, payroll functionality, employee pay, ease of use, employee tracking, payroll administration",
+      "plain_description": "Reviewers appreciate the payroll processing capabilities and tax calculation features in their ERP systems. They find the payroll functionality easy to use and effective for managing employee compensation and tax compliance.",
+      "candidate_categories": [
+        "payroll processing",
+        "tax compliance",
+        "human resources management"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "39": {
+      "topic_id": 39,
+      "resolved_keywords": "business modules, different functional modules, user interface, integrated modules, integration, interface user experience, individual module, use business modules, modules ease of use, user experience design",
+      "plain_description": "Reviewers appreciate the modular architecture of ERP systems that allows different functional areas to work together seamlessly through well-designed user interfaces. They like how individual modules for different business functions integrate smoothly while maintaining good usability.",
+      "candidate_categories": [
+        "modular system architecture",
+        "user interface design",
+        "system integration"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "40": {
+      "topic_id": 40,
+      "resolved_keywords": "single source of truth, centralized data repository, unified information system, data transparency, consolidated reporting, master data management",
+      "plain_description": "Reviewers appreciate having a single source of truth where all business data is centralized and accessible in one place, eliminating data silos and providing transparency across the organization.",
+      "candidate_categories": [
+        "master data management",
+        "data integration",
+        "centralized reporting"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "41": {
+      "topic_id": 41,
+      "resolved_keywords": "user experience, experience, applications, simplified, implementing, easy business processes, extend functionality, simple user interface, interfaces, complexity reduction",
+      "plain_description": "Reviewers appreciate ERP systems that offer simplified user interfaces and streamlined implementation processes that reduce complexity for business users. They value systems that are easy to extend with additional applications while maintaining intuitive user experiences.",
+      "candidate_categories": [
+        "user interface design",
+        "implementation complexity",
+        "system extensibility"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "42": {
+      "topic_id": 42,
+      "resolved_keywords": "constantly, innovation, year, technology, evolving, trends, developing, updates, continuous, continues",
+      "plain_description": "Reviewers appreciate the continuous innovation and regular updates to ERP systems, highlighting how vendors consistently evolve their technology to incorporate new trends and improvements year over year.",
+      "candidate_categories": [
+        "software updates",
+        "product innovation",
+        "technology evolution"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "43": {
+      "topic_id": 43,
+      "resolved_keywords": "journal entries, journal entry creation, entry editing, draft journal entries, posting journal entries, financial reports ease, prior period adjustments",
+      "plain_description": "Reviewers appreciate the ease of creating, editing, and managing journal entries, including working with drafts before posting and the convenience this brings to financial reporting processes.",
+      "candidate_categories": [
+        "general ledger management",
+        "financial reporting",
+        "journal entry processing"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "44": {
+      "topic_id": 44,
+      "resolved_keywords": "timesheet entry, timesheet management, hours tracking, time sheet functionality, calendar view, Excel integration, time sheets export, paid time off tracking",
+      "plain_description": "Reviewers appreciate the timesheet and time tracking functionality, particularly the ability to view and manage hours in calendar format and export time data to Excel. They find the time entry interface user-friendly for tracking both work hours and paid time off.",
+      "candidate_categories": [
+        "time tracking",
+        "timesheet management",
+        "Excel integration"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "45": {
+      "topic_id": 45,
+      "resolved_keywords": "computer, user login, able to access, mobile device, work from home, mobile phone, user log in, desktop workstation, laptop computer, Microsoft Windows operating system",
+      "plain_description": "Reviewers appreciate the ability to access their ERP system from multiple devices and locations, including laptops, phones, and desktop computers, enabling remote work flexibility. They value the cross-platform compatibility and mobile accessibility of the software.",
+      "candidate_categories": [
+        "mobile accessibility",
+        "remote access capabilities",
+        "cross-platform compatibility",
+        "user authentication"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "46": {
+      "topic_id": 46,
+      "resolved_keywords": "processing speed, data slicing and dicing capabilities, machine learning functionality, data management systems, query processing performance, system scalability, database operations",
+      "plain_description": "Reviewers appreciate the fast processing speeds and advanced data analysis capabilities, particularly the ability to slice and dice data quickly for reporting and analytics. They value the machine learning features and overall system performance for handling large datasets.",
+      "candidate_categories": [
+        "business intelligence and analytics",
+        "system performance",
+        "data management"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "47": {
+      "topic_id": 47,
+      "resolved_keywords": "development environment, modular architecture, modules, out-of-the-box functionality, marketing automation, data entry, user interface design, development environment, Open Data Protocol (OData)",
+      "plain_description": "Reviewers appreciate the modular development environment and customization capabilities, particularly the ability to develop custom modules and integrate data through OData protocols. They value the out-of-the-box functionality combined with flexible development tools for extending the system.",
+      "candidate_categories": [
+        "system customization",
+        "development platform",
+        "API integration"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "48": {
+      "topic_id": 48,
+      "resolved_keywords": "software version, use software version, version allows functionality, purchase decision, subscription model, better version upgrade, switched to newer version, better version capabilities, easier to use interface, version easy to navigate",
+      "plain_description": "Reviewers discussing their positive experiences with upgrading to newer versions or editions of their ERP software, highlighting improved usability, enhanced functionality, and better user interfaces in updated releases.",
+      "candidate_categories": [
+        "software version management",
+        "user interface improvements",
+        "subscription model satisfaction"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "49": {
+      "topic_id": 49,
+      "resolved_keywords": "new artificial intelligence, artificial intelligence features, artificial intelligence feature, looking forward, forward, artificial intelligence powered, powered, looking, machine learning",
+      "plain_description": "Reviewers are expressing enthusiasm about new artificial intelligence and machine learning capabilities being introduced in their ERP systems. They appreciate AI-powered features and are looking forward to future AI enhancements that will improve automation and decision-making.",
+      "candidate_categories": [
+        "artificial intelligence automation",
+        "machine learning analytics",
+        "predictive analytics"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "50": {
+      "topic_id": 50,
+      "resolved_keywords": "import, export, export data, import export, importing, Microsoft Excel, comma-separated values (CSV), access data, data Excel, exporting",
+      "plain_description": "Reviewers appreciate the ability to import and export data to and from their ERP system, particularly the ease of transferring data between the system and Excel or CSV files for external analysis and reporting.",
+      "candidate_categories": [
+        "data integration",
+        "reporting and analytics"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "51": {
+      "topic_id": 51,
+      "resolved_keywords": "generic reports, data inquiries, generic inquiry screens, inquiry functionality, data retrieval needs, create custom reports, search capabilities, ability to create queries, inquiry screens, report customizations",
+      "plain_description": "Reviewers appreciate the generic inquiry and reporting functionality that allows them to create custom data searches and build flexible reports to retrieve specific business information from the ERP system.",
+      "candidate_categories": [
+        "custom reporting",
+        "data inquiry tools"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "52": {
+      "topic_id": 52,
+      "resolved_keywords": "training, learn, easy to learn, onboarding, new employees, teach, employees, train, easy to teach, easy easy",
+      "plain_description": "Reviewers praise ERP systems for being easy to learn and train new employees on, with straightforward onboarding processes that make it simple to teach staff how to use the software effectively.",
+      "candidate_categories": [
+        "user training",
+        "system onboarding",
+        "user experience design"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "53": {
+      "topic_id": 53,
+      "resolved_keywords": "Salesforce, Professional Services Automation (PSA), professional services, customer relationship management, professional, business objectives, product roadmap, Customer Relationship Management (CRM), Salesforce Lightning platform, professional services",
+      "plain_description": "Reviewers appreciate the Professional Services Automation capabilities and CRM integration, particularly how Salesforce Lightning platform helps manage customer relationships and aligns with business objectives for service-oriented organizations.",
+      "candidate_categories": [
+        "professional services automation",
+        "customer relationship management",
+        "project management"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "54": {
+      "topic_id": 54,
+      "resolved_keywords": "sales order management, sales processes, order processing, Salesforce integration, corporate multi-location operations, customer satisfaction, business continuity",
+      "plain_description": "Reviewers appreciate the sales order management capabilities and Salesforce integration that helps satisfy customer needs across multiple corporate locations. They value how the system continues to support their sales processes effectively.",
+      "candidate_categories": [
+        "sales order management",
+        "CRM integration",
+        "multi-location operations"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "55": {
+      "topic_id": 55,
+      "resolved_keywords": "NetSuite, enterprise resource planning, NetSuite ERP, multiple entities, multiple entities management, just, multi-entity, easier, multiple companies",
+      "plain_description": "Reviewers appreciate NetSuite's ability to manage multiple business entities or subsidiaries within a single system instance. They find it easier to handle operations across multiple companies or divisions compared to other solutions.",
+      "candidate_categories": [
+        "multi-entity consolidation",
+        "subsidiary management"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "56": {
+      "topic_id": 56,
+      "resolved_keywords": "reporting dimensions, financial reports, custom fields, create reports, custom reporting, generate reports, useful reports, customized reporting, specific reporting requirements",
+      "plain_description": "Reviewers appreciate the ability to create custom financial reports with multiple dimensions and custom fields to meet their specific reporting requirements. They find the report generation capabilities useful for producing tailored financial analysis and business intelligence reports.",
+      "candidate_categories": [
+        "financial reporting",
+        "custom reporting",
+        "business intelligence"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "57": {
+      "topic_id": 57,
+      "resolved_keywords": "transactions, audit trail, audit trail functionality, transaction records, saved searches, error handling, journal entries, saved search reports",
+      "plain_description": "Reviewers appreciate the audit trail capabilities that track all transaction history and changes, along with saved search functionality that allows them to easily retrieve and analyze transaction data and journal entries.",
+      "candidate_categories": [
+        "audit trail management",
+        "transaction tracking",
+        "financial reporting"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    },
+    "58": {
+      "topic_id": 58,
+      "resolved_keywords": "lot of different options, lot of features, lot of configuration options, wide range of functionality, management capabilities, powerful features, lots of customization, multiple things, numerous options",
+      "plain_description": "Reviewers appreciate the extensive range of features and configuration options available in their ERP system. They highlight the system's powerful capabilities and the wide variety of management functions that can be customized to meet different business needs.",
+      "candidate_categories": [
+        "system flexibility",
+        "feature breadth",
+        "configuration management"
+      ],
+      "is_noise": false,
+      "noise_reason": null
+    }
+  },
+  "stage2_result": {
+    "macro_groups": [
+      {
+        "group_key": "core_financial_accounting",
+        "group_label": "Core Financial & Accounting",
+        "group_description": "Fundamental accounting functions including AP/AR, bank reconciliation, invoicing, journal entries, and expense management.",
+        "topic_ids": [
+          0,
+          4,
+          6,
+          8,
+          13,
+          15,
+          17,
+          43
+        ],
+        "reasoning": "These topics all focus on core accounting operations that are fundamental to any ERP system - accounts payable/receivable, bank reconciliation, invoicing, journal entries, and expense tracking."
+      },
+      {
+        "group_key": "financial_reporting_analytics",
+        "group_label": "Financial Reporting & Business Intelligence",
+        "group_description": "Financial reporting capabilities, dashboards, KPIs, and business intelligence tools for decision-making.",
+        "topic_ids": [
+          16,
+          19,
+          27,
+          56,
+          51
+        ],
+        "reasoning": "These topics focus on reporting, dashboards, custom reports, and data inquiry capabilities that help users analyze financial and business data."
+      },
+      {
+        "group_key": "payroll_hr_management",
+        "group_label": "Payroll & HR Management",
+        "group_description": "Payroll processing, tax calculations, employee management, and time tracking functionality.",
+        "topic_ids": [
+          30,
+          34,
+          38,
+          44
+        ],
+        "reasoning": "These topics specifically address human capital management including payroll, employee records, tax compliance, and timesheet management."
+      },
+      {
+        "group_key": "sales_order_management",
+        "group_label": "Sales & Order Management",
+        "group_description": "Sales order processing, purchase order management, and order-to-cash workflow capabilities.",
+        "topic_ids": [
+          10,
+          22,
+          32,
+          54
+        ],
+        "reasoning": "These topics focus specifically on sales order processing, purchase order management, and related order management workflows."
+      },
+      {
+        "group_key": "user_experience_usability",
+        "group_label": "User Experience & System Usability",
+        "group_description": "User interface design, ease of use, navigation, learning curve, and overall user experience.",
+        "topic_ids": [
+          2,
+          5,
+          9,
+          18,
+          23,
+          41,
+          52
+        ],
+        "reasoning": "These topics all discuss the user experience aspects - how easy the system is to learn, navigate, and use on a daily basis."
+      },
+      {
+        "group_key": "system_integration_apis",
+        "group_label": "System Integration & APIs",
+        "group_description": "Integration capabilities with third-party systems, APIs, and data import/export functionality.",
+        "topic_ids": [
+          11,
+          20,
+          21,
+          26,
+          50,
+          53
+        ],
+        "reasoning": "These topics focus on how the ERP system connects with other software through integrations, APIs, CRM systems like Salesforce, and data exchange capabilities."
+      },
+      {
+        "group_key": "advanced_analytics_ai",
+        "group_label": "Advanced Analytics & AI",
+        "group_description": "Real-time analytics, in-memory processing, machine learning, and artificial intelligence capabilities.",
+        "topic_ids": [
+          3,
+          33,
+          46,
+          49
+        ],
+        "reasoning": "These topics discuss advanced technological capabilities including real-time processing, AI/ML features, and high-performance analytics."
+      },
+      {
+        "group_key": "mobile_web_access",
+        "group_label": "Mobile & Web Access",
+        "group_description": "Web-based access, mobile device compatibility, and remote work capabilities.",
+        "topic_ids": [
+          35,
+          45
+        ],
+        "reasoning": "These topics specifically address the ability to access the ERP system from various devices and locations, enabling remote work flexibility."
+      },
+      {
+        "group_key": "system_architecture_customization",
+        "group_label": "System Architecture & Customization",
+        "group_description": "Modular architecture, customization capabilities, and system configuration flexibility.",
+        "topic_ids": [
+          14,
+          39,
+          47
+        ],
+        "reasoning": "These topics focus on the underlying architecture and customization capabilities that allow businesses to tailor the system to their needs."
+      },
+      {
+        "group_key": "implementation_support",
+        "group_label": "Implementation & Customer Support",
+        "group_description": "Implementation process, customer support quality, help documentation, and user assistance.",
+        "topic_ids": [
+          31,
+          36,
+          37
+        ],
+        "reasoning": "These topics address the support experience during and after implementation, including customer service quality and help resources."
+      },
+      {
+        "group_key": "security_user_management",
+        "group_label": "Security & User Management",
+        "group_description": "Role-based access control, user permissions, security features, and user licensing models.",
+        "topic_ids": [
+          24
+        ],
+        "reasoning": "This topic specifically addresses security controls, user access management, and licensing models."
+      },
+      {
+        "group_key": "multi_entity_operations",
+        "group_label": "Multi-Entity Operations",
+        "group_description": "Management of multiple business entities, subsidiaries, or companies within a single system.",
+        "topic_ids": [
+          55
+        ],
+        "reasoning": "This topic specifically addresses the ability to manage multiple business entities or subsidiaries, which is crucial for larger organizations."
+      },
+      {
+        "group_key": "inventory_supply_chain",
+        "group_label": "Inventory & Supply Chain Management",
+        "group_description": "Inventory management, supply chain operations, and related business process automation.",
+        "topic_ids": [
+          1,
+          7,
+          12
+        ],
+        "reasoning": "These topics focus on inventory management, supply chain functionality, and related operational process automation."
+      },
+      {
+        "group_key": "small_business_focus",
+        "group_label": "Small Business Suitability",
+        "group_description": "Features and capabilities specifically designed for small and medium-sized businesses.",
+        "topic_ids": [
+          28,
+          29
+        ],
+        "reasoning": "These topics specifically highlight how the ERP systems are well-suited for small business needs and requirements."
+      },
+      {
+        "group_key": "audit_compliance",
+        "group_label": "Audit Trail & Compliance",
+        "group_description": "Audit trail functionality, transaction tracking, and compliance-related features.",
+        "topic_ids": [
+          57
+        ],
+        "reasoning": "This topic specifically addresses audit trail capabilities and transaction tracking for compliance purposes."
+      },
+      {
+        "group_key": "product_evolution",
+        "group_label": "Product Evolution & Updates",
+        "group_description": "Software updates, version management, continuous innovation, and product development.",
+        "topic_ids": [
+          42,
+          48
+        ],
+        "reasoning": "These topics discuss how the ERP systems evolve over time with updates, new versions, and continuous innovation."
+      }
+    ],
+    "noise_topic_ids": [
+      25,
+      58
+    ],
+    "ungrouped_topic_ids": [
+      40
+    ],
+    "_stage2_reasoning": "Looking at these 59 topics from ERP software reviews, I need to identify natural functional groupings based on what users are actually discussing. Let me analyze the semantic relationships:\n\n**Core Financial Management clusters:**\n- Topics 0, 4, 5, 6, 8, 13, 15, 17, 43 all discuss core accounting functions like AP/AR, bank reconciliation, invoicing, journal entries, expense tracking\n- Topics 30, 34, 38 focus on payroll processing and HR-related financial functions\n- Topics 16, 19, 27, 56 discuss financial reporting, dashboards, and custom reports\n\n**Sales & Order Management:**\n- Topics 10, 22, 32, 54 all focus on sales order processing and management\n- These are distinct from general CRM functionality\n\n**System Usability & Interface:**\n- Topics 2, 5, 9, 18, 23, 41, 52 all discuss ease of use, navigation, learning curve, user interfaces\n- These are about the user experience rather than specific functional areas\n\n**System Integration & Technical:**\n- Topics 11, 20, 21, 26, 50 discuss integration capabilities, APIs, third-party connections\n- Topic 35, 45 focus on web/mobile access\n- Topics 39, 47 discuss modular architecture and development\n\n**Business Intelligence & Analytics:**\n- Topics 3, 19, 33, 46, 49 focus on real-time analytics, BI dashboards, AI/ML capabilities\n- Topic 51 discusses inquiry and custom reporting tools\n\n**Implementation & Support:**\n- Topics 31, 36, 37 discuss customer support and implementation assistance\n- Topic 24 covers user management and security\n- Topic 42 discusses ongoing updates and innovation\n\n**Small Business Focus:**\n- Topics 28, 29 specifically highlight small business suitability\n\n**Multi-entity Operations:**\n- Topics 55, 11 (partially) discuss managing multiple entities/subsidiaries\n\n**Inventory & Supply Chain:**\n- Topics 1, 7 discuss inventory management and supply chain functionality\n\n**Time & Project Management:**\n- Topic 44 focuses on timesheet/time tracking\n- Topic 53 discusses professional services automation\n\n**Quality/Audit:**\n- Topic 57 discusses audit trails and transaction tracking\n\n**Negative sentiment:**\n- Topic 25 contains negative feedback and dissatisfaction\n\n**Meta/Generic:**\n- Topic 58 is very generic about \"lots of features\" - this might be noise\n- Topic 48 discusses software versions/upgrades\n- Topic 14 discusses general customization capabilities\n- Topic 40 discusses \"single source of truth\" concept\n\nLet me group these into meaningful ERP functional areas that would be useful for product stakeholders."
+  },
+  "stage3_result": {
+    "macro_groups": [
+      {
+        "group_key": "core_financial_accounting",
+        "group_label": "Core Financial & Accounting",
+        "group_description": "Fundamental accounting functions including AP/AR, bank reconciliation, invoicing, journal entries, and expense management.",
+        "topic_ids": [
+          0,
+          4,
+          6,
+          8,
+          13,
+          15,
+          17,
+          43
+        ],
+        "reasoning": "These topics all focus on core accounting operations that are fundamental to any ERP system - accounts payable/receivable, bank reconciliation, invoicing, journal entries, and expense tracking."
+      },
+      {
+        "group_key": "financial_reporting_analytics",
+        "group_label": "Financial Reporting & Business Intelligence",
+        "group_description": "Financial reporting capabilities, dashboards, KPIs, business intelligence tools, and centralized data management for decision-making.",
+        "topic_ids": [
+          16,
+          19,
+          27,
+          40,
+          51,
+          56
+        ],
+        "reasoning": "These topics focus on reporting, dashboards, custom reports, data inquiry capabilities, and centralized data management that help users analyze financial and business data."
+      },
+      {
+        "group_key": "payroll_hr_management",
+        "group_label": "Payroll & HR Management",
+        "group_description": "Payroll processing, tax calculations, employee management, and time tracking functionality.",
+        "topic_ids": [
+          30,
+          34,
+          38,
+          44
+        ],
+        "reasoning": "These topics specifically address human capital management including payroll, employee records, tax compliance, and timesheet management."
+      },
+      {
+        "group_key": "sales_order_management",
+        "group_label": "Sales & Order Management",
+        "group_description": "Sales order processing, purchase order management, and order-to-cash workflow capabilities.",
+        "topic_ids": [
+          10,
+          22,
+          32,
+          54
+        ],
+        "reasoning": "These topics focus specifically on sales order processing, purchase order management, and related order management workflows."
+      },
+      {
+        "group_key": "user_experience_usability",
+        "group_label": "User Experience & System Usability",
+        "group_description": "User interface design, ease of use, navigation, learning curve, and overall user experience.",
+        "topic_ids": [
+          2,
+          5,
+          9,
+          18,
+          23,
+          41,
+          52
+        ],
+        "reasoning": "These topics all discuss the user experience aspects - how easy the system is to learn, navigate, and use on a daily basis."
+      },
+      {
+        "group_key": "system_integration_apis",
+        "group_label": "System Integration & APIs",
+        "group_description": "Integration capabilities with third-party systems, APIs, and data import/export functionality.",
+        "topic_ids": [
+          11,
+          20,
+          21,
+          26,
+          50,
+          53
+        ],
+        "reasoning": "These topics focus on how the ERP system connects with other software through integrations, APIs, CRM systems like Salesforce, and data exchange capabilities."
+      },
+      {
+        "group_key": "advanced_analytics_ai",
+        "group_label": "Advanced Analytics & AI",
+        "group_description": "Real-time analytics, in-memory processing, machine learning, and artificial intelligence capabilities.",
+        "topic_ids": [
+          3,
+          33,
+          46,
+          49
+        ],
+        "reasoning": "These topics discuss advanced technological capabilities including real-time processing, AI/ML features, and high-performance analytics."
+      },
+      {
+        "group_key": "mobile_web_access",
+        "group_label": "Mobile & Web Access",
+        "group_description": "Web-based access, mobile device compatibility, and remote work capabilities.",
+        "topic_ids": [
+          35,
+          45
+        ],
+        "reasoning": "These topics specifically address the ability to access the ERP system from various devices and locations, enabling remote work flexibility."
+      },
+      {
+        "group_key": "system_architecture_customization",
+        "group_label": "System Architecture & Customization",
+        "group_description": "Modular architecture, customization capabilities, and system configuration flexibility.",
+        "topic_ids": [
+          14,
+          39,
+          47
+        ],
+        "reasoning": "These topics focus on the underlying architecture and customization capabilities that allow businesses to tailor the system to their needs."
+      },
+      {
+        "group_key": "implementation_support",
+        "group_label": "Implementation & Customer Support",
+        "group_description": "Implementation process, customer support quality, help documentation, and user assistance.",
+        "topic_ids": [
+          31,
+          36,
+          37
+        ],
+        "reasoning": "These topics address the support experience during and after implementation, including customer service quality and help resources."
+      },
+      {
+        "group_key": "system_administration_governance",
+        "group_label": "System Administration & Governance",
+        "group_description": "Security controls, user management, multi-entity operations, audit trails, and compliance features.",
+        "topic_ids": [
+          24,
+          55,
+          57
+        ],
+        "reasoning": "These topics address system governance aspects including security/user access controls, multi-entity management capabilities, and audit trail functionality for compliance."
+      },
+      {
+        "group_key": "inventory_supply_chain",
+        "group_label": "Inventory & Supply Chain Management",
+        "group_description": "Inventory management, supply chain operations, and related business process automation.",
+        "topic_ids": [
+          1,
+          7,
+          12
+        ],
+        "reasoning": "These topics focus on inventory management, supply chain functionality, and related operational process automation."
+      },
+      {
+        "group_key": "small_business_focus",
+        "group_label": "Small Business Suitability",
+        "group_description": "Features and capabilities specifically designed for small and medium-sized businesses.",
+        "topic_ids": [
+          28,
+          29
+        ],
+        "reasoning": "These topics specifically highlight how the ERP systems are well-suited for small business needs and requirements."
+      },
+      {
+        "group_key": "product_evolution",
+        "group_label": "Product Evolution & Updates",
+        "group_description": "Software updates, version management, continuous innovation, and product development.",
+        "topic_ids": [
+          42,
+          48
+        ],
+        "reasoning": "These topics discuss how the ERP systems evolve over time with updates, new versions, and continuous innovation."
+      }
+    ],
+    "noise_topic_ids": [
+      25,
+      58
+    ],
+    "_stage3_reasoning": "Let me analyze this grouping for the issues mentioned:\n\n1. OVERSIZED GROUPS: \n- \"user_experience_usability\" has 7 topics (2, 5, 9, 18, 23, 41, 52) - this is borderline but acceptable\n- No groups exceed 8 topics\n\n2. UNDERSIZED GROUPS:\n- \"security_user_management\" has only 1 topic (24) - needs to merge or expand\n- \"multi_entity_operations\" has only 1 topic (55) - needs to merge or expand\n- \"audit_compliance\" has only 1 topic (57) - needs to merge or expand\n- \"mobile_web_access\" has only 2 topics (35, 45) - borderline but acceptable\n- \"small_business_focus\" has only 2 topics (28, 29) - borderline but acceptable\n- \"product_evolution\" has only 2 topics (42, 48) - borderline but acceptable\n\n3. MISPLACEMENTS: Let me check if topics match their group themes...\n- All topics seem reasonably well-placed based on the descriptions provided\n\n4. MISSING NOISE: Need to check if any topics are meta-commentary\n- Looking at the topic IDs, I don't see obvious meta-commentary that should be noise\n\n5. UNGROUPED: Topic 40 needs assignment\n- Topic 40 is about \"single source of truth, centralized data repository\" - this could fit well with \"financial_reporting_analytics\" or could be part of a data management group\n\nFIXES NEEDED:\n1. Merge the three single-topic groups (security_user_management, multi_entity_operations, audit_compliance) with related groups or create a consolidated group\n2. Assign ungrouped topic 40\n\nFor the undersized groups:\n- Topic 24 (security/user management) could merge with \"system_architecture_customization\" as both deal with system configuration aspects\n- Topic 55 (multi-entity operations) could merge with \"system_architecture_customization\" as it's an architectural capability\n- Topic 57 (audit compliance) could merge with \"core_financial_accounting\" as audit trails are fundamental to accounting\n- Topic 40 should go to \"financial_reporting_analytics\" as centralized data supports reporting and BI\n\nActually, let me reconsider - I could create a \"System Administration & Governance\" group that combines security, multi-entity, and audit topics, as these are all governance-related capabilities."
+  }
+}

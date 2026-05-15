@@ -1,68 +1,83 @@
 # nlp_bertopic.py
 # =============================================================================
-# BERTopic pipeline — ERP Market Intelligence (v4)
+# BERTopic pipeline — ERP Market Intelligence (v5)
 #
-# ROOT CAUSE OF v3 KEYWORD POLLUTION (diagnosed from output):
+# WHAT CHANGED FROM v4 (based on oracle_netsuite_normalized.json inspection):
 #
-#   v3 keywords still showed "the, and, to, of, is" and product names despite
-#   them being in the CountVectorizer stopword list. Root cause:
+#   1. BETTER EMBEDDING MODEL — BAAI/bge-base-en-v1.5
+#      all-MiniLM-L6-v2 is general-purpose English. ERP reviews contain dense
+#      domain jargon (ap/ar, gl, mrp, rev rec, job costing) that MiniLM rarely
+#      saw during training — producing loose clusters. bge-base-en-v1.5 ranks
+#      top on MTEB semantic similarity benchmarks, ~110MB, still CPU-viable.
 #
-#   BERTopic's reduce_outliers() + update_topics() regenerates topic keywords
-#   using a FRESH internal vectorizer that does NOT inherit the stopword list
-#   from the original CountVectorizer. This is a known BERTopic behaviour —
-#   update_topics() accepts a new vectorizer_model parameter, but if omitted
-#   it falls back to a default vectorizer with no custom stopwords.
+#   2. ERP ABBREVIATION EXPANSION BEFORE EMBEDDING
+#      Reviewers write "ap", "ar", "gl", "po", "mrp", "wms" without expansion.
+#      The model treats these as rare tokens with weak representations.
+#      Expanding to full forms ("accounts payable", "general ledger") before
+#      embedding puts concepts into well-represented semantic neighbourhoods.
 #
-# FIXES IN v4:
+#   3. KEYBERT FOR TOPIC LABELLING (replaces c-TF-IDF labels only)
+#      c-TF-IDF splits score across token variants: "invoice", "invoicing",
+#      "invoices" = 3 separate signals. KeyBERT finds keyphrases closest to
+#      the topic centroid — picks "invoice processing" as one concept.
+#      c-TF-IDF still drives clustering. KeyBERT only runs for labelling.
 #
-#   1. EXPLICIT update_topics() WITH VECTORIZER
-#      After reduce_outliers(), call update_topics(vectorizer_model=...) and
-#      pass the same configured CountVectorizer explicitly. This ensures
-#      stopwords are applied during keyword re-generation.
+#   4. HDBSCAN leaf CLUSTER SELECTION (was eom)
+#      ERP datasets have uneven product densities (QuickBooks 3000 docs vs
+#      Certinia 437). "eom" favours large dense regions, fragments small ones.
+#      "leaf" gives more uniform cluster sizes across all products.
 #
-#   2. TWO-STAGE TOPIC REPRESENTATION
-#      Stage 1: fit_transform() for clustering (UMAP + HDBSCAN)
-#      Stage 2: update_topics() with full stopword vectorizer for keywords
-#      This is the BERTopic-recommended approach for custom stopwords.
+#   5. USE_CASE TITLE LEAKAGE FIX
+#      37.8% of use_case records end with a truncated G2 review title:
+#        "...seeing what is happening. Powerful Yet Pricey ERP with"
+#      Pattern confirmed from data: last real sentence ends with "." then
+#      title-case fragment with no terminal punctuation. Stripped before
+#      embedding.
 #
-#   3. POST-HOC KEYWORD CLEANING
-#      After update_topics(), run a final filter that removes any remaining
-#      stopword tokens from the keyword lists. This catches edge cases where
-#      a term is so frequent it survives CountVectorizer filtering (e.g.
-#      "accounting" appears in >50% of docs so IDF weight approaches 0 but
-#      c-TF-IDF can still surface it). Replaces polluted keywords with the
-#      next-best non-stopword terms from model.get_topic().
+#   6. SWITCHED_FROM EXTRACTION FROM BONUS_DATA
+#      716/2000 records have switched_from as a nested dict:
+#        {"products": [{"name": "QuickBooks Online"}], "reason": "..."}
+#      Extracted as switched_from_product (pipe-joined if multiple) and
+#      switched_from_reason for displacement intelligence use case.
 #
-#   4. PRODUCT-NAME CLUSTER DETECTION
-#      Topics where the top-3 keywords are all product names are flagged as
-#      product_cluster=True in topic_info. These are still valid (they show
-#      which product features are discussed) but are labelled separately so
-#      analysts can filter them out of cross-product comparison views.
+#   7. INCENTIVIZED REVIEW FLAGGING
+#      27.6% of records are incentivized (g2gives + g2_incentivized).
+#      These have positive rating bias. Flagged as is_incentivized so
+#      downstream ABSA can weight accordingly.
 #
-#   5. MEANINGFUL TOPIC LABELS
-#      topic_name is now generated as a human-readable label using the first
-#      3 non-stopword, non-product-name keywords joined with " | " instead of
-#      BERTopic's default "ID_word1_word2_word3" format.
+#   8. RECOMMENDATIONS REMOVED FROM TEXT_FIELDS
+#      99.4% null in jupri output. Running BERTopic on ~12 docs = garbage.
+#      Only 3 fields now: likes, dislikes, use_case.
 #
-# INPUT:  data/all_products_normalized.csv
-# OUTPUT: data/bertopic/{field}_topics.csv, topic_info_{field}.csv,
-#         topic_dist_{field}.csv, model_{field}/
+# INPUT:  data/g2/normalized/all_products_normalized.csv
+# OUTPUT: data/bertopic/v5/{field}_topics.csv
+#         data/bertopic/v5/topic_info_{field}.csv
+#         data/bertopic/v5/topic_dist_{field}.csv
+#         data/bertopic/v5/model_{field}/
+#
+# INSTALL:
+#   pip install bertopic sentence-transformers hdbscan umap-learn keybert
 #
 # USAGE:
 #   python nlp_bertopic.py
 #   python nlp_bertopic.py --fields likes dislikes
+#   python nlp_bertopic.py --no-keybert       # faster, c-TF-IDF labels only
 #   python nlp_bertopic.py --no-save-model
 #
-# RUNTIME: ~35-50 min CPU for all 4 fields
+# RUNTIME:
+#   With KeyBERT:    ~60-75 min CPU for 3 fields
+#   Without KeyBERT: ~35-45 min CPU for 3 fields
 #
 # PAPERS:
-#   Grootendorst, M. (2022). BERTopic: Neural topic modeling with a class-based
-#   TF-IDF procedure. arXiv:2203.05794
+#   Grootendorst 2022 — BERTopic (arXiv:2203.05794)
+#   Xiao et al. 2023  — BGE embeddings (arXiv:2309.07597)
+#   Egger & Yu 2022   — KeyBERT (doi:10.3390/fi14110330)
 # =============================================================================
 
 from __future__ import annotations
 
 import argparse
+import json
 import logging
 import re
 import warnings
@@ -88,113 +103,244 @@ log = logging.getLogger("nlp_bertopic")
 # ---------------------------------------------------------------------------
 
 INPUT_CSV  = "data/g2/normalized/all_products_normalized.csv"
-OUTPUT_DIR = Path("data/bertopic/v3")
+OUTPUT_DIR = Path("data/bertopic/v5")
 
-EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
+# BAAI/bge-base-en-v1.5: top MTEB semantic similarity benchmark
+# ~110MB download, cached after first run
+EMBEDDING_MODEL = "BAAI/bge-base-en-v1.5"
 
-# Per-field settings — recommendations has ~2.7K docs vs ~14K for others
+# Only 3 fields — recommendations is 99.4% null in jupri output
 FIELD_SETTINGS: dict[str, dict] = {
-    "likes":           {"min_topic_size": 10, "nr_topics": 60},
-    "dislikes":        {"min_topic_size": 10, "nr_topics": 60},
-    "use_case":        {"min_topic_size": 10, "nr_topics": 60},
-    "recommendations": {"min_topic_size": 5,  "nr_topics": 30},
+    "likes":    {"min_topic_size": 10, "nr_topics": 60},
+    "dislikes": {"min_topic_size": 10, "nr_topics": 60},
+    "use_case": {"min_topic_size": 10, "nr_topics": 60},
 }
 
 TEXT_FIELDS = list(FIELD_SETTINGS.keys())
-MIN_CHARS   = 30
+
+# Raised from 30 → 50: cuts more filler ("It's great, no complaints" = 30 chars)
+MIN_CHARS = 50
+
+# Incentivized review types from bonus_data.type — have positive rating bias
+INCENTIVIZED_TYPES = {"g2gives", "g2_incentivized"}
 
 META_COLS = [
-    "review_id", "product_id", "product_name",
-    "reviewer_company_size", "source_platform",
-    "review_date", "overall_rating",
+    "review_id",
+    "product_id",
+    "product_name",
+    "reviewer_company_size",
+    "reviewer_industry",
+    "source_platform",
+    "review_date",
+    "overall_rating",
+    "is_incentivized",
+    "switched_from_product",
+    "switched_from_reason",
 ]
+
+
+# ---------------------------------------------------------------------------
+# ERP ABBREVIATION EXPANSION
+# ---------------------------------------------------------------------------
+# Applied BEFORE embedding so model encodes semantically rich representations.
+# Patterns use word boundaries (\b) for precision.
+# Listed longest/most specific first to avoid partial matches.
+
+ERP_ABBREV_MAP: list[tuple[str, str]] = [
+    # Multi-word first (most specific)
+    (r"\bap aging\b",        "accounts payable aging report"),
+    (r"\bar aging\b",        "accounts receivable aging report"),
+    (r"\brev rec\b",         "revenue recognition"),
+    (r"\basc 606\b",         "revenue recognition standard"),
+    (r"\bfp&a\b",            "financial planning and analysis"),
+    (r"\bfpa\b",             "financial planning and analysis"),
+    # Accounting
+    (r"\bap\b",              "accounts payable"),
+    (r"\bar\b",              "accounts receivable"),
+    (r"\bgl\b",              "general ledger"),
+    (r"\bcoa\b",             "chart of accounts"),
+    (r"\bp&l\b",             "profit and loss"),
+    (r"\bpnl\b",             "profit and loss"),
+    (r"\btb\b",              "trial balance"),
+    # Procurement / Supply chain
+    (r"\bpo\b",              "purchase order"),
+    (r"\bpos\b",             "point of sale"),
+    (r"\bso\b",              "sales order"),
+    (r"\bwms\b",             "warehouse management system"),
+    (r"\bmrp\b",             "material requirements planning"),
+    (r"\bwip\b",             "work in progress"),
+    (r"\bskus?\b",           "stock keeping unit"),
+    (r"\bbom\b",             "bill of materials"),
+    (r"\b3pl\b",             "third party logistics"),
+    # Finance / Compliance
+    (r"\bkpis?\b",           "key performance indicator"),
+    (r"\broi\b",             "return on investment"),
+    (r"\bgaap\b",            "generally accepted accounting principles"),
+    (r"\bifrs\b",            "international financial reporting standards"),
+    (r"\bsox\b",             "sarbanes oxley compliance"),
+    (r"\b1099\b",            "1099 tax form"),
+    (r"\bw-?2\b",            "w2 payroll form"),
+    # HR
+    (r"\bpto\b",             "paid time off"),
+    (r"\bhris\b",            "human resources information system"),
+    (r"\bhcm\b",             "human capital management"),
+    # Projects / Services
+    (r"\bpsa\b",             "professional services automation"),
+    (r"\bsow\b",             "statement of work"),
+    (r"\bcrm\b",             "customer relationship management"),
+    # Tech
+    (r"\bapi\b",             "application programming interface"),
+    (r"\bsso\b",             "single sign on"),
+    (r"\b2fa\b",             "two factor authentication"),
+    (r"\bui\b",              "user interface"),
+    (r"\bux\b",              "user experience"),
+    (r"\bsla\b",             "service level agreement"),
+    (r"\betl\b",             "data extraction transformation loading"),
+]
+
+# Pre-compile for performance (applied once per document)
+_ABBREV_RE = [(re.compile(p, re.IGNORECASE), r) for p, r in ERP_ABBREV_MAP]
 
 
 # ---------------------------------------------------------------------------
 # STOPWORD SETS
 # ---------------------------------------------------------------------------
 
-# All product names, vendor names, abbreviations, and UI-specific terms.
-# These are removed from keyword extraction because:
-#   (a) we already know product_id per review — product names add zero info
-#   (b) they're so frequent they dominate c-TF-IDF scores
 PRODUCT_STOP: set[str] = {
-    # Oracle NetSuite
     "netsuite", "net suite", "oracle",
-    # SAP
-    "sap", "s4", "s4hana", "hana", "4hana", "s/4hana", "ecc", "brf",
-    # Microsoft Dynamics
+    "sap", "s4", "s4hana", "hana", "4hana", "s/4hana", "ecc", "brf", "fiori",
     "microsoft", "dynamics", "dynamics 365", "business central", "bc",
     "gp", "navision", "nav", "d365", "365", "central",
-    # QuickBooks (all variants)
     "quickbooks", "quickbooks online", "quickbooks enterprise", "quickbooks desktop",
     "qb", "qbo", "qbe", "qbd", "quick books", "quickbook",
-    "online", "desktop", "pro", "desktop pro", "desktop version", "online version",
-    # Intuit / IES
+    "online", "desktop", "pro", "desktop pro",
     "intuit", "intuit enterprise", "ies",
-    # Sage Intacct (including typo intaact)
     "sage", "intacct", "sage intacct", "intaact",
-    # Workday
     "workday", "workday financial",
-    # Acumatica (VAR = value-added reseller, Acumatica channel term)
     "acumatica", "aia", "var", "vars",
-    # Xero
     "xero",
-    # Certinia / FinancialForce
-    "certinia", "financialforce", "financial force", "ffa", "ff", "psa",
-    # Cross-product generic labels
+    "certinia", "financialforce", "financial force", "ffa", "ff",
     "erp", "software", "system", "platform", "tool", "product",
-    "application", "solution", "program", "saas",
-    "cloud", "cloud based",
-    # QuickBooks name fragments
-    "books", "book",
-    # Field name leakage
-    "likes", "dislikes", "dislike",
+    "application", "solution", "program", "saas", "cloud", "cloud based",
+    "books", "book", "likes", "dislikes", "dislike",
 }
 
-# Common English function words that CountVectorizer should remove but
-# sometimes don't when custom stop_words are passed as a list (encoding issues).
-# We handle these with a post-hoc filter instead of relying on CountVectorizer.
-FUNCTION_WORDS: set[str] = {
-    "the", "and", "to", "of", "is", "it", "for", "in", "our", "we",
-    "that", "are", "with", "you", "my", "this", "be", "can", "as",
-    "have", "not", "at", "so", "an", "or", "all", "i", "a", "was",
-    "they", "their", "on", "by", "from", "but", "do", "had", "he",
-    "her", "his", "if", "into", "more", "no", "out", "she", "up",
-    "us", "very", "when", "which", "who", "will", "your", "been",
-    "has", "its", "just", "also", "about", "than", "would", "there",
-    "some", "could", "get", "use", "one", "time", "like", "even",
-    "other", "how", "any", "many", "does", "make", "need", "know",
-    "way", "each", "much", "most", "used", "using", "able", "really",
-    "feature", "features",  # too generic across all ERP topics
-}
-
-# Meta-commentary words — reviewers saying "no complaints" rather than naming features
 META_STOP: set[str] = {
     "downsides", "downside", "complaints", "complain", "negatives", "negative",
-    "honestly", "nothing", "anything", "haven", "far", "moment", "head",
-    "think", "comes", "mind", "change", "thing", "great", "good", "works",
-    "perfectly", "enjoyed", "deserves", "relevant",
+    "honestly", "nothing", "anything", "haven", "moment", "head",
+    "think", "comes", "mind", "change", "thing", "great", "good",
+    "perfectly", "enjoyed", "deserves", "relevant", "works",
 }
 
-# Combined set used for post-hoc keyword filtering
-ALL_STOP: set[str] = PRODUCT_STOP | FUNCTION_WORDS | META_STOP
+ALL_STOP: set[str] = PRODUCT_STOP | META_STOP
 
 
 # ---------------------------------------------------------------------------
-# STEP 1: LOAD AND PREPROCESS
+# PREPROCESSING HELPERS
 # ---------------------------------------------------------------------------
+
+def extract_switched_from(bonus_data_val) -> tuple[str | None, str | None]:
+    """
+    Extract switched_from product names and reason from bonus_data.
+
+    jupri structure:
+      bonus_data.switched_from = {
+        "products": [{"id": "394", "name": "QuickBooks Online", "slug": "..."}],
+        "reason": "The board made us switch."
+      }
+
+    Returns:
+        (pipe-joined product names, reason text)
+        e.g. ("QuickBooks Online | Fishbowl Inventory", "Needed better reporting")
+    """
+    try:
+        bd = bonus_data_val if isinstance(bonus_data_val, dict) \
+             else json.loads(str(bonus_data_val))
+        sf = bd.get("switched_from")
+        if not sf or not isinstance(sf, dict):
+            return None, None
+        products = sf.get("products", [])
+        names    = [p["name"] for p in products if isinstance(p, dict) and "name" in p]
+        return (" | ".join(names) if names else None), (sf.get("reason") or None)
+    except Exception:
+        return None, None
+
+
+def extract_incentivized(bonus_data_val) -> bool:
+    """Return True if review was incentivized (positive rating bias)."""
+    try:
+        bd = bonus_data_val if isinstance(bonus_data_val, dict) \
+             else json.loads(str(bonus_data_val))
+        return bd.get("type", "") in INCENTIVIZED_TYPES
+    except Exception:
+        return False
+
+
+def strip_title_leakage(text: str) -> str:
+    """
+    Remove G2 review title fragment appended to end of use_case text.
+
+    Confirmed pattern from data (37.8% of use_case records affected):
+      "...seeing what is happening. Powerful Yet Pricey ERP with"
+    The leaked fragment: follows ". ", starts title-case, no terminal punct.
+    """
+    if not isinstance(text, str):
+        return text
+    return re.sub(r'\.\s+[A-Z][^.!?]{10,120}[^.!?\s]$', '.', text.strip())
+
+
+def expand_abbreviations(text: str) -> str:
+    """Expand ERP abbreviations to full forms before embedding."""
+    if not isinstance(text, str):
+        return text
+    for pattern, replacement in _ABBREV_RE:
+        text = pattern.sub(replacement, text)
+    return text
+
 
 def load_and_preprocess(input_csv: str) -> pd.DataFrame:
     """
-    Load normalized CSV and add {field}_clean columns for all TEXT_FIELDS.
+    Load CSV, extract bonus_data fields, clean and expand text.
 
-    Cleans: escaped newlines, whitespace, nan strings, min-length filter.
+    Per record:
+      1. Parse bonus_data → switched_from_product, switched_from_reason
+      2. Extract is_incentivized from bonus_data.type
+      3. Normalize review_date to date-only
+      4. Clean text: unescape newlines, strip whitespace
+      5. Strip title leakage from use_case (37.8% affected)
+      6. Expand ERP abbreviations
+      7. Apply MIN_CHARS length filter
     """
     log.info("Loading %s ...", input_csv)
     df = pd.read_csv(input_csv, low_memory=False)
     log.info("Loaded %d rows, %d columns", len(df), len(df.columns))
 
+    # --- Extract from bonus_data ---
+    log.info("Parsing bonus_data fields ...")
+    sf_products, sf_reasons, incentivized = [], [], []
+    bd_col = df.get("bonus_data", pd.Series([None] * len(df)))
+
+    for bd in bd_col:
+        p, r = extract_switched_from(bd)
+        sf_products.append(p)
+        sf_reasons.append(r)
+        incentivized.append(extract_incentivized(bd))
+
+    df["switched_from_product"] = sf_products
+    df["switched_from_reason"]  = sf_reasons
+    df["is_incentivized"]       = incentivized
+
+    log.info("  switched_from: %d records", df["switched_from_product"].notna().sum())
+    log.info("  incentivized:  %d (%.1f%%)", df["is_incentivized"].sum(),
+             df["is_incentivized"].mean() * 100)
+
+    # --- Normalize review_date ---
+    if "review_date" in df.columns:
+        df["review_date"] = pd.to_datetime(
+            df["review_date"], utc=True, errors="coerce"
+        ).dt.date.astype(str)
+
+    # --- Clean and prepare each text field ---
     for col in TEXT_FIELDS:
         if col not in df.columns:
             log.warning("Column '%s' not found — skipping", col)
@@ -207,124 +353,95 @@ def load_and_preprocess(input_csv: str) -> pd.DataFrame:
             .str.replace(r"\\r\\n|\\n|\\r", " ", regex=True)
             .str.replace(r"\s+", " ", regex=True)
             .str.strip()
-            .replace("nan", np.nan)
+            .replace({"nan": np.nan, "None": np.nan, "": np.nan})
         )
+
+        # Strip title leakage — only systematically present in use_case
+        if col == "use_case":
+            cleaned = cleaned.apply(
+                lambda x: strip_title_leakage(x) if pd.notna(x) else x
+            )
+
+        # Expand abbreviations (expand first, then apply length filter)
+        cleaned = cleaned.apply(
+            lambda x: expand_abbreviations(x) if pd.notna(x) else x
+        )
+
+        # Minimum length filter
         df[f"{col}_clean"] = cleaned.where(
             cleaned.str.len().fillna(0) >= MIN_CHARS, other=np.nan
         )
+
         n = df[f"{col}_clean"].notna().sum()
-        log.info("  %-20s usable: %d / %d", col, n, len(df))
+        log.info("  %-15s usable: %d / %d (%.1f%%)",
+                 col, n, len(df), n / len(df) * 100)
 
     return df
 
 
 # ---------------------------------------------------------------------------
-# STEP 2: BUILD CONFIGURED VECTORIZER (reusable)
+# VECTORIZER
 # ---------------------------------------------------------------------------
 
 def build_vectorizer():
     """
-    Build a CountVectorizer with combined stopwords.
-
-    This is called twice per field:
-      (a) passed to BERTopic constructor for initial fitting
-      (b) passed to update_topics() after reduce_outliers()
-
-    Passing the same vectorizer instance to update_topics() is the fix for
-    the v3 bug where stopwords were bypassed during keyword regeneration.
+    Build CountVectorizer with combined stopwords.
+    Must be passed explicitly to update_topics() — omitting it causes
+    BERTopic to silently rebuild keywords with a no-stopword default.
     """
-    from sklearn.feature_extraction.text import CountVectorizer
-
-    # Combine sklearn English stopwords with our domain-specific sets
-    # Use a list (not set) — CountVectorizer requires an iterable
-    from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
+    from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS, CountVectorizer
     combined = list(ENGLISH_STOP_WORDS) + list(PRODUCT_STOP) + list(META_STOP)
-
     return CountVectorizer(
         ngram_range=(1, 2),
         stop_words=combined,
-        min_df=5,          # term must appear in ≥5 docs to be a keyword
-        max_df=0.85,       # term appearing in >85% of docs adds no discrimination
+        min_df=5,
+        max_df=0.85,
     )
 
 
 # ---------------------------------------------------------------------------
-# STEP 3: POST-HOC KEYWORD CLEANING
+# KEYWORD CLEANING
 # ---------------------------------------------------------------------------
 
-def clean_keywords(raw_keywords: str, model, topic_id: int) -> str:
-    """
-    Remove stopword tokens from a topic's keyword string.
-
-    If the top-10 keywords still contain stopwords (function words, product
-    names) after CountVectorizer filtering, this fetches the next-best
-    keywords from the full c-TF-IDF scores and substitutes them.
-
-    Args:
-        raw_keywords: Comma-separated keyword string from model.get_topic_info()
-        model:        Fitted BERTopic instance
-        topic_id:     Topic ID to look up extended keyword list
-
-    Returns:
-        Cleaned comma-separated keyword string with stopwords removed.
-    """
-    if topic_id == -1 or not raw_keywords:
-        return raw_keywords
-
-    # Get extended keyword list (top-30) from the model
-    all_words = model.get_topic(topic_id)  # list of (word, score) tuples
-    if not all_words:
-        return raw_keywords
-
-    # Filter to non-stopword terms
+def clean_keywords(model, topic_id: int) -> str:
+    """Get top-10 clean keywords for a topic, removing residual stopwords."""
+    if topic_id == -1:
+        return "outlier — no coherent topic"
     clean = []
-    for word, score in all_words:
-        word_lower = word.lower().strip()
-        # Skip if any stopword token is in the word or phrase
+    for word, _ in (model.get_topic(topic_id) or []):
+        w = word.lower().strip()
         is_stop = any(
-            word_lower == s or word_lower.startswith(s + " ") or word_lower.endswith(" " + s)
+            w == s or w.startswith(s + " ") or w.endswith(" " + s)
             for s in ALL_STOP
         )
-        # Skip single-character tokens and pure numbers
-        if not is_stop and len(word_lower) > 2 and not word_lower.isdigit():
+        if not is_stop and len(w) > 2 and not w.isdigit():
             clean.append(word)
         if len(clean) == 10:
             break
-
-    return ", ".join(clean) if clean else raw_keywords
+    return ", ".join(clean) if clean else "unlabelled"
 
 
 def make_label(keywords: str) -> str:
-    """
-    Generate a human-readable topic label from the top 3 cleaned keywords.
-
-    BERTopic's default label format is "ID_word1_word2_word3" which is not
-    readable in dashboards. This produces "word1 | word2 | word3" instead.
-    """
-    if not keywords or keywords == "outlier — no coherent topic":
-        return "outlier"
-    parts = [k.strip() for k in keywords.split(",")[:3]]
-    return " | ".join(parts)
+    """'word1 | word2 | word3' from top-3 keywords."""
+    if not keywords or keywords in ("outlier — no coherent topic", "unlabelled"):
+        return keywords
+    return " | ".join(k.strip() for k in keywords.split(",")[:3])
 
 
 # ---------------------------------------------------------------------------
-# STEP 4: BUILD AND FIT BERTOPIC MODEL
+# FIT MODEL
 # ---------------------------------------------------------------------------
 
-def fit_model(docs: list[str], min_topic_size: int, nr_topics: int):
+def fit_model(docs: list[str], min_topic_size: int, nr_topics: int, use_keybert: bool):
     """
-    Build and fit a BERTopic model using the two-stage approach.
+    Fit BERTopic: BGE embeddings → UMAP → HDBSCAN (leaf) → c-TF-IDF
+    then optionally KeyBERT for labelling.
 
-    Stage 1 — fit_transform():
-      Embeddings → UMAP → HDBSCAN → initial topic assignments
-      Vectorizer is passed here for initial c-TF-IDF keyword generation.
-
-    Stage 2 — reduce_outliers() + update_topics():
-      Reassign outlier docs to nearest topic by embedding similarity.
-      update_topics() is called WITH the same vectorizer to ensure
-      stopwords are applied during keyword re-generation (v3 bug fix).
-
-    Returns: (model, topics_list)
+    Two-stage:
+      Stage 1: fit_transform() — clustering
+      Stage 2: reduce_outliers() + update_topics(vectorizer_model=vectorizer)
+               The explicit vectorizer pass is the critical v4 fix —
+               without it, stopwords are silently discarded on keyword regen.
     """
     from bertopic import BERTopic
     from bertopic.vectorizers import ClassTfidfTransformer
@@ -332,69 +449,74 @@ def fit_model(docs: list[str], min_topic_size: int, nr_topics: int):
     from sentence_transformers import SentenceTransformer
     from umap import UMAP
 
-    vectorizer = build_vectorizer()
-
+    vectorizer     = build_vectorizer()
     embedding_model = SentenceTransformer(EMBEDDING_MODEL)
 
     umap_model = UMAP(
         n_neighbors=15,
-        n_components=10,   # 10 dims: better cluster separation, fewer outliers
+        n_components=10,
         min_dist=0.0,
         metric="cosine",
         random_state=42,
     )
 
+    # leaf selection: more uniform cluster sizes across uneven product densities
     hdbscan_model = HDBSCAN(
         min_cluster_size=min_topic_size,
         metric="euclidean",
-        cluster_selection_method="eom",
+        cluster_selection_method="leaf",
         prediction_data=True,
     )
 
     ctfidf_model = ClassTfidfTransformer(reduce_frequent_words=True)
 
+    # KeyBERT representation — concept-level labels, not token frequency
+    representation_model = None
+    if use_keybert:
+        try:
+            from bertopic.representation import KeyBERTInspired
+            representation_model = KeyBERTInspired()
+            log.info("KeyBERT representation enabled")
+        except ImportError:
+            log.warning("keybert not installed — pip install keybert. Falling back to c-TF-IDF.")
+
     model = BERTopic(
         embedding_model=embedding_model,
         umap_model=umap_model,
         hdbscan_model=hdbscan_model,
-        vectorizer_model=vectorizer,   # passed here for Stage 1
+        vectorizer_model=vectorizer,
         ctfidf_model=ctfidf_model,
+        representation_model=representation_model,
         nr_topics=nr_topics,
         calculate_probabilities=True,
         verbose=True,
     )
 
-    # Stage 1: cluster
-    log.info("Stage 1: fit_transform (%d docs) ...", len(docs))
+    # Stage 1
+    log.info("Stage 1 — fit_transform (%d docs) ...", len(docs))
     topics, probs = model.fit_transform(docs)
+    before = list(topics).count(-1)
+    log.info("Clustering done: %d topics | %d outliers (%.1f%%)",
+             len(set(topics)) - 1, before, before / len(docs) * 100)
 
-    n_outliers_before = list(topics).count(-1)
-    log.info("After clustering: %d topics, %d outliers (%.1f%%)",
-             len(set(topics)) - 1, n_outliers_before,
-             n_outliers_before / len(docs) * 100)
-
-    # Stage 2: reduce outliers and regenerate keywords WITH vectorizer
-    log.info("Stage 2: reduce_outliers + update_topics ...")
+    # Stage 2 — reduce outliers + regenerate keywords with stopword vectorizer
+    log.info("Stage 2 — reduce_outliers + update_topics ...")
     try:
         new_topics = model.reduce_outliers(docs, topics, strategy="embeddings")
-
-        # KEY FIX: pass vectorizer_model explicitly so stopwords are applied
-        # during keyword regeneration — without this, update_topics() uses
-        # a default vectorizer with no custom stopwords (v3 bug)
+        # Critical: explicit vectorizer_model= so stopwords are applied
         model.update_topics(docs, topics=new_topics, vectorizer_model=vectorizer)
-
         topics = new_topics
-        n_outliers_after = list(topics).count(-1)
+        after = list(topics).count(-1)
         log.info("After reduce_outliers: %d outliers (%.1f%%)",
-                 n_outliers_after, n_outliers_after / len(docs) * 100)
+                 after, after / len(docs) * 100)
     except Exception as exc:
-        log.warning("reduce_outliers failed (%s) — using original topics", exc)
+        log.warning("reduce_outliers failed (%s) — keeping original topics", exc)
 
     return model, topics, probs
 
 
 # ---------------------------------------------------------------------------
-# STEP 5: FIT AND EXTRACT OUTPUTS
+# FIT AND EXTRACT
 # ---------------------------------------------------------------------------
 
 def fit_and_extract(
@@ -402,19 +524,16 @@ def fit_and_extract(
     field: str,
     output_dir: Path,
     save_model: bool,
+    use_keybert: bool,
 ) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
-    """
-    Fit BERTopic on one text field and save three output CSVs.
-
-    Returns: (doc_df, info_df, dist_df)
-    """
+    """Fit BERTopic on one field, save three output CSVs."""
     settings = FIELD_SETTINGS[field]
     text_col = f"{field}_clean"
-    sub      = df[df[text_col].notna()].copy()
+    sub      = df[df[text_col].notna()].copy().reset_index(drop=True)
     docs     = sub[text_col].tolist()
 
     if not docs:
-        log.warning("No usable documents for '%s' — skipping", field)
+        log.warning("No usable docs for '%s' — skipping", field)
         empty = pd.DataFrame()
         return empty, empty, empty
 
@@ -425,10 +544,12 @@ def fit_and_extract(
         docs=docs,
         min_topic_size=settings["min_topic_size"],
         nr_topics=settings["nr_topics"],
+        use_keybert=use_keybert,
     )
 
-    # --- Document-level output ---
-    doc_df = sub[META_COLS].copy().reset_index(drop=True)
+    # Document-level output
+    avail = [c for c in META_COLS if c in sub.columns]
+    doc_df = sub[avail].copy()
     doc_df["topic_id"]    = topics
     doc_df["probability"] = np.round(
         probs.max(axis=1) if hasattr(probs, "ndim") and probs.ndim > 1 else probs, 4
@@ -436,147 +557,101 @@ def fit_and_extract(
     doc_df["text_field"] = field
     doc_df["text"]       = sub[text_col].values
 
-    # --- Topic info output ---
-    info = model.get_topic_info()
-
+    # Topic info
     rows = []
-    for _, row in info.iterrows():
-        tid = row["Topic"]
-
-        # Get raw keywords from model
-        raw_kw = "outlier — no coherent topic" if tid == -1 else (
-            ", ".join([w for w, _ in (model.get_topic(tid) or [])[:10]])
+    for _, row in model.get_topic_info().iterrows():
+        tid   = row["Topic"]
+        kw    = clean_keywords(model, tid)
+        label = make_label(kw)
+        top3  = [k.strip().lower() for k in kw.split(",")[:3]]
+        is_prod = (tid != -1) and all(
+            any(p in t for p in PRODUCT_STOP) for t in top3
         )
-
-        # Apply post-hoc stopword cleaning
-        clean_kw = raw_kw if tid == -1 else clean_keywords(raw_kw, model, tid)
-
-        # Generate human-readable label
-        label = make_label(clean_kw)
-
-        # Flag: is this a product-name cluster?
-        # A topic is a product cluster if its top-3 keywords are all product names
-        top3 = [k.strip().lower() for k in clean_kw.split(",")[:3]]
-        is_product_cluster = all(any(p in t for p in PRODUCT_STOP) for t in top3)
-
         rows.append({
-            "topic_id":          tid,
-            "doc_count":         row["Count"],
-            "label":             label,
-            "top_keywords":      clean_kw,
-            "is_product_cluster": is_product_cluster,
+            "topic_id":           tid,
+            "doc_count":          row["Count"],
+            "label":              label,
+            "top_keywords":       kw,
+            "is_product_cluster": is_prod,
         })
-
     info_df = pd.DataFrame(rows)
 
-    # --- Product × topic distribution ---
-    # Exclude outliers and product-name clusters from cross-product comparison
-    valid_ids = info_df[
-        (info_df["topic_id"] != -1) & (~info_df["is_product_cluster"])
-    ]["topic_id"].tolist()
-
+    # Product × topic distribution
+    valid = info_df[(info_df["topic_id"] != -1) & (~info_df["is_product_cluster"])]["topic_id"].tolist()
     dist_df = (
-        doc_df[doc_df["topic_id"].isin(valid_ids)]
-        .groupby(["product_name", "topic_id"])
-        .size()
+        doc_df[doc_df["topic_id"].isin(valid)]
+        .groupby(["product_name", "topic_id"]).size()
         .reset_index(name="doc_count")
         .merge(info_df[["topic_id", "label", "top_keywords"]], on="topic_id", how="left")
         .sort_values(["product_name", "doc_count"], ascending=[True, False])
     )
 
-    # --- Save ---
+    # Save
     output_dir.mkdir(parents=True, exist_ok=True)
     doc_df.to_csv(output_dir / f"{field}_topics.csv",      index=False)
     info_df.to_csv(output_dir / f"topic_info_{field}.csv", index=False)
     dist_df.to_csv(output_dir / f"topic_dist_{field}.csv", index=False)
-    log.info("Saved topic_info_%s.csv (%d topics)", field, len(info_df))
+    log.info("Saved → %s", output_dir)
 
     if save_model:
-        model_path = output_dir / f"model_{field}"
-        model.save(
-            str(model_path),
-            serialization="safetensors",
-            save_ctfidf=True,
-            save_embedding_model=EMBEDDING_MODEL,
-        )
-        log.info("Model saved → %s", model_path)
+        model.save(str(output_dir / f"model_{field}"),
+                   serialization="safetensors", save_ctfidf=True,
+                   save_embedding_model=EMBEDDING_MODEL)
+        log.info("Model saved → %s", output_dir / f"model_{field}")
 
     return doc_df, info_df, dist_df
 
 
 # ---------------------------------------------------------------------------
-# STEP 6: SUMMARY REPORT
+# SUMMARY
 # ---------------------------------------------------------------------------
 
 def print_summary(field: str, info_df: pd.DataFrame, dist_df: pd.DataFrame) -> None:
     if info_df.empty:
         return
-
     total    = info_df["doc_count"].sum()
     outliers = info_df[info_df["topic_id"] == -1]["doc_count"].sum() if -1 in info_df["topic_id"].values else 0
     prod_cl  = info_df[info_df["is_product_cluster"] & (info_df["topic_id"] != -1)]
     clean    = info_df[(info_df["topic_id"] != -1) & (~info_df["is_product_cluster"])]
 
     print(f"\n{'='*70}")
-    print(f"  BERTOPIC v4 — {field.upper()}")
+    print(f"  BERTopic v5 — {field.upper()}")
     print(f"{'='*70}")
-    print(f"  Feature topics:       {len(clean)}")
-    print(f"  Product-name clusters:{len(prod_cl)} ({prod_cl['doc_count'].sum()} docs)")
-    print(f"  Outliers:             {outliers} ({outliers/total*100:.1f}%)")
-    print(f"  Total docs:           {total}")
-
+    print(f"  Feature topics:        {len(clean)}")
+    print(f"  Product-name clusters: {len(prod_cl)} ({prod_cl['doc_count'].sum()} docs)")
+    print(f"  Outliers:              {outliers} ({outliers/total*100:.1f}%)")
+    print(f"  Total docs:            {total}")
     print(f"\n  TOP 15 FEATURE TOPICS:")
-    top = clean.nlargest(15, "doc_count")
-    for _, row in top.iterrows():
-        print(f"    [{row['topic_id']:>3}] {row['doc_count']:>5} docs  {row['label']:<30}  {row['top_keywords'][:50]}")
-
+    for _, row in clean.nlargest(15, "doc_count").iterrows():
+        print(f"    [{row['topic_id']:>3}] {row['doc_count']:>5} docs  "
+              f"{row['label']:<30}  {str(row['top_keywords'])[:45]}")
     if not dist_df.empty:
-        print(f"\n  DOMINANT FEATURE TOPIC PER PRODUCT:")
+        print(f"\n  DOMINANT TOPIC PER PRODUCT:")
         top_per = dist_df.loc[dist_df.groupby("product_name")["doc_count"].idxmax()]
         for _, row in top_per.sort_values("product_name").iterrows():
             print(f"    {row['product_name']:<35} [{row['topic_id']:>3}] {row['label']}")
 
 
 # ---------------------------------------------------------------------------
-# MAIN
+# MAIN / CLI
 # ---------------------------------------------------------------------------
 
-def main(input_csv: str, fields: list[str], save_model: bool) -> None:
-    run_start = datetime.now()
-    log.info("BERTopic v4 starting — %s", run_start.strftime("%Y-%m-%d %H:%M:%S"))
-    log.info("Fields: %s", fields)
-
+def main(input_csv, fields, save_model, use_keybert):
+    t0 = datetime.now()
+    log.info("BERTopic v5 | fields=%s | keybert=%s | model=%s", fields, use_keybert, EMBEDDING_MODEL)
     df = load_and_preprocess(input_csv)
-
     for field in fields:
-        log.info("\n%s\n--- FIELD: %s ---\n%s", "="*55, field.upper(), "="*55)
-        doc_df, info_df, dist_df = fit_and_extract(
-            df=df, field=field, output_dir=OUTPUT_DIR, save_model=save_model,
-        )
+        log.info("\n%s\n--- %s ---\n%s", "="*55, field.upper(), "="*55)
+        doc_df, info_df, dist_df = fit_and_extract(df, field, OUTPUT_DIR, save_model, use_keybert)
         print_summary(field, info_df, dist_df)
+    log.info("Done in %.1f min → %s", (datetime.now()-t0).total_seconds()/60, OUTPUT_DIR.resolve())
 
-    duration = (datetime.now() - run_start).total_seconds() / 60
-    log.info("Complete in %.1f min. Outputs: %s", duration, OUTPUT_DIR.resolve())
-
-
-# ---------------------------------------------------------------------------
-# CLI
-# ---------------------------------------------------------------------------
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(
-        description="BERTopic v4 — stopword bypass fixed, clean feature topics",
-        formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog="""
-Examples:
-  python nlp_bertopic.py
-  python nlp_bertopic.py --fields likes dislikes
-  python nlp_bertopic.py --no-save-model
-        """
-    )
-    parser.add_argument("--input",         default=INPUT_CSV)
-    parser.add_argument("--fields",        nargs="+", default=TEXT_FIELDS, choices=TEXT_FIELDS)
-    parser.add_argument("--no-save-model", action="store_true")
-
-    args = parser.parse_args()
-    main(input_csv=args.input, fields=args.fields, save_model=not args.no_save_model)
+    p = argparse.ArgumentParser(description="BERTopic v5 — BGE, KeyBERT, ERP abbrev expansion")
+    p.add_argument("--input",         default=INPUT_CSV)
+    p.add_argument("--fields",        nargs="+", default=TEXT_FIELDS, choices=TEXT_FIELDS)
+    p.add_argument("--no-keybert",    action="store_true")
+    p.add_argument("--no-save-model", action="store_true")
+    args = p.parse_args()
+    main(args.input, args.fields, not args.no_save_model, not args.no_keybert)

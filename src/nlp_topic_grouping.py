@@ -1,66 +1,77 @@
 # nlp_topic_grouping.py
 # =============================================================================
-# Post-processing: assign macro-groups to BERTopic output topics.
+# LLM-driven topic grouping — ERP Market Intelligence
 #
-# WHY A SEPARATE FILE:
-#   BERTopic produces fine-grained clusters (50-80 per field). Many of these
-#   are semantically related and should be grouped into actionable categories
-#   for the dashboard and ABSA pipeline. Rather than re-running BERTopic with
-#   fewer topics (which loses granularity), we keep the fine-grained clusters
-#   and add a macro_group label on top.
+# REPLACES the hardcoded keyword-scoring approach (v1) with a three-stage
+# LLM pipeline that understands domain abbreviations, context, and nuance.
 #
-# APPROACH:
-#   1. Keyword scoring — each topic's keywords are scored against each group's
-#      term list. Multi-word phrases score higher than single words to avoid
-#      false matches (e.g. "cost" alone shouldn't trigger pricing_licensing
-#      but "pricing, expensive, license" should).
-#   2. Manual overrides — topics with ambiguous or wrong auto-assignment are
-#      corrected via MANUAL_OVERRIDES dict. These were identified by inspecting
-#      the group assignment output.
-#   3. Noise/filler flagging — topics with no clear feature content (e.g.
-#      "say, issues, dont, disliked" or "regret, try, worth, buy") are flagged
-#      as is_noise=True and assigned to group "noise".
+# WHY LLM INSTEAD OF KEYWORD MATCHING:
+#   Keyword matching produced false positives because:
+#     - "cost" in "job cost tracking" → wrongly triggered pricing_licensing
+#     - "easy" in "easy export" → wrongly triggered ease_of_use
+#     - "bc" → matched bank reconciliation AND Business Central
+#   An LLM understands these distinctions through context and reasoning.
 #
-# MACRO-GROUPS (20 total — maps to ABSA aspects and dashboard panels):
-#   reporting_analytics     — reports, dashboards, export, BI, insights
-#   ease_of_use             — navigation, interface, intuitive, layout
-#   pricing_licensing       — cost, expensive, subscription, licensing
-#   implementation_setup    — setup, onboarding, go-live, configuration
-#   customer_support        — support, helpdesk, response time, chat
-#   integrations_api        — integrations, API, third-party, Salesforce
-#   invoicing_payments      — invoices, billing, payments, AR
-#   bank_reconciliation     — bank feeds, reconciliation, transactions
-#   inventory_orders        — inventory, purchase orders, stock, supply chain
-#   payroll_hr              — payroll, employees, taxes, timesheets
-#   customization           — custom fields, workflows, flexibility
-#   performance_reliability — slow, crashes, bugs, errors, loading
-#   multi_entity            — consolidation, subsidiaries, intercompany
-#   mobile_access           — mobile app, remote access, cloud access
-#   accounting_bookkeeping  — journal entries, ledger, bookkeeping, accounts
-#   automation_workflow     — automation, manual processes, workflows
-#   project_budgeting       — project accounting, budgeting, cost tracking
-#   learning_training       — learning curve, training, onboarding
-#   updates_upgrades        — version updates, upgrade cycles, bugs
-#   security_access         — roles, permissions, login, audit trail
+# THREE-STAGE PIPELINE:
 #
-# INPUT:  data/bertopic/v3/topic_info_{field}.csv  (existing BERTopic output)
-# OUTPUT: data/bertopic/v3/topic_info_{field}.csv  (same files, macro_group added)
-#         data/bertopic/v3/{field}_topics.csv       (macro_group joined to doc level)
-#         data/bertopic/v3/macro_summary_{field}.csv (group-level rollup)
+#   STAGE 1 — Per-topic enrichment (parallelized, cheap)
+#     For each BERTopic fine-grained topic:
+#       - Resolve abbreviations (ap → accounts payable, gl → general ledger)
+#       - Write a plain English description of what reviewers in this cluster say
+#       - Suggest 2-3 candidate functional categories
+#     Input: topic_id, doc_count, top_keywords
+#     Output: enriched_description, candidate_categories (per topic)
+#
+#   STAGE 2 — Global clustering reasoning (one call, all topics in context)
+#     Send all enriched topics to LLM in one prompt:
+#       - Reason about semantic relationships between topics
+#       - Propose macro-groups that emerge from the data (no preset list)
+#       - Assign topics to groups with justification
+#       - Name each group descriptively
+#     Output: {group_name: [topic_ids], group_description}
+#
+#   STAGE 3 — Self-critique and refinement (one call)
+#     Send proposed groups back to LLM:
+#       - Identify any misplacements or oversized catch-all groups
+#       - Merge groups that are too similar
+#       - Flag topics that belong in "noise" (meta-commentary, filler)
+#     Output: final group assignments with confidence scores
+#
+# COST ESTIMATE:
+#   Stage 1: ~60 topics × 3 fields × ~300 tokens = ~54K tokens → ~$0.08
+#   Stage 2: 3 calls × ~5K tokens                = ~15K tokens → ~$0.02
+#   Stage 3: 3 calls × ~4K tokens                = ~12K tokens → ~$0.02
+#   Total: ~$0.12 for all 3 fields
+#
+# INPUT:  data/bertopic/v5/topic_info_{field}.csv
+# OUTPUT: data/bertopic/v5/topic_info_{field}.csv  (macro_group column added)
+#         data/bertopic/v5/{field}_topics.csv       (macro_group joined to docs)
+#         data/bertopic/v5/macro_summary_{field}.csv
+#         data/bertopic/v5/grouping_reasoning_{field}.json  (full LLM reasoning)
 #
 # USAGE:
 #   python nlp_topic_grouping.py
-#   python nlp_topic_grouping.py --input-dir data/bertopic/v3
 #   python nlp_topic_grouping.py --fields likes dislikes
+#   python nlp_topic_grouping.py --input-dir data/bertopic/v5
+#   python nlp_topic_grouping.py --stage1-only   # enrich topics, don't group yet
+#   python nlp_topic_grouping.py --skip-stage1   # use cached enrichments
 # =============================================================================
 
 from __future__ import annotations
 
 import argparse
+import json
 import logging
+import os
+import re
+import time
 from pathlib import Path
 
+import anthropic
 import pandas as pd
+from dotenv import load_dotenv
+
+load_dotenv()
 
 logging.basicConfig(
     level=logging.INFO,
@@ -69,535 +80,610 @@ logging.basicConfig(
 )
 log = logging.getLogger("topic_grouping")
 
-
 # ---------------------------------------------------------------------------
 # CONFIG
 # ---------------------------------------------------------------------------
 
-INPUT_DIR  = Path("data/bertopic/v3")
-TEXT_FIELDS = ["likes", "dislikes", "use_case", "recommendations"]
+INPUT_DIR   = Path("data/bertopic/v5")
+TEXT_FIELDS = ["likes", "dislikes", "use_case"]
+MODEL       = "claude-sonnet-4-20250514"
+
+# Stage 1: max concurrent API calls (stay within rate limits)
+STAGE1_BATCH_SIZE = 10   # process 10 topics at a time
+STAGE1_DELAY_SECS = 0.5  # delay between batches
 
 
 # ---------------------------------------------------------------------------
-# MACRO-GROUP DEFINITIONS
+# ANTHROPIC CLIENT
 # ---------------------------------------------------------------------------
-# Each group has a term list scored against topic keywords.
-# Multi-word phrases (bigrams) count double — they're more precise signals.
-# Order within a group doesn't matter; scoring picks the best-matching group.
 
-MACRO_GROUPS: dict[str, dict] = {
+def get_client() -> anthropic.Anthropic:
+    token = os.getenv("ANTHROPIC_API_KEY") or os.getenv("AI_API_KEY")
+    if not token:
+        raise EnvironmentError(
+            "Anthropic API key not found.\n"
+            "Set ANTHROPIC_API_KEY or AI_API_KEY in your .env file."
+        )
+    return anthropic.Anthropic(api_key=token)
 
-    "reporting_analytics": {
-        "label": "Reporting & Analytics",
-        "terms": [
-            # High-signal bigrams (weight 2)
-            "custom reports", "financial reporting", "report writer", "real time",
-            "real time data", "decision making", "power bi", "data analytics",
-            "export excel", "access data", "data management", "reporting dashboards",
-            "run reports", "generate reports", "saved searches",
-            # Single terms (weight 1)
-            "reports", "reporting", "report", "dashboard", "dashboards",
-            "analytics", "insights", "excel", "export", "import",
-            "search", "searches", "data", "visibility", "kpi",
-        ],
-        "bigrams": [  # terms that MUST match as a phrase (exact or near)
-            "custom reports", "real time", "power bi", "saved searches",
-            "financial reporting", "data analytics",
-        ],
-    },
 
-    "ease_of_use": {
-        "label": "Ease of Use & UX",
-        "terms": [
-            "navigate", "navigation", "intuitive", "user friendly", "friendly",
-            "interface", "ui", "layout", "simple", "easy navigate",
-            "easy use", "easy learn", "learn", "organized", "clear",
-            "straightforward", "screens", "menus", "clicks", "steps",
-        ],
-        "bigrams": [
-            "user friendly", "easy navigate", "easy use", "easy learn",
-            "learning curve",
-        ],
-    },
+def call_claude(client: anthropic.Anthropic, prompt: str, system: str, max_tokens: int = 2048) -> str:
+    """Call Claude with retry on rate limit."""
+    for attempt in range(3):
+        try:
+            response = client.messages.create(
+                model=MODEL,
+                max_tokens=max_tokens,
+                system=system,
+                messages=[{"role": "user", "content": prompt}],
+            )
+            return response.content[0].text
+        except anthropic.RateLimitError:
+            wait = 30 * (attempt + 1)
+            log.warning("Rate limit hit — waiting %ds (attempt %d/3)", wait, attempt + 1)
+            time.sleep(wait)
+        except Exception as exc:
+            log.error("API call failed: %s", exc)
+            raise
+    raise RuntimeError("All 3 API attempts failed")
 
-    "pricing_licensing": {
-        "label": "Pricing & Licensing",
-        "terms": [
-            "cost", "price", "pricing", "expensive", "affordable", "cheap",
-            "license", "licensing", "subscription", "monthly", "annual",
-            "unlimited users", "per user", "fee", "fees", "value",
-            "worth", "budget", "add ons", "additional cost",
-        ],
-        "bigrams": [
-            "unlimited users", "per user", "additional cost", "add ons",
-            "subscription model", "licensing model",
-        ],
-    },
 
-    "implementation_setup": {
-        "label": "Implementation & Setup",
-        "terms": [
-            "implementation", "setup", "initial setup", "onboarding",
-            "deploy", "configuration", "going live", "configure",
-            "install", "rollout", "migration", "migrating", "partner",
-            "consultant", "project manager", "go live",
-        ],
-        "bigrams": [
-            "initial setup", "going live", "go live", "implementation partner",
-            "implementation process",
-        ],
-    },
+def parse_json_from_response(text: str) -> dict | list:
+    """
+    Extract and parse JSON from LLM response.
+    Handles both raw JSON and JSON wrapped in markdown code blocks.
+    """
+    # Try raw parse first
+    try:
+        return json.loads(text.strip())
+    except json.JSONDecodeError:
+        pass
 
-    "customer_support": {
-        "label": "Customer Support",
-        "terms": [
-            "support", "customer service", "customer support", "helpdesk",
-            "help desk", "response", "chat", "phone", "ticket",
-            "account manager", "agent", "documentation", "help center",
-            "knowledgebase", "community",
-        ],
-        "bigrams": [
-            "customer service", "customer support", "help center",
-            "response time", "account manager",
-        ],
-    },
+    # Extract from ```json ... ``` blocks
+    match = re.search(r'```(?:json)?\s*([\s\S]+?)\s*```', text)
+    if match:
+        try:
+            return json.loads(match.group(1))
+        except json.JSONDecodeError:
+            pass
 
-    "integrations_api": {
-        "label": "Integrations & API",
-        "terms": [
-            "integration", "integrations", "api", "connect", "connector",
-            "salesforce", "third party", "party", "sync", "platforms",
-            "ecosystem", "webhook", "rest", "endpoint", "crm integration",
-            "seamless integration",
-        ],
-        "bigrams": [
-            "third party", "seamless integration", "crm integration",
-            "rest api", "api documentation",
-        ],
-    },
+    # Extract from <output> tags (reasoning-then-JSON pattern)
+    match = re.search(r'<output>([\s\S]+?)</output>', text)
+    if match:
+        try:
+            return json.loads(match.group(1).strip())
+        except json.JSONDecodeError:
+            pass
 
-    "invoicing_payments": {
-        "label": "Invoicing & Payments",
-        "terms": [
-            "invoice", "invoices", "invoicing", "payment", "payments",
-            "billing", "bills", "credit", "send invoice", "recurring",
-            "accounts receivable", "ar", "collections", "reminders",
-            "estimates", "quotes",
-        ],
-        "bigrams": [
-            "accounts receivable", "send invoice", "recurring invoice",
-            "ap automation", "payment processing",
-        ],
-    },
+    raise ValueError(f"Could not parse JSON from response:\n{text[:500]}")
 
-    "bank_reconciliation": {
-        "label": "Bank & Reconciliation",
-        "terms": [
-            "bank", "reconciliation", "bank reconciliation", "bank feed",
-            "bank feeds", "transactions", "reconcile", "banking",
-            "bank accounts", "bank statement", "cash flow",
-        ],
-        "bigrams": [
-            "bank reconciliation", "bank feed", "bank feeds", "cash flow",
-            "bank statement",
-        ],
-    },
-
-    "inventory_orders": {
-        "label": "Inventory & Orders",
-        "terms": [
-            "inventory", "orders", "order", "inventory management",
-            "purchase order", "sales order", "stock", "supply chain",
-            "warehouse", "fulfillment", "items", "purchasing",
-            "bom", "manufacturing", "production",
-        ],
-        "bigrams": [
-            "inventory management", "purchase order", "sales order",
-            "supply chain", "order fulfillment",
-        ],
-    },
-
-    "payroll_hr": {
-        "label": "Payroll & HR",
-        "terms": [
-            "payroll", "employee", "employees", "hr", "taxes", "tax",
-            "direct deposit", "pay", "salary", "benefits", "w2",
-            "1099", "compliance", "deductions",
-        ],
-        "bigrams": [
-            "direct deposit", "payroll processing", "payroll taxes",
-            "employee expense",
-        ],
-    },
-
-    "customization": {
-        "label": "Customization & Flexibility",
-        "terms": [
-            "customize", "customization", "customizable", "flexibility",
-            "custom fields", "workflows", "workflow", "configure",
-            "tailor", "flexible", "custom", "fields", "forms",
-            "templates", "custom reports",
-        ],
-        "bigrams": [
-            "custom fields", "custom reports", "highly customizable",
-            "ability customize",
-        ],
-    },
-
-    "performance_reliability": {
-        "label": "Performance & Reliability",
-        "terms": [
-            "slow", "load", "loading", "speed", "lag", "lags",
-            "crash", "crashes", "glitch", "glitches", "error", "errors",
-            "bugs", "performance", "freeze", "freezes", "timeout",
-            "downtime", "outage", "unstable",
-        ],
-        "bigrams": [
-            "bit slow", "slow load", "loading time", "error messages",
-        ],
-    },
-
-    "multi_entity": {
-        "label": "Multi-Entity & Consolidation",
-        "terms": [
-            "entity", "multi entity", "entities", "consolidation",
-            "subsidiaries", "subsidiary", "intercompany", "multi",
-            "multiple entities", "parent company", "branches",
-            "consolidated", "group reporting",
-        ],
-        "bigrams": [
-            "multi entity", "multiple entities", "intercompany",
-            "consolidated financial", "group reporting",
-        ],
-    },
-
-    "mobile_access": {
-        "label": "Mobile & Remote Access",
-        "terms": [
-            "mobile", "app", "remote", "access", "anywhere",
-            "device", "log", "internet", "web based", "browser",
-            "offline", "tablet", "smartphone", "iphone", "android",
-        ],
-        "bigrams": [
-            "mobile app", "remote access", "web based", "work remotely",
-            "access anywhere",
-        ],
-    },
-
-    "accounting_bookkeeping": {
-        "label": "Accounting & Bookkeeping",
-        "terms": [
-            "accounting", "bookkeeping", "accountant", "journal",
-            "ledger", "general ledger", "accounts", "financial",
-            "journal entries", "chart of accounts", "double entry",
-            "accrual", "cash basis", "trial balance",
-        ],
-        "bigrams": [
-            "journal entries", "general ledger", "chart of accounts",
-            "financial statements",
-        ],
-    },
-
-    "automation_workflow": {
-        "label": "Automation & Workflow",
-        "terms": [
-            "automation", "automate", "process", "workflow", "manual",
-            "processes", "automated", "trigger", "rule", "scheduled",
-            "batch", "recurring", "streamline", "efficiency",
-        ],
-        "bigrams": [
-            "manual processes", "business processes", "automate processes",
-            "workflow automation",
-        ],
-    },
-
-    "project_budgeting": {
-        "label": "Project & Budgeting",
-        "terms": [
-            "project", "budget", "budgeting", "cost tracking",
-            "project management", "costs", "forecasting", "planning",
-            "profitability", "job costing", "cost center",
-        ],
-        "bigrams": [
-            "project management", "cost tracking", "job costing",
-            "project accounting", "budget planning",
-        ],
-    },
-
-    "learning_training": {
-        "label": "Learning & Training",
-        "terms": [
-            "training", "learn", "learning curve", "curve", "steep",
-            "tutorials", "videos", "onboarding", "guide", "courses",
-            "certification", "documentation", "knowledge base",
-        ],
-        "bigrams": [
-            "learning curve", "steep learning", "training videos",
-            "training resources",
-        ],
-    },
-
-    "updates_upgrades": {
-        "label": "Updates & Upgrades",
-        "terms": [
-            "update", "updates", "upgrade", "upgrades", "version",
-            "release", "changes", "bugs", "patch", "rollout",
-            "new features", "changelog",
-        ],
-        "bigrams": [
-            "new features", "version update", "upgrade process",
-            "frequent updates",
-        ],
-    },
-
-    "security_access": {
-        "label": "Security & Access Control",
-        "terms": [
-            "security", "login", "password", "roles", "user mode",
-            "permission", "permissions", "audit", "multi user",
-            "access control", "authentication", "sso", "two factor",
-            "log in", "logout",
-        ],
-        "bigrams": [
-            "audit trail", "access control", "multi user", "two factor",
-            "user permissions",
-        ],
-    },
-}
 
 # ---------------------------------------------------------------------------
-# MANUAL OVERRIDES
+# STAGE 1: PER-TOPIC ENRICHMENT
 # ---------------------------------------------------------------------------
-# Topics that the keyword scorer assigns incorrectly, identified by inspecting
-# the group assignment output. Format: {field: {topic_id: correct_group}}
-# "noise" = no feature content, should be excluded from analysis.
 
-MANUAL_OVERRIDES: dict[str, dict[int, str]] = {
-    "likes": {
-        29: "accounting_bookkeeping",  # "transactions, record, cash, batch" → bookkeeping not ease_of_use
-        32: "customization",           # "module, department, interface" → customization
-        37: "reporting_analytics",     # "machine learning, ai integration" → analytics/AI
-        48: "reporting_analytics",     # "single source of truth" → data/reporting
-        50: "ease_of_use",             # "fix mistakes, easy fix, correcting" → UX (correct, keep)
-        52: "integrations_api",        # "sync, syncing, easy sync" → integrations not reporting
-        25: "ease_of_use",             # "saved searches, search bar" → UX feature not reporting
-    },
-    "dislikes": {
-        2:  "noise",                   # "say, issues, dont, disliked, isn" → meta noise
-        23: "ease_of_use",             # "love, enjoy, easy" → actually UX positive (keep but note)
-        24: "implementation_setup",    # "implementation, complex, complexity, process" → setup
-        53: "noise",                   # "pos, aging, fifo" → too niche / fragmented
-        12: "implementation_setup",    # "complex, implementation, complexity" → setup not pricing
-        51: "noise",                   # "wms, robust, box" → warehouse niche, too small
-        45: "accounting_bookkeeping",  # "ap ar, check, aging, bills" → AP/accounting
-        54: "inventory_orders",        # "mrp, planning" → manufacturing/orders
-        56: "noise",                   # "say, opinion, dont, criticism" → meta noise
-    },
-    "use_case": {
-        1:  "inventory_orders",        # "inventory, manufacturing, project" → not reporting
-        2:  "inventory_orders",        # "inventory, orders, management" → not reporting
-        14: "noise",                   # "helps, allows, helping, easier" → generic filler
-        17: "accounting_bookkeeping",  # "ap automation, ap ar" → AP/accounting
-        18: "noise",                   # "recommend, trial, free trial" → meta noise
-        19: "multi_entity",            # "suite, entities, multiple entities" → multi-entity
-        35: "noise",                   # "regret, try, worth, buy" → meta/sentiment noise
-        37: "noise",                   # "problems, solving, solve" → meta noise
-        52: "integrations_api",        # "crm, sales team, customer data" → CRM/integrations
-    },
-    "recommendations": {
-        7:  "noise",                   # "it, for, to, and, use" → generic filler
-        11: "noise",                   # "benefits, time, more" → too generic
-        14: "noise",                   # "problems, haven, issues, resolve" → meta
-        35: "noise",                   # "regret, try, worth" → meta sentiment
-    },
+STAGE1_SYSTEM = """You are an expert ERP software analyst. You understand accounting, 
+finance, supply chain, and enterprise software terminology deeply.
+
+You will receive a BERTopic cluster from reviews of ERP products (NetSuite, SAP, 
+Microsoft Dynamics, QuickBooks, Sage Intacct, Workday, Acumatica, Xero, Certinia).
+
+Your job: enrich each topic by resolving abbreviations and writing a clear description
+of what reviewers in this cluster are actually talking about.
+
+Respond ONLY with a JSON object. No preamble, no explanation outside the JSON."""
+
+STAGE1_PROMPT = """Enrich this BERTopic cluster from ERP software reviews.
+
+Topic ID: {topic_id}
+Document count: {doc_count}
+Top keywords: {top_keywords}
+Text field: {field} (what reviewers wrote about what they {field_verb})
+
+Return a JSON object with exactly these keys:
+{{
+  "topic_id": {topic_id},
+  "resolved_keywords": "keywords with abbreviations expanded to full ERP terminology",
+  "plain_description": "1-2 sentence plain English description of what reviewers in this cluster are discussing. Be specific about the ERP feature or pain point.",
+  "candidate_categories": ["category1", "category2"],
+  "is_noise": false,
+  "noise_reason": null
+}}
+
+For is_noise: set true only if the topic is meta-commentary (e.g. "I can't think of downsides", 
+"nothing to dislike", "no complaints") with no specific feature content.
+For candidate_categories: use specific ERP functional area names, not generic terms.
+Examples of good categories: "accounts payable automation", "financial reporting", 
+"implementation complexity", "user interface navigation", "bank reconciliation",
+"inventory management", "payroll processing", "multi-entity consolidation"."""
+
+FIELD_VERBS = {
+    "likes":    "liked",
+    "dislikes": "disliked",
+    "use_case": "use the product for",
 }
 
 
-# ---------------------------------------------------------------------------
-# SCORING FUNCTION
-# ---------------------------------------------------------------------------
-
-def assign_group(keywords: str, field: str, topic_id: int) -> str:
+def run_stage1(
+    client: anthropic.Anthropic,
+    info_df: pd.DataFrame,
+    field: str,
+    cache_path: Path,
+) -> dict[int, dict]:
     """
-    Assign a macro-group to a topic based on keyword scoring.
+    Enrich each topic individually with LLM understanding.
 
-    Scoring logic:
-      - Exact phrase match (bigram) in keywords → score +2
-      - Single term match → score +1
-      - Best-scoring group wins
-      - If no group scores > 0 → "other"
-      - Manual overrides always win
+    Processes in batches to stay within rate limits.
+    Caches results to disk so Stage 1 doesn't re-run if Stage 2/3 fail.
 
-    Args:
-        keywords: Comma-separated keyword string from topic_info CSV
-        field:    Text field name ("likes", "dislikes", etc.)
-        topic_id: Topic ID — checked against MANUAL_OVERRIDES first
-
-    Returns:
-        Macro-group key string
+    Returns: {topic_id: enrichment_dict}
     """
-    # Manual override always wins
-    if field in MANUAL_OVERRIDES and topic_id in MANUAL_OVERRIDES[field]:
-        return MANUAL_OVERRIDES[field][topic_id]
+    # Load cache if exists
+    if cache_path.exists():
+        log.info("Loading Stage 1 cache from %s", cache_path)
+        return json.loads(cache_path.read_text())
 
-    if not isinstance(keywords, str) or not keywords.strip():
-        return "other"
+    field_verb    = FIELD_VERBS.get(field, "talked about")
+    enrichments: dict[int, dict] = {}
+    clean_topics  = info_df[info_df["topic_id"] != -1]
+    total         = len(clean_topics)
 
-    kw_lower = keywords.lower()
-    scores: dict[str, float] = {}
+    log.info("Stage 1: enriching %d topics for field '%s' ...", total, field)
 
-    for group, cfg in MACRO_GROUPS.items():
-        score = 0.0
+    for i, (_, row) in enumerate(clean_topics.iterrows()):
+        tid = int(row["topic_id"])
+        kw  = str(row.get("top_keywords", ""))
 
-        # Bigram matches — score 2 each (more specific signal)
-        for bigram in cfg.get("bigrams", []):
-            if bigram in kw_lower:
-                score += 2.0
+        if not kw or kw == "unlabelled":
+            enrichments[tid] = {
+                "topic_id": tid,
+                "resolved_keywords": kw,
+                "plain_description": "Unlabelled topic",
+                "candidate_categories": ["other"],
+                "is_noise": True,
+                "noise_reason": "No keywords available",
+            }
+            continue
 
-        # Single term matches — score 1 each
-        for term in cfg["terms"]:
-            # Only count single-word terms here to avoid double-counting bigrams
-            if " " not in term and term in kw_lower.split():
-                score += 1.0
-            elif " " in term and term in kw_lower:
-                # Multi-word term not in bigrams list — score 1.5
-                score += 1.5
+        prompt = STAGE1_PROMPT.format(
+            topic_id=tid,
+            doc_count=int(row["doc_count"]),
+            top_keywords=kw,
+            field=field,
+            field_verb=field_verb,
+        )
 
-        if score > 0:
-            scores[group] = score
+        try:
+            response = call_claude(client, prompt, STAGE1_SYSTEM, max_tokens=512)
+            enrichment = parse_json_from_response(response)
+            enrichments[tid] = enrichment
+            log.info("  [%d/%d] topic %d enriched: %s",
+                     i+1, total, tid,
+                     enrichment.get("plain_description", "")[:60])
+        except Exception as exc:
+            log.warning("  topic %d enrichment failed: %s", tid, exc)
+            enrichments[tid] = {
+                "topic_id": tid,
+                "resolved_keywords": kw,
+                "plain_description": f"Keywords: {kw}",
+                "candidate_categories": ["other"],
+                "is_noise": False,
+                "noise_reason": None,
+            }
 
-    if not scores:
-        return "other"
+        # Batch delay
+        if (i + 1) % STAGE1_BATCH_SIZE == 0:
+            time.sleep(STAGE1_DELAY_SECS)
 
-    return max(scores, key=scores.get)
+    # Cache to disk
+    cache_path.parent.mkdir(parents=True, exist_ok=True)
+    cache_path.write_text(json.dumps(enrichments, indent=2))
+    log.info("Stage 1 complete. Cache saved → %s", cache_path)
+
+    return enrichments
 
 
 # ---------------------------------------------------------------------------
-# MAIN PROCESSING
+# STAGE 2: GLOBAL CLUSTERING REASONING
 # ---------------------------------------------------------------------------
 
-def process_field(field: str, input_dir: Path) -> None:
-    """
-    Load topic_info CSV, assign macro-groups, save updated files.
+STAGE2_SYSTEM = """You are an expert ERP software product analyst tasked with organizing 
+customer review topics into meaningful, actionable macro-groups for product stakeholders.
 
-    Produces:
-      topic_info_{field}.csv  — original file + macro_group + group_label columns
-      macro_summary_{field}.csv — one row per group: total docs, n_topics, top keywords
+You will receive enriched BERTopic clusters from reviews of ERP products. Your job is to:
+1. Reason about semantic relationships between topics
+2. Propose macro-groups that emerge naturally from the data (do NOT use a preset list)
+3. Assign every non-noise topic to exactly one macro-group
+4. Name each group descriptively using ERP domain language
+
+The groups should be useful for: competitive intelligence, feature gap analysis, 
+sentiment monitoring, and executive briefings."""
+
+STAGE2_PROMPT = """Here are {n_topics} enriched BERTopic topics from the "{field}" field 
+of ERP software reviews. Each topic represents a cluster of reviews discussing related themes.
+
+ENRICHED TOPICS:
+{topics_json}
+
+TASK:
+First, think through the semantic relationships between these topics in <reasoning> tags.
+Consider:
+- Which topics are discussing the same ERP functional area?
+- Which topics are too similar and should be in the same group?
+- What natural groupings emerge from the actual content?
+- What would be most useful for Intuit product stakeholders?
+
+Then output your grouping in <output> tags as a JSON object:
+{{
+  "macro_groups": [
+    {{
+      "group_key": "snake_case_key",
+      "group_label": "Human Readable Label",
+      "group_description": "1 sentence: what functional area or theme this covers",
+      "topic_ids": [list of topic_ids assigned to this group],
+      "reasoning": "Why these topics belong together"
+    }}
+  ],
+  "noise_topic_ids": [topic_ids that are meta-commentary with no feature content],
+  "ungrouped_topic_ids": [topic_ids you are uncertain about]
+}}
+
+Rules:
+- Every non-noise topic must appear in exactly one macro_group OR ungrouped_topic_ids
+- Aim for 10-20 groups (not too fine, not too coarse)
+- Group names should be specific ERP functional areas, not generic ("Reporting & Analytics" 
+  not "Features", "Implementation Complexity" not "Problems")
+- Do NOT create a large catch-all "Other" group — if a topic doesn't fit, put it in ungrouped"""
+
+def run_stage2(
+    client: anthropic.Anthropic,
+    enrichments: dict[int, dict],
+    field: str,
+) -> dict:
     """
+    Send all enriched topics to LLM for global clustering reasoning.
+
+    Returns the raw Stage 2 response dict including macro_groups.
+    """
+    # Filter noise topics from Stage 1
+    non_noise = {
+        tid: e for tid, e in enrichments.items()
+        if not e.get("is_noise", False)
+    }
+
+    # Build compact topic list for the prompt
+    topics_for_prompt = []
+    for tid, e in sorted(non_noise.items()):
+        topics_for_prompt.append({
+            "topic_id":          tid,
+            "doc_count":         enrichments[tid].get("doc_count",
+                                 e.get("doc_count", "?")),
+            "keywords":          e.get("resolved_keywords", ""),
+            "description":       e.get("plain_description", ""),
+            "candidate_cats":    e.get("candidate_categories", []),
+        })
+
+    prompt = STAGE2_PROMPT.format(
+        n_topics=len(topics_for_prompt),
+        field=field,
+        topics_json=json.dumps(topics_for_prompt, indent=2),
+    )
+
+    log.info("Stage 2: global clustering (%d non-noise topics) ...", len(topics_for_prompt))
+    response = call_claude(client, prompt, STAGE2_SYSTEM, max_tokens=4096)
+
+    # Extract reasoning for audit log
+    reasoning_match = re.search(r'<reasoning>([\s\S]+?)</reasoning>', response)
+    reasoning = reasoning_match.group(1).strip() if reasoning_match else ""
+
+    result = parse_json_from_response(response)
+    result["_stage2_reasoning"] = reasoning
+
+    log.info("Stage 2 complete: %d macro-groups proposed",
+             len(result.get("macro_groups", [])))
+    for g in result.get("macro_groups", []):
+        log.info("  %-35s %d topics", g["group_label"], len(g["topic_ids"]))
+
+    return result
+
+
+# ---------------------------------------------------------------------------
+# STAGE 3: SELF-CRITIQUE AND REFINEMENT
+# ---------------------------------------------------------------------------
+
+STAGE3_SYSTEM = """You are a senior ERP product analyst reviewing a topic grouping for quality.
+Be critical. Identify problems and fix them."""
+
+STAGE3_PROMPT = """Review this proposed grouping of ERP review topics and improve it.
+
+PROPOSED GROUPING:
+{grouping_json}
+
+UNGROUPED TOPICS (need assignment):
+{ungrouped_json}
+
+Check for and fix:
+1. OVERSIZED GROUPS: Any group with >8 topics likely contains distinct themes — split it
+2. UNDERSIZED GROUPS: Any group with 1-2 topics — can it merge with a similar group?
+3. MISPLACEMENTS: Topics where the keywords don't match the group label
+4. MISSING NOISE: Topics that are meta-commentary ("no complaints", "nothing to dislike") 
+   not already in noise_topic_ids
+5. UNGROUPED: Assign all ungrouped topics to the best matching group
+
+Think through fixes in <reasoning> tags, then output the corrected grouping in <output> tags
+using the same JSON structure as the input but with your improvements applied.
+
+The output must be complete — include ALL groups and ALL topic assignments."""
+
+
+def run_stage3(
+    client: anthropic.Anthropic,
+    stage2_result: dict,
+    enrichments: dict[int, dict],
+) -> dict:
+    """
+    Self-critique pass: fix oversized groups, misplacements, ungrouped topics.
+
+    Returns the final refined grouping dict.
+    """
+    ungrouped_ids = stage2_result.get("ungrouped_topic_ids", [])
+    ungrouped_enriched = [
+        enrichments.get(str(tid), enrichments.get(int(tid), {"topic_id": tid}))
+        for tid in ungrouped_ids
+    ]
+
+    prompt = STAGE3_PROMPT.format(
+        grouping_json=json.dumps({
+            "macro_groups":     stage2_result.get("macro_groups", []),
+            "noise_topic_ids":  stage2_result.get("noise_topic_ids", []),
+        }, indent=2),
+        ungrouped_json=json.dumps(ungrouped_enriched, indent=2),
+    )
+
+    log.info("Stage 3: self-critique and refinement ...")
+    response = call_claude(client, prompt, STAGE3_SYSTEM, max_tokens=4096)
+
+    reasoning_match = re.search(r'<reasoning>([\s\S]+?)</reasoning>', response)
+    reasoning = reasoning_match.group(1).strip() if reasoning_match else ""
+
+    result = parse_json_from_response(response)
+    result["_stage3_reasoning"] = reasoning
+
+    log.info("Stage 3 complete: %d final macro-groups",
+             len(result.get("macro_groups", [])))
+
+    return result
+
+
+# ---------------------------------------------------------------------------
+# APPLY GROUPS TO DATAFRAMES
+# ---------------------------------------------------------------------------
+
+def apply_groups(
+    info_df: pd.DataFrame,
+    doc_df: pd.DataFrame,
+    final_grouping: dict,
+    enrichments: dict[int, dict],
+) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+    """
+    Apply final group assignments back to topic_info and doc-level DataFrames.
+
+    Also adds is_noise flag (from Stage 1 enrichments + Stage 3 noise list).
+    Builds macro_summary DataFrame for dashboard.
+
+    Returns: (info_df_enriched, doc_df_enriched, macro_summary_df)
+    """
+    # Build topic_id → group mapping
+    noise_ids = set(final_grouping.get("noise_topic_ids", []))
+    topic_to_group: dict[int, dict] = {}
+
+    for group in final_grouping.get("macro_groups", []):
+        for tid in group.get("topic_ids", []):
+            topic_to_group[int(tid)] = {
+                "macro_group": group["group_key"],
+                "group_label": group["group_label"],
+            }
+
+    # Mark noise topics
+    for tid in noise_ids:
+        topic_to_group[int(tid)] = {
+            "macro_group": "noise",
+            "group_label": "Noise / Filler",
+        }
+
+    # Enrich topic_info
+    info_df = info_df.copy()
+    info_df["macro_group"] = info_df["topic_id"].apply(
+        lambda tid: topic_to_group.get(int(tid), {}).get("macro_group", "unassigned")
+        if tid != -1 else "outlier"
+    )
+    info_df["group_label"] = info_df["topic_id"].apply(
+        lambda tid: topic_to_group.get(int(tid), {}).get("group_label", "Unassigned")
+        if tid != -1 else "Outlier"
+    )
+
+    # Add Stage 1 enrichment columns
+    info_df["plain_description"] = info_df["topic_id"].apply(
+        lambda tid: enrichments.get(str(tid), enrichments.get(int(tid), {})).get("plain_description", "")
+    )
+    info_df["is_noise"] = info_df["macro_group"].isin(["noise", "outlier"])
+
+    # Enrich doc-level
+    doc_df = doc_df.copy()
+    doc_df["macro_group"] = doc_df["topic_id"].apply(
+        lambda tid: topic_to_group.get(int(tid), {}).get("macro_group", "unassigned")
+        if tid != -1 else "outlier"
+    )
+    doc_df["group_label"] = doc_df["topic_id"].apply(
+        lambda tid: topic_to_group.get(int(tid), {}).get("group_label", "Unassigned")
+        if tid != -1 else "Outlier"
+    )
+
+    # Build macro summary
+    clean = info_df[~info_df["is_noise"] & (info_df["topic_id"] != -1)]
+    summary_rows = []
+    for group in final_grouping.get("macro_groups", []):
+        group_topics = clean[clean["macro_group"] == group["group_key"]]
+        summary_rows.append({
+            "macro_group":       group["group_key"],
+            "group_label":       group["group_label"],
+            "group_description": group.get("group_description", ""),
+            "n_topics":          len(group_topics),
+            "total_docs":        group_topics["doc_count"].sum(),
+            "top_keywords":      " | ".join(
+                group_topics.nlargest(3, "doc_count")["top_keywords"]
+                .str[:40].tolist()
+            ),
+        })
+
+    macro_df = pd.DataFrame(summary_rows).sort_values("total_docs", ascending=False)
+    if not macro_df.empty:
+        macro_df["pct_docs"] = (
+            macro_df["total_docs"] / macro_df["total_docs"].sum() * 100
+        ).round(1)
+
+    return info_df, doc_df, macro_df
+
+
+# ---------------------------------------------------------------------------
+# MAIN PROCESSING PER FIELD
+# ---------------------------------------------------------------------------
+
+def process_field(
+    field: str,
+    input_dir: Path,
+    client: anthropic.Anthropic,
+    stage1_only: bool,
+    skip_stage1: bool,
+) -> None:
+    """Run the full 3-stage LLM grouping pipeline for one field."""
+
     info_path = input_dir / f"topic_info_{field}.csv"
+    doc_path  = input_dir / f"{field}_topics.csv"
+
     if not info_path.exists():
         log.warning("Not found: %s — skipping", info_path)
         return
 
     info_df = pd.read_csv(info_path)
-    log.info("Processing %s: %d topics", field, len(info_df))
+    doc_df  = pd.read_csv(doc_path) if doc_path.exists() else pd.DataFrame()
 
-    # Assign macro-group per topic
-    info_df["macro_group"] = info_df.apply(
-        lambda row: (
-            "noise" if row["topic_id"] == -1
-            else assign_group(
-                row.get("top_keywords", ""),
-                field,
-                row["topic_id"],
-            )
-        ),
-        axis=1,
+    log.info("Field '%s': %d topics", field, len(info_df))
+
+    # Stage 1 cache path
+    cache_path = input_dir / f"stage1_cache_{field}.json"
+
+    # --- Stage 1 ---
+    if skip_stage1 and cache_path.exists():
+        log.info("Skipping Stage 1 — loading cache from %s", cache_path)
+        enrichments = json.loads(cache_path.read_text())
+    else:
+        enrichments = run_stage1(client, info_df, field, cache_path)
+
+    # Add doc_count to enrichments from info_df
+    for _, row in info_df.iterrows():
+        tid = str(int(row["topic_id"]))
+        if tid in enrichments:
+            enrichments[tid]["doc_count"] = int(row["doc_count"])
+
+    if stage1_only:
+        log.info("--stage1-only: stopping after Stage 1")
+        return
+
+    # --- Stage 2 ---
+    stage2_result = run_stage2(client, enrichments, field)
+
+    # --- Stage 3 ---
+    final_grouping = run_stage3(client, stage2_result, enrichments)
+
+    # --- Apply and save ---
+    info_enriched, doc_enriched, macro_df = apply_groups(
+        info_df, doc_df, final_grouping, enrichments
     )
 
-    # Add human-readable label
-    group_labels = {k: v["label"] for k, v in MACRO_GROUPS.items()}
-    group_labels["noise"] = "Noise / Filler"
-    group_labels["other"] = "Other"
-    info_df["group_label"] = info_df["macro_group"].map(group_labels).fillna("Other")
+    info_enriched.to_csv(info_path, index=False)
+    log.info("Updated → %s", info_path)
 
-    # Save updated topic_info
-    info_df.to_csv(info_path, index=False)
-    log.info("Updated %s", info_path)
+    if not doc_df.empty:
+        doc_enriched.to_csv(doc_path, index=False)
+        log.info("Updated → %s", doc_path)
 
-    # Build macro-level summary
-    clean = info_df[~info_df["macro_group"].isin(["noise", "other"])].copy()
+    macro_path = input_dir / f"macro_summary_{field}.csv"
+    macro_df.to_csv(macro_path, index=False)
+    log.info("Saved → %s", macro_path)
 
-    summary = (
-        clean.groupby(["macro_group", "group_label"])
-        .agg(
-            total_docs=("doc_count", "sum"),
-            n_topics=("topic_id", "count"),
-            top_topic_keywords=(
-                "top_keywords",
-                lambda x: " | ".join(
-                    x.iloc[:3].str[:40].tolist()  # top 3 topic keyword strings
-                ),
-            ),
-        )
-        .reset_index()
-        .sort_values("total_docs", ascending=False)
-    )
-    summary["pct_of_docs"] = (
-        summary["total_docs"] / summary["total_docs"].sum() * 100
-    ).round(1)
+    # Save full reasoning audit log
+    reasoning_log = {
+        "field":              field,
+        "stage1_enrichments": enrichments,
+        "stage2_result":      stage2_result,
+        "stage3_result":      final_grouping,
+    }
+    reasoning_path = input_dir / f"grouping_reasoning_{field}.json"
+    reasoning_path.write_text(json.dumps(reasoning_log, indent=2, default=str))
+    log.info("Reasoning log → %s", reasoning_path)
 
-    summary_path = input_dir / f"macro_summary_{field}.csv"
-    summary.to_csv(summary_path, index=False)
-    log.info("Saved %s", summary_path)
-
-    # Update doc-level CSV if it exists
-    doc_path = input_dir / f"{field}_topics.csv"
-    if doc_path.exists():
-        doc_df = pd.read_csv(doc_path)
-        topic_to_group = info_df.set_index("topic_id")[["macro_group", "group_label"]].to_dict("index")
-        doc_df["macro_group"] = doc_df["topic_id"].map(
-            lambda tid: topic_to_group.get(tid, {}).get("macro_group", "other")
-        )
-        doc_df["group_label"] = doc_df["topic_id"].map(
-            lambda tid: topic_to_group.get(tid, {}).get("group_label", "Other")
-        )
-        doc_df.to_csv(doc_path, index=False)
-        log.info("Updated %s", doc_path)
-
-    # Print console summary
+    # Console summary
     print(f"\n{'='*65}")
-    print(f"  MACRO-GROUPS — {field.upper()}")
+    print(f"  LLM GROUPING — {field.upper()}")
     print(f"{'='*65}")
     print(f"  {'Group':<35} {'Docs':>6}  {'Topics':>7}  {'Pct':>5}")
-    print(f"  {'-'*60}")
-    for _, row in summary.iterrows():
-        print(
-            f"  {row['group_label']:<35} {row['total_docs']:>6}  "
-            f"{row['n_topics']:>7}  {row['pct_of_docs']:>4.1f}%"
-        )
-    noise_rows = info_df[info_df["macro_group"] == "noise"]
-    other_rows = info_df[info_df["macro_group"] == "other"]
-    print(f"  {'Noise / Filler':<35} {noise_rows['doc_count'].sum():>6}  {len(noise_rows):>7}")
-    print(f"  {'Other (unassigned)':<35} {other_rows['doc_count'].sum():>6}  {len(other_rows):>7}")
+    print(f"  {'-'*58}")
+    for _, row in macro_df.iterrows():
+        print(f"  {row['group_label']:<35} {row['total_docs']:>6}  "
+              f"{row['n_topics']:>7}  {row['pct_docs']:>4.1f}%")
 
 
-def main(input_dir: Path, fields: list[str]) -> None:
-    log.info("Topic grouping starting | input_dir=%s | fields=%s", input_dir, fields)
+# ---------------------------------------------------------------------------
+# MAIN / CLI
+# ---------------------------------------------------------------------------
+
+def main(
+    input_dir: Path,
+    fields: list[str],
+    stage1_only: bool,
+    skip_stage1: bool,
+) -> None:
+    client = get_client()
+    log.info("LLM topic grouping | fields=%s | model=%s", fields, MODEL)
+
     for field in fields:
-        log.info("\n--- %s ---", field.upper())
-        process_field(field, input_dir)
-    log.info("\nDone. Updated files in %s", input_dir)
+        log.info("\n%s\n--- FIELD: %s ---\n%s", "="*55, field.upper(), "="*55)
+        process_field(
+            field=field,
+            input_dir=input_dir,
+            client=client,
+            stage1_only=stage1_only,
+            skip_stage1=skip_stage1,
+        )
+
+    log.info("All fields complete.")
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(
-        description="Assign macro-groups to BERTopic output topics",
+    p = argparse.ArgumentParser(
+        description="LLM-driven topic grouping — 3-stage Claude pipeline",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
   python nlp_topic_grouping.py
-  python nlp_topic_grouping.py --input-dir data/bertopic/v3
   python nlp_topic_grouping.py --fields likes dislikes
+  python nlp_topic_grouping.py --stage1-only      # enrich topics, save cache
+  python nlp_topic_grouping.py --skip-stage1      # use cached enrichments
+  python nlp_topic_grouping.py --input-dir data/bertopic/v5
         """
     )
-    parser.add_argument("--input-dir", default=str(INPUT_DIR))
-    parser.add_argument(
-        "--fields", nargs="+", default=TEXT_FIELDS, choices=TEXT_FIELDS
-    )
-    args = parser.parse_args()
+    p.add_argument("--input-dir",   default=str(INPUT_DIR))
+    p.add_argument("--fields",      nargs="+", default=TEXT_FIELDS, choices=TEXT_FIELDS)
+    p.add_argument("--stage1-only", action="store_true",
+                   help="Run Stage 1 enrichment only, save cache, stop")
+    p.add_argument("--skip-stage1", action="store_true",
+                   help="Skip Stage 1, load from cache, run Stages 2+3 only")
 
+    args = p.parse_args()
     main(
         input_dir=Path(args.input_dir),
         fields=args.fields,
+        stage1_only=args.stage1_only,
+        skip_stage1=args.skip_stage1,
     )
