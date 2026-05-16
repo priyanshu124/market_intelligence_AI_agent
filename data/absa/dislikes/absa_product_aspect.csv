@@ -1,0 +1,145 @@
+product_name,macro_group,group_label,aspect_term,text_field,avg_rating,n_reviews,n_sentences,pct_positive,pct_neutral,pct_negative,avg_overall_rating,pct_incentivized
+Acumatica,accounts_payable_invoice_processing,Accounts Payable & Invoice Processing,accounts payable invoice processing,dislikes,2.66,6,10,16.7,33.3,50.0,4.67,33.3
+Acumatica,banking_cash_management,Banking & Cash Management,banking cash management,dislikes,2.53,2,2,0.0,50.0,50.0,4.5,0.0
+Acumatica,customer_support_service,Customer Support & Service Quality,customer support service quality,dislikes,2.3,5,26,20.0,0.0,80.0,3.7,20.0
+Acumatica,customization_integration,Customization & Third-Party Integration,customization third-party integration,dislikes,2.02,16,24,18.8,6.2,75.0,4.5,62.5
+Acumatica,financial_accounting_core,Financial Accounting & General Ledger,financial accounting general ledger,dislikes,2.54,9,28,0.0,55.6,44.4,3.56,33.3
+Acumatica,financial_reporting_analytics,Financial Reporting & Business Intelligence,financial reporting business intelligence,dislikes,2.28,13,23,0.0,46.2,53.8,4.42,30.8
+Acumatica,implementation_complexity,"Implementation, Setup & Cost Management",implementation setup cost management,dislikes,3.02,44,145,47.7,2.3,50.0,4.38,43.2
+Acumatica,mobile_remote_access,Mobile & Remote Access,mobile remote access,dislikes,1.9,1,1,0.0,0.0,100.0,5.0,100.0
+Acumatica,multi_entity_currency,Multi-Entity & Currency Management,multi-entity currency management,dislikes,4.16,1,1,100.0,0.0,0.0,5.0,0.0
+Acumatica,sales_order_management,Sales Order Management,sales order management,dislikes,2.8,1,2,0.0,100.0,0.0,5.0,100.0
+Acumatica,specialized_modules,Specialized Module Functionality,specialized module functionality,dislikes,2.66,13,22,30.8,15.4,53.8,4.62,38.5
+Acumatica,system_access_security,System Access & Security Management,system access security management,dislikes,1.93,1,3,0.0,0.0,100.0,4.5,100.0
+Acumatica,system_performance_reliability,System Performance & Reliability,system performance reliability,dislikes,1.16,2,2,0.0,0.0,100.0,4.5,100.0
+Acumatica,user_interface_navigation,User Interface & System Navigation,user interface system navigation,dislikes,2.31,5,5,40.0,0.0,60.0,4.3,60.0
+Acumatica,user_training_learning,User Training & Learning Curve,user training learning curve,dislikes,1.35,3,4,0.0,0.0,100.0,4.5,66.7
+Certinia,customer_support_service,Customer Support & Service Quality,customer support service quality,dislikes,2.51,3,6,33.3,0.0,66.7,3.67,0.0
+Certinia,customization_integration,Customization & Third-Party Integration,customization third-party integration,dislikes,4.01,2,2,50.0,50.0,0.0,4.0,0.0
+Certinia,financial_accounting_core,Financial Accounting & General Ledger,financial accounting general ledger,dislikes,2.62,5,17,0.0,80.0,20.0,3.7,0.0
+Certinia,financial_reporting_analytics,Financial Reporting & Business Intelligence,financial reporting business intelligence,dislikes,1.56,4,4,0.0,0.0,100.0,4.38,0.0
+Certinia,implementation_complexity,"Implementation, Setup & Cost Management",implementation setup cost management,dislikes,1.63,5,19,0.0,0.0,100.0,3.9,20.0
+Certinia,sales_order_management,Sales Order Management,sales order management,dislikes,3.97,1,1,0.0,100.0,0.0,5.0,0.0
+Certinia,specialized_modules,Specialized Module Functionality,specialized module functionality,dislikes,2.6,1,2,100.0,0.0,0.0,3.5,0.0
+Certinia,system_performance_reliability,System Performance & Reliability,system performance reliability,dislikes,3.53,2,2,50.0,0.0,50.0,3.5,0.0
+Certinia,user_training_learning,User Training & Learning Curve,user training learning curve,dislikes,3.76,2,4,50.0,0.0,50.0,3.75,0.0
+Intuit Enterprise Suite,customer_support_service,Customer Support & Service Quality,customer support service quality,dislikes,1.46,1,3,0.0,0.0,100.0,5.0,0.0
+Intuit Enterprise Suite,financial_reporting_analytics,Financial Reporting & Business Intelligence,financial reporting business intelligence,dislikes,3.53,1,2,0.0,100.0,0.0,4.0,0.0
+Intuit Enterprise Suite,sales_order_management,Sales Order Management,sales order management,dislikes,4.02,1,1,100.0,0.0,0.0,5.0,0.0
+Intuit Enterprise Suite,specialized_modules,Specialized Module Functionality,specialized module functionality,dislikes,1.35,1,1,0.0,0.0,100.0,4.0,0.0
+Intuit Enterprise Suite,system_performance_reliability,System Performance & Reliability,system performance reliability,dislikes,4.45,1,1,100.0,0.0,0.0,5.0,0.0
+Microsoft Dynamics 365,accounts_payable_invoice_processing,Accounts Payable & Invoice Processing,accounts payable invoice processing,dislikes,2.56,5,10,40.0,0.0,60.0,4.3,40.0
+Microsoft Dynamics 365,crm_customer_management,CRM & Customer Relationship Management,crm customer relationship management,dislikes,2.56,9,16,0.0,88.9,11.1,3.94,77.8
+Microsoft Dynamics 365,customer_support_service,Customer Support & Service Quality,customer support service quality,dislikes,2.79,2,5,50.0,0.0,50.0,4.25,100.0
+Microsoft Dynamics 365,customization_integration,Customization & Third-Party Integration,customization third-party integration,dislikes,1.39,10,16,10.0,0.0,90.0,4.3,80.0
+Microsoft Dynamics 365,financial_accounting_core,Financial Accounting & General Ledger,financial accounting general ledger,dislikes,2.93,3,5,0.0,100.0,0.0,3.83,100.0
+Microsoft Dynamics 365,financial_reporting_analytics,Financial Reporting & Business Intelligence,financial reporting business intelligence,dislikes,1.46,1,1,0.0,0.0,100.0,4.0,100.0
+Microsoft Dynamics 365,implementation_complexity,"Implementation, Setup & Cost Management",implementation setup cost management,dislikes,2.21,11,20,18.2,0.0,81.8,4.59,100.0
+Microsoft Dynamics 365,mobile_remote_access,Mobile & Remote Access,mobile remote access,dislikes,2.35,1,2,0.0,100.0,0.0,4.5,0.0
+Microsoft Dynamics 365,specialized_modules,Specialized Module Functionality,specialized module functionality,dislikes,2.15,4,7,0.0,50.0,50.0,4.0,50.0
+Microsoft Dynamics 365,system_performance_reliability,System Performance & Reliability,system performance reliability,dislikes,1.99,1,1,0.0,0.0,100.0,4.0,100.0
+Microsoft Dynamics 365,user_interface_navigation,User Interface & System Navigation,user interface system navigation,dislikes,2.47,2,2,50.0,0.0,50.0,5.0,100.0
+Microsoft Dynamics 365,user_training_learning,User Training & Learning Curve,user training learning curve,dislikes,2.31,6,7,33.3,0.0,66.7,4.08,100.0
+Oracle NetSuite,accounts_payable_invoice_processing,Accounts Payable & Invoice Processing,accounts payable invoice processing,dislikes,2.49,31,54,12.9,38.7,48.4,4.31,6.5
+Oracle NetSuite,banking_cash_management,Banking & Cash Management,banking cash management,dislikes,2.47,9,13,0.0,66.7,33.3,3.44,11.1
+Oracle NetSuite,crm_customer_management,CRM & Customer Relationship Management,crm customer relationship management,dislikes,2.84,1,1,0.0,100.0,0.0,5.0,0.0
+Oracle NetSuite,customer_support_service,Customer Support & Service Quality,customer support service quality,dislikes,1.92,72,228,12.5,0.0,87.5,3.67,4.2
+Oracle NetSuite,customization_integration,Customization & Third-Party Integration,customization third-party integration,dislikes,1.7,37,49,5.4,5.4,89.2,3.88,8.1
+Oracle NetSuite,financial_accounting_core,Financial Accounting & General Ledger,financial accounting general ledger,dislikes,2.59,34,105,0.0,67.6,32.4,4.28,11.8
+Oracle NetSuite,financial_reporting_analytics,Financial Reporting & Business Intelligence,financial reporting business intelligence,dislikes,2.43,87,159,11.5,44.8,43.7,4.32,9.2
+Oracle NetSuite,implementation_complexity,"Implementation, Setup & Cost Management",implementation setup cost management,dislikes,2.47,192,485,30.2,2.1,67.7,4.16,9.9
+Oracle NetSuite,mobile_remote_access,Mobile & Remote Access,mobile remote access,dislikes,2.17,2,2,0.0,50.0,50.0,5.0,0.0
+Oracle NetSuite,multi_entity_currency,Multi-Entity & Currency Management,multi-entity currency management,dislikes,2.22,12,16,16.7,25.0,58.3,3.92,0.0
+Oracle NetSuite,sales_order_management,Sales Order Management,sales order management,dislikes,3.62,14,22,21.4,78.6,0.0,4.61,7.1
+Oracle NetSuite,specialized_modules,Specialized Module Functionality,specialized module functionality,dislikes,2.31,24,51,8.3,29.2,62.5,4.25,4.2
+Oracle NetSuite,system_access_security,System Access & Security Management,system access security management,dislikes,1.95,6,8,0.0,33.3,66.7,4.17,33.3
+Oracle NetSuite,system_performance_reliability,System Performance & Reliability,system performance reliability,dislikes,2.0,27,38,11.1,3.7,85.2,4.3,7.4
+Oracle NetSuite,user_interface_navigation,User Interface & System Navigation,user interface system navigation,dislikes,1.76,31,43,6.5,22.6,71.0,3.95,0.0
+Oracle NetSuite,user_training_learning,User Training & Learning Curve,user training learning curve,dislikes,1.71,31,41,9.7,6.5,83.9,4.31,3.2
+QuickBooks Desktop Pro,accounts_payable_invoice_processing,Accounts Payable & Invoice Processing,accounts payable invoice processing,dislikes,2.31,1,2,0.0,100.0,0.0,5.0,100.0
+QuickBooks Desktop Pro,banking_cash_management,Banking & Cash Management,banking cash management,dislikes,2.13,1,1,0.0,100.0,0.0,5.0,0.0
+QuickBooks Desktop Pro,customer_support_service,Customer Support & Service Quality,customer support service quality,dislikes,1.98,1,1,0.0,0.0,100.0,5.0,100.0
+QuickBooks Desktop Pro,financial_accounting_core,Financial Accounting & General Ledger,financial accounting general ledger,dislikes,2.85,4,12,0.0,75.0,25.0,4.38,50.0
+QuickBooks Desktop Pro,mobile_remote_access,Mobile & Remote Access,mobile remote access,dislikes,2.18,2,2,50.0,0.0,50.0,3.75,50.0
+QuickBooks Desktop Pro,user_interface_navigation,User Interface & System Navigation,user interface system navigation,dislikes,1.19,1,2,0.0,0.0,100.0,4.0,100.0
+QuickBooks Enterprise,accounts_payable_invoice_processing,Accounts Payable & Invoice Processing,accounts payable invoice processing,dislikes,2.08,5,5,0.0,60.0,40.0,4.7,100.0
+QuickBooks Enterprise,banking_cash_management,Banking & Cash Management,banking cash management,dislikes,1.03,1,1,0.0,0.0,100.0,5.0,100.0
+QuickBooks Enterprise,customer_support_service,Customer Support & Service Quality,customer support service quality,dislikes,2.44,4,11,25.0,0.0,75.0,4.25,50.0
+QuickBooks Enterprise,customization_integration,Customization & Third-Party Integration,customization third-party integration,dislikes,1.03,2,2,0.0,0.0,100.0,4.5,50.0
+QuickBooks Enterprise,financial_accounting_core,Financial Accounting & General Ledger,financial accounting general ledger,dislikes,2.95,16,35,6.2,87.5,6.2,4.34,87.5
+QuickBooks Enterprise,financial_reporting_analytics,Financial Reporting & Business Intelligence,financial reporting business intelligence,dislikes,1.65,2,3,0.0,0.0,100.0,4.75,50.0
+QuickBooks Enterprise,implementation_complexity,"Implementation, Setup & Cost Management",implementation setup cost management,dislikes,1.2,5,5,0.0,0.0,100.0,4.2,100.0
+QuickBooks Enterprise,mobile_remote_access,Mobile & Remote Access,mobile remote access,dislikes,1.06,1,1,0.0,0.0,100.0,4.0,100.0
+QuickBooks Enterprise,multi_entity_currency,Multi-Entity & Currency Management,multi-entity currency management,dislikes,2.21,3,3,0.0,66.7,33.3,4.17,33.3
+QuickBooks Enterprise,specialized_modules,Specialized Module Functionality,specialized module functionality,dislikes,3.48,2,4,50.0,50.0,0.0,3.5,50.0
+QuickBooks Enterprise,system_access_security,System Access & Security Management,system access security management,dislikes,2.05,3,3,33.3,0.0,66.7,4.5,100.0
+QuickBooks Enterprise,system_performance_reliability,System Performance & Reliability,system performance reliability,dislikes,1.23,3,3,0.0,0.0,100.0,4.33,100.0
+QuickBooks Enterprise,user_interface_navigation,User Interface & System Navigation,user interface system navigation,dislikes,1.86,5,5,20.0,0.0,80.0,4.2,80.0
+QuickBooks Online,accounts_payable_invoice_processing,Accounts Payable & Invoice Processing,accounts payable invoice processing,dislikes,2.4,8,11,12.5,50.0,37.5,4.5,37.5
+QuickBooks Online,banking_cash_management,Banking & Cash Management,banking cash management,dislikes,2.16,4,4,0.0,50.0,50.0,4.62,0.0
+QuickBooks Online,customer_support_service,Customer Support & Service Quality,customer support service quality,dislikes,2.35,26,87,26.9,0.0,73.1,3.85,69.2
+QuickBooks Online,customization_integration,Customization & Third-Party Integration,customization third-party integration,dislikes,1.77,2,2,0.0,0.0,100.0,4.0,100.0
+QuickBooks Online,financial_accounting_core,Financial Accounting & General Ledger,financial accounting general ledger,dislikes,2.87,51,123,7.8,80.4,11.8,4.39,56.9
+QuickBooks Online,financial_reporting_analytics,Financial Reporting & Business Intelligence,financial reporting business intelligence,dislikes,2.27,7,12,0.0,42.9,57.1,4.36,71.4
+QuickBooks Online,implementation_complexity,"Implementation, Setup & Cost Management",implementation setup cost management,dislikes,1.64,8,12,0.0,0.0,100.0,4.25,87.5
+QuickBooks Online,mobile_remote_access,Mobile & Remote Access,mobile remote access,dislikes,2.05,2,4,0.0,0.0,100.0,3.5,0.0
+QuickBooks Online,multi_entity_currency,Multi-Entity & Currency Management,multi-entity currency management,dislikes,1.38,2,4,0.0,0.0,100.0,4.25,50.0
+QuickBooks Online,specialized_modules,Specialized Module Functionality,specialized module functionality,dislikes,3.0,5,9,60.0,0.0,40.0,4.6,80.0
+QuickBooks Online,system_access_security,System Access & Security Management,system access security management,dislikes,1.19,1,1,0.0,0.0,100.0,4.0,0.0
+QuickBooks Online,system_performance_reliability,System Performance & Reliability,system performance reliability,dislikes,2.98,9,10,55.6,0.0,44.4,4.72,66.7
+QuickBooks Online,user_interface_navigation,User Interface & System Navigation,user interface system navigation,dislikes,1.52,3,3,0.0,0.0,100.0,4.67,33.3
+QuickBooks Online,user_training_learning,User Training & Learning Curve,user training learning curve,dislikes,2.1,6,8,0.0,33.3,66.7,4.67,66.7
+SAP S/4HANA Cloud,accounts_payable_invoice_processing,Accounts Payable & Invoice Processing,accounts payable invoice processing,dislikes,1.92,3,6,0.0,33.3,66.7,4.5,100.0
+SAP S/4HANA Cloud,customer_support_service,Customer Support & Service Quality,customer support service quality,dislikes,2.38,2,7,0.0,50.0,50.0,4.75,100.0
+SAP S/4HANA Cloud,customization_integration,Customization & Third-Party Integration,customization third-party integration,dislikes,1.24,7,13,0.0,0.0,100.0,4.21,85.7
+SAP S/4HANA Cloud,financial_accounting_core,Financial Accounting & General Ledger,financial accounting general ledger,dislikes,2.88,1,2,0.0,100.0,0.0,4.0,100.0
+SAP S/4HANA Cloud,financial_reporting_analytics,Financial Reporting & Business Intelligence,financial reporting business intelligence,dislikes,2.78,1,2,0.0,100.0,0.0,4.0,100.0
+SAP S/4HANA Cloud,implementation_complexity,"Implementation, Setup & Cost Management",implementation setup cost management,dislikes,2.41,41,104,34.1,2.4,63.4,4.41,80.5
+SAP S/4HANA Cloud,multi_entity_currency,Multi-Entity & Currency Management,multi-entity currency management,dislikes,2.75,1,1,0.0,100.0,0.0,4.5,0.0
+SAP S/4HANA Cloud,specialized_modules,Specialized Module Functionality,specialized module functionality,dislikes,2.08,1,3,0.0,0.0,100.0,5.0,100.0
+SAP S/4HANA Cloud,system_access_security,System Access & Security Management,system access security management,dislikes,2.45,2,2,0.0,50.0,50.0,4.25,100.0
+SAP S/4HANA Cloud,system_performance_reliability,System Performance & Reliability,system performance reliability,dislikes,1.7,5,6,0.0,0.0,100.0,4.2,100.0
+SAP S/4HANA Cloud,user_interface_navigation,User Interface & System Navigation,user interface system navigation,dislikes,2.67,3,3,0.0,100.0,0.0,5.0,33.3
+SAP S/4HANA Cloud,user_training_learning,User Training & Learning Curve,user training learning curve,dislikes,1.99,2,4,0.0,0.0,100.0,4.75,50.0
+Sage Intacct,accounts_payable_invoice_processing,Accounts Payable & Invoice Processing,accounts payable invoice processing,dislikes,2.38,75,145,5.3,57.3,37.3,4.24,5.3
+Sage Intacct,banking_cash_management,Banking & Cash Management,banking cash management,dislikes,2.06,15,24,6.7,33.3,60.0,4.37,6.7
+Sage Intacct,customer_support_service,Customer Support & Service Quality,customer support service quality,dislikes,2.08,29,75,10.3,6.9,82.8,4.17,13.8
+Sage Intacct,customization_integration,Customization & Third-Party Integration,customization third-party integration,dislikes,1.64,15,16,13.3,0.0,86.7,4.47,0.0
+Sage Intacct,financial_accounting_core,Financial Accounting & General Ledger,financial accounting general ledger,dislikes,2.81,59,131,13.6,67.8,18.6,4.12,0.0
+Sage Intacct,financial_reporting_analytics,Financial Reporting & Business Intelligence,financial reporting business intelligence,dislikes,2.58,73,134,9.6,57.5,32.9,4.32,2.7
+Sage Intacct,implementation_complexity,"Implementation, Setup & Cost Management",implementation setup cost management,dislikes,2.5,13,20,30.8,0.0,69.2,4.42,15.4
+Sage Intacct,mobile_remote_access,Mobile & Remote Access,mobile remote access,dislikes,2.96,1,3,100.0,0.0,0.0,4.5,0.0
+Sage Intacct,multi_entity_currency,Multi-Entity & Currency Management,multi-entity currency management,dislikes,2.14,14,23,7.1,28.6,64.3,4.36,0.0
+Sage Intacct,sales_order_management,Sales Order Management,sales order management,dislikes,4.47,3,7,100.0,0.0,0.0,5.0,0.0
+Sage Intacct,specialized_modules,Specialized Module Functionality,specialized module functionality,dislikes,2.38,21,44,4.8,9.5,85.7,4.17,0.0
+Sage Intacct,system_access_security,System Access & Security Management,system access security management,dislikes,2.14,9,16,0.0,55.6,44.4,4.56,0.0
+Sage Intacct,system_performance_reliability,System Performance & Reliability,system performance reliability,dislikes,2.46,18,23,27.8,5.6,66.7,4.33,5.6
+Sage Intacct,user_interface_navigation,User Interface & System Navigation,user interface system navigation,dislikes,1.89,37,46,2.7,27.0,70.3,4.35,10.8
+Sage Intacct,user_training_learning,User Training & Learning Curve,user training learning curve,dislikes,2.03,127,336,13.4,2.4,84.3,4.23,3.1
+Workday Financial Management,accounts_payable_invoice_processing,Accounts Payable & Invoice Processing,accounts payable invoice processing,dislikes,1.39,2,4,0.0,0.0,100.0,3.0,100.0
+Workday Financial Management,customer_support_service,Customer Support & Service Quality,customer support service quality,dislikes,2.02,3,6,0.0,0.0,100.0,3.67,100.0
+Workday Financial Management,customization_integration,Customization & Third-Party Integration,customization third-party integration,dislikes,1.02,1,1,0.0,0.0,100.0,4.5,100.0
+Workday Financial Management,financial_accounting_core,Financial Accounting & General Ledger,financial accounting general ledger,dislikes,2.91,6,11,16.7,83.3,0.0,4.42,50.0
+Workday Financial Management,financial_reporting_analytics,Financial Reporting & Business Intelligence,financial reporting business intelligence,dislikes,2.95,4,11,0.0,75.0,25.0,4.25,50.0
+Workday Financial Management,implementation_complexity,"Implementation, Setup & Cost Management",implementation setup cost management,dislikes,1.47,2,4,0.0,0.0,100.0,5.0,50.0
+Workday Financial Management,multi_entity_currency,Multi-Entity & Currency Management,multi-entity currency management,dislikes,1.06,1,1,0.0,0.0,100.0,4.5,0.0
+Workday Financial Management,sales_order_management,Sales Order Management,sales order management,dislikes,4.95,1,1,100.0,0.0,0.0,5.0,0.0
+Workday Financial Management,system_access_security,System Access & Security Management,system access security management,dislikes,2.54,1,1,0.0,100.0,0.0,2.5,100.0
+Workday Financial Management,system_performance_reliability,System Performance & Reliability,system performance reliability,dislikes,2.98,2,3,100.0,0.0,0.0,4.5,0.0
+Workday Financial Management,user_interface_navigation,User Interface & System Navigation,user interface system navigation,dislikes,1.66,2,4,0.0,0.0,100.0,4.5,50.0
+Xero,accounts_payable_invoice_processing,Accounts Payable & Invoice Processing,accounts payable invoice processing,dislikes,2.3,25,46,0.0,64.0,36.0,4.56,20.0
+Xero,banking_cash_management,Banking & Cash Management,banking cash management,dislikes,2.74,62,176,4.8,75.8,19.4,4.43,19.4
+Xero,crm_customer_management,CRM & Customer Relationship Management,crm customer relationship management,dislikes,2.02,1,2,0.0,0.0,100.0,4.0,0.0
+Xero,customer_support_service,Customer Support & Service Quality,customer support service quality,dislikes,2.83,17,47,35.3,5.9,58.8,3.97,29.4
+Xero,customization_integration,Customization & Third-Party Integration,customization third-party integration,dislikes,1.56,8,11,12.5,0.0,87.5,4.69,25.0
+Xero,financial_accounting_core,Financial Accounting & General Ledger,financial accounting general ledger,dislikes,2.9,28,46,10.7,71.4,17.9,4.54,21.4
+Xero,financial_reporting_analytics,Financial Reporting & Business Intelligence,financial reporting business intelligence,dislikes,2.24,14,20,7.1,28.6,64.3,4.43,28.6
+Xero,implementation_complexity,"Implementation, Setup & Cost Management",implementation setup cost management,dislikes,2.5,2,2,50.0,0.0,50.0,4.75,0.0
+Xero,mobile_remote_access,Mobile & Remote Access,mobile remote access,dislikes,2.58,2,9,0.0,50.0,50.0,4.25,0.0
+Xero,multi_entity_currency,Multi-Entity & Currency Management,multi-entity currency management,dislikes,1.95,2,4,0.0,50.0,50.0,3.5,0.0
+Xero,sales_order_management,Sales Order Management,sales order management,dislikes,3.24,4,6,0.0,100.0,0.0,4.5,25.0
+Xero,specialized_modules,Specialized Module Functionality,specialized module functionality,dislikes,2.64,11,15,18.2,27.3,54.5,4.45,36.4
+Xero,system_access_security,System Access & Security Management,system access security management,dislikes,2.38,3,4,0.0,66.7,33.3,4.5,0.0
+Xero,system_performance_reliability,System Performance & Reliability,system performance reliability,dislikes,2.58,6,9,33.3,0.0,66.7,4.75,33.3
+Xero,user_interface_navigation,User Interface & System Navigation,user interface system navigation,dislikes,1.61,8,9,0.0,25.0,75.0,4.38,25.0
+Xero,user_training_learning,User Training & Learning Curve,user training learning curve,dislikes,1.27,2,3,0.0,0.0,100.0,4.75,0.0

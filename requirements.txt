@@ -17,3 +17,7 @@ pandas
 numpy
 tqdm
 keybert
+pyabsa
+transformers
+torch
+sentencepiece
